@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: b5db8b2de3a1
+Revision ID: 3930fa7826bc
 Revises:
-Create Date: 2023-02-22 17:30:28.707248
+Create Date: 2023-02-22 17:59:18.108228
 
 """
 from alembic import op
@@ -11,8 +11,9 @@ import os
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 
+
 # revision identifiers, used by Alembic.
-revision = 'b5db8b2de3a1'
+revision = '3930fa7826bc'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -43,10 +44,10 @@ def upgrade():
     sa.Column('ingredients', sa.String(), nullable=False),
     sa.Column('avg_rating', sa.Numeric(precision=2, scale=1), nullable=False),
     sa.Column('num_reviews', sa.Integer(), nullable=False),
-    sa.Column('step_one', sa.String(length=500), nullable=False),
-    sa.Column('step_two', sa.String(length=500), nullable=False),
-    sa.Column('step_three', sa.String(length=500), nullable=False),
-    sa.Column('step_four', sa.String(length=500), nullable=False),
+    sa.Column('step_one', sa.String(), nullable=False),
+    sa.Column('step_two', sa.String(), nullable=False),
+    sa.Column('step_three', sa.String(), nullable=False),
+    sa.Column('step_four', sa.String(), nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=True),
@@ -78,7 +79,6 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    
     if environment == "production":
         op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
