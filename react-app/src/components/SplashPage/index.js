@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { thunkLoadAllRecipes } from "../../store/recipe";
+import { thunkLoadAllReviews } from "../../store/review";
 import { NavLink } from "react-router-dom";
 import RecipeCard from "../RecipeCard";
 import "./SplashPage.css";
@@ -14,6 +15,7 @@ const SplashPage = () => {
   if (allRecipesData) allRecipes = Object.values(allRecipesData);
   useEffect(() => {
     dispatch(thunkLoadAllRecipes())
+    dispatch(thunkLoadAllReviews())
   }, [dispatch])
   if (!allRecipes) {
     return null

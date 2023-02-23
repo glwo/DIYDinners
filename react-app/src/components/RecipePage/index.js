@@ -30,9 +30,9 @@ const RecipePage = () => {
     return null
   }
 
-  const totalReviews = useSelector(state => state.reviews.allReviews)
-  const reviews = Object.values(totalReviews).filter(review => review.recipe_id == recipeId)
-  if (!totalReviews) return null
+//   const totalReviews = useSelector(state => state.reviews.allReviews)
+//   const reviews = Object.values(totalReviews).filter(review => review.recipe_id == recipeId)
+//   if (!totalReviews) return null
 
   if (!currentRecipe) {
     return null
@@ -67,29 +67,29 @@ const RecipePage = () => {
 
                 </div>
                 <div id='page-bottom-container'>
-                    <div className="review-container">
+                    {/* <div className="review-container">
                         <h3>Reviews</h3>
                     {reviews.length > 0 && (
                         reviews.map(review => {
                             return (
                                 <div key={review.id} className='indiv-review'>
                                     <div className="review-name">
-                                    {/* <h5><i class="fa-solid fa-user"></i>{review.User?.firstName}</h5> */}
+                                    <h5><i class="fa-solid fa-user"></i>{review.User?.firstName}</h5>
                                     </div>
                                     {review.review}
                                     <div>
-                                    {/* <button className="delReviewButton"
+                                    <button className="delReviewButton"
                                     onClick={() => dispatch(deleteReview(review.id)).then(dispatch(getAllReviews(spotObj.id)))}
                                     hidden={(loggedInUser && loggedInUser?.id === review.User?.id ? false : true)}>
                                         Delete Your Review
-                                    </button> */}
+                                    </button>
                                     </div>
                                 </div>
                             )
                         })
                             )}
                         </div>
-                    {!reviews.length && (<p> There are currently no reviews for this location </p>)}
+                    {!reviews.length && (<p> There are currently no reviews for this location </p>)} */}
                 </div>
             </div>
         </div>
