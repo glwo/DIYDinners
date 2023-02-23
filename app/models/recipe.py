@@ -43,5 +43,7 @@ class Recipe(db.Model):
       "step_one": self.step_one,
       "step_two": self.step_two,
       "step_three": self.step_three,
+      "step_four": self.step_four,
+      "recipe_images": [image.to_dict() for image in self.recipe_images],
       "review": [review.to_dict() for review in self.reviews]
     }
