@@ -1,13 +1,13 @@
 
-const CREATE_REVIEWS = 'reviews/CREATE_REVIEWS'
+const CREATE_REVIEW = 'reviews/CREATE_REVIEWS'
 const ALL_REVIEWS = 'reviews/ALL_REVIEWS'
 const USER_REVIEWS = 'reviews/USER'
-const UPDATE_REVIEWS = 'reviews/UPDATE'
-const DELETE_REVIEWS = 'reviews/DELETE'
+const UPDATE_REVIEW = 'reviews/UPDATE'
+const DELETE_REVIEW = 'reviews/DELETE'
 
 const createReview = (review) => {
     return {
-        type: CREATE_REVIEWS,
+        type: CREATE_REVIEW,
         review
     }
 }
@@ -28,14 +28,14 @@ const loadUserReviews = (reviews) => {
 
 const updateReview = (review) => {
     return {
-        type: UPDATE_REVIEWS,
+        type: UPDATE_REVIEW,
         review
     }
 }
 
 const deleteReview = (reviewId) => {
     return {
-        type: DELETE_REVIEWS,
+        type: DELETE_REVIEW,
         reviewId
     }
 }
@@ -71,7 +71,7 @@ export const userReviews = () => async dispatch => {
     }
 }
 
-export const allReviews = () => async dispatch => {
+export const thunkLoadAllReviews = () => async dispatch => {
     const response = await fetch(`/api/review`)
 
 
@@ -128,26 +128,26 @@ const initialState = {
 export default function reducer (state = initialState, action) {
     let newState;
     switch (action.type) {
-        case CREATE_REVIEWS:
+        case CREATE_REVIEW:
             newState = {...state, allReviews: {...state.allReviews}, user: {...state.user}}
             newState.user[action.review.id] = action.review
             newState.allReviews[action.review.id] = action.review
             return newState
-        case ALL:
+        case ALL_REVIEWS:
             newState = {...state, allReviews: {}, user: {...state.user}}
             action.reviews.forEach(review => {
                 newState.allReviews[review.id] = review
             });
             return newState
-        case USER:
+        case USER_REVIEWS:
             newState = {...state, user: {...state.user}}
             action.reviews.userReviews.forEach(review => {
                 newState.user[review.id] = review
             });
             return newState
-        case UPDATE:
+        case UPDATE_REVIEW:
             return {...state, allReviews: {...state.allReviews, [action.review.id]: action.review}}
-        case DELETE:
+        case DELETE_REVIEW:
             newState = {allReviews: {...state.allReviews}, user: {...state.user}}
             if (newState.user[action.reviewId]) delete newState.user[action.reviewId]
             if (newState.allReviews[action.reviewId]) delete newState.allReviews[action.reviewId]

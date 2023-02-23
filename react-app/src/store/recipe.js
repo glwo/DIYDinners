@@ -1,6 +1,6 @@
+const ADD_RECIPE = 'recipe/ADD_RECIPE';
 const LOAD_ALL_RECIPES = 'recipe/LOAD_ALL_RECIPES';
 const LOAD_RECIPE = 'recipe/LOAD_RECIPE';
-const ADD_RECIPE = 'recipe/ADD_RECIPE';
 const UPDATE_RECIPE = 'recipe/UPDATE_RECIPE';
 const REMOVE_RECIPE = 'recipe/REMOVE_RECIPE';
 
