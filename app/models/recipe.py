@@ -36,6 +36,7 @@ class Recipe(db.Model):
       "id": self.id,
       "user_id": self.user_id,
       "recipe_name": self.recipe_name,
+      "recipe_type": self.recipe_type,
       "description": self.description,
       "ingredients": self.ingredients,
       "avg_rating": avg,

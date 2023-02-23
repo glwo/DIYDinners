@@ -55,6 +55,9 @@ const RecipePage = () => {
                 <div className="recipeDesc">
                     <p id="recipe-description">{currentRecipe.description}</p>
                 </div>
+                <div className="recipeIngredients">
+                    <p>{currentRecipe.ingredients}</p>
+                </div>
                 <div className="recipeSteps">
                     <h3>Preparation</h3>
                     <h4>Step One</h4>

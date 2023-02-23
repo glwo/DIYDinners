@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { thunkCreateRecipe } from '../../store/recipe';
 import './CreateBusiness.css'
 
 export default function CreateBusiness() {
@@ -23,26 +24,23 @@ export default function CreateBusiness() {
     setErrors([]);
     if (currentUser == undefined) return history.push('/login')
 
-    const business = {
-      store_name,
+    const recipe = {
+      recipe_name,
+      recipe_type,
       description,
-      city,
-      state,
-      address,
-      zipcode,
-      business_type,
-      opening_time,
-      closing_time,
-      phone_num,
-      image_url
+      ingredients,
+      step_one,
+      step_two,
+      step_three,
+      step_four,
     };
 
-    const data = await dispatch(thunkCreateBusiness(business))
+    const data = await dispatch(thunkCreateRecipe(recipe))
     if (data.errors) {
       setErrors(data.errors)
     } else {
       setErrors([]);
-      history.push(`/business/${data.id}`);
+      history.push(`/recipe/${data.id}`);
     }
   }
 
@@ -57,16 +55,28 @@ export default function CreateBusiness() {
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
           <div className="input-form">
-            <label>Business Name:</label>
+            <label>Recipe Name :</label>
             <input
               type='text'
-              value={store_name}
-              onChange={(e) => setStoreName(e.target.value)}
+              value={recipe_name}
+              onChange={(e) => setRecipeName(e.target.value)}
               required
             />
           </div>
           <div className="input-form">
-            <label>Description:</label>
+            <label>Recipe Type :</label>
+            <select
+              value={recipe_type}
+              onChange={(e) => setRecipeType(e.target.value)}
+            >
+              <option value="vegetarian">Vegetarian</option>
+              <option value="classic">Classic</option>
+              <option value="desert">Desert</option>
+              <option value="pasta">Pasta</option>
+            </select>
+          </div>
+          <div className="input-form">
+            <label>Description :</label>
             <input
               type='text'
               value={description}
@@ -75,96 +85,51 @@ export default function CreateBusiness() {
             />
           </div>
           <div className="input-form">
-            <label>City:</label>
+            <label>Ingredients :</label>
             <input
               type='text'
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
+              value={ingredients}
+              onChange={(e) => setIngredients(e.target.value)}
               required
             />
           </div>
           <div className="input-form">
-            <label>State:</label>
+            <label>Step One :</label>
             <input
               type='text'
-              value={state}
-              onChange={(e) => setState(e.target.value)}
+              value={step_one}
+              onChange={(e) => setStepOne(e.target.value)}
               required
             />
           </div>
           <div className="input-form">
-            <label>Address:</label>
+            <label>Step Two :</label>
             <input
               type='text'
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
+              value={step_two}
+              onChange={(e) => setStepTwo(e.target.value)}
               required
             />
           </div>
           <div className="input-form">
-            <label>Zipcode:</label>
+            <label>Step Three :</label>
             <input
               type='number'
-              value={zipcode}
-              onChange={(e) => setZipcode(e.target.value)}
+              value={step_three}
+              onChange={(e) => setStepThree(e.target.value)}
               required
             />
           </div>
           <div className="input-form">
-            <label>Business Type:</label>
-            <select
-              value={business_type}
-              onChange={(e) => setBusinessType(e.target.value)}
-            >
-              <option value="restaurant">Restaurant</option>
-              <option value="auto">Auto Service</option>
-              <option value="home">Home Service</option>
-              <option value="salon">Hair Salon</option>
-            </select>
-          </div>
-          <div className="input-form">
-            <label>Opening Time:</label>
+            <label>Step Four :</label>
             <input
               type='text'
-              value={opening_time}
-              onChange={(e) => setOpeningTime(e.target.value)}
+              value={step_four}
+              onChange={(e) => setStepFour(e.target.value)}
               required
             />
-          </div>
-          <div className="input-form">
-            <label>Closing Time:</label>
-            <input
-              type='text'
-              value={closing_time}
-              onChange={(e) => setClosingTime(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>Phone Number:</label>
-            <input
-              type='text'
-              value={phone_num}
-              onChange={(e) => setPhoneNum(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>Business Image:</label>
-            <input
-              type='text'
-              value={image_url}
-              onChange={(e) => setImageUrl(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <button className='create-button' type="submit">Create New Business</button>
           </div>
         </form>
-      </div>
-      <div className='image-splash'>
-        <img src={createBusinessImage} />
       </div>
     </div>
   )
