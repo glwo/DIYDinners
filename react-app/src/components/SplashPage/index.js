@@ -15,7 +15,7 @@ const SplashPage = () => {
   if (allRecipesData) allRecipes = Object.values(allRecipesData);
   useEffect(() => {
     dispatch(thunkLoadAllRecipes())
-    dispatch(thunkLoadAllReviews())
+    // dispatch(thunkLoadAllReviews())
   }, [dispatch])
   if (!allRecipes) {
     return null
