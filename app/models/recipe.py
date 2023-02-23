@@ -19,6 +19,7 @@ class Recipe(db.Model):
   step_two = db.Column(db.String, nullable=False)
   step_three = db.Column(db.String, nullable=False)
   step_four = db.Column(db.String, nullable=False)
+  image_url = StringField('image_url', validators=[DataRequired(), URL()])
   created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
@@ -43,5 +44,7 @@ class Recipe(db.Model):
       "step_one": self.step_one,
       "step_two": self.step_two,
       "step_three": self.step_three,
+      "step_four": self.step_four,
+      "recipe_images": [image.to_dict() for image in self.recipe_images],
       "review": [review.to_dict() for review in self.reviews]
     }
