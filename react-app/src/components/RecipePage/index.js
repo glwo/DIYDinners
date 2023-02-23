@@ -12,10 +12,10 @@ const RecipePage = () => {
   const recipes = useSelector(state => state.recipe.recipes)
   const currentRecipe = Object.values(recipes).find(recipe => recipe.id == recipeId)
 
-//   let recipeReviews;
-//   if (currentRecipe) {
-//     recipeReviews = currentRecipe.review
-//   }
+  let recipeReviews;
+  if (currentRecipe) {
+    recipeReviews = currentRecipe.review
+  }
 
   useEffect(() => {
     dispatch(thunkLoadAllRecipes())
@@ -30,9 +30,9 @@ const RecipePage = () => {
     return null
   }
 
-//   const totalReviews = useSelector(state => state.reviews.allReviews)
-//   const reviews = Object.values(totalReviews).filter(review => review.recipe_id == recipeId)
-//   if (!totalReviews) return null
+  const totalReviews = useSelector(state => state.reviews.allReviews)
+  const reviews = Object.values(totalReviews).filter(review => review.recipe_id == recipeId)
+  if (!totalReviews) return null
 
   if (!currentRecipe) {
     return null
@@ -67,7 +67,7 @@ const RecipePage = () => {
 
                 </div>
                 <div id='page-bottom-container'>
-                    {/* <div className="review-container">
+                    <div className="review-container">
                         <h3>Reviews</h3>
                     {reviews.length > 0 && (
                         reviews.map(review => {
@@ -89,7 +89,7 @@ const RecipePage = () => {
                         })
                             )}
                         </div>
-                    {!reviews.length && (<p> There are currently no reviews for this location </p>)} */}
+                    {!reviews.length && (<p> There are currently no reviews for this location </p>)}
                 </div>
             </div>
         </div>
