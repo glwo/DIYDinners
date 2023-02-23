@@ -4,6 +4,7 @@ import { thunkLoadAllRecipes } from "../../store/recipe";
 import { thunkLoadAllReviews } from "../../store/review";
 import { Link, useParams } from "react-router-dom";
 import "./RecipePage.css"
+import { removeReview } from "../../store/review";
 import OpenModalButton from "../OpenModalButton";
 
 const RecipePage = () => {
@@ -79,7 +80,7 @@ const RecipePage = () => {
                                     {review.review}
                                     <div>
                                     <button className="delReviewButton"
-                                    onClick={() => dispatch(deleteReview(review.id)).then(dispatch(getAllReviews(spotObj.id)))}
+                                    onClick={() => dispatch(removeReview(review.id)).then(dispatch(thunkLoadAllReviews()))}
                                     hidden={(loggedInUser && loggedInUser?.id === review.User?.id ? false : true)}>
                                         Delete Your Review
                                     </button>
