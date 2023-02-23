@@ -19,7 +19,6 @@ class Recipe(db.Model):
   step_two = db.Column(db.String, nullable=False)
   step_three = db.Column(db.String, nullable=False)
   step_four = db.Column(db.String, nullable=False)
-  image_url = StringField('image_url', validators=[DataRequired(), URL()])
   created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 

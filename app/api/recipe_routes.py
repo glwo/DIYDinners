@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect,session, request
 from flask_login import login_required, current_user
 from app.models import db, Recipe, RecipeImage
-from forms.recipe_form import RecipeForm
+from app.forms import recipe_form
 
 recipe_routes = Blueprint('recipe', __name__)
 
@@ -30,7 +30,7 @@ def post_recipe():
   """
   Create a new recipe and return that recipe in a dictionary
   """
-  form = RecipeForm()
+  form = recipe_form.RecipeForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   # Add and commit new recipe
   if form.validate_on_submit():
@@ -84,7 +84,7 @@ def update_recipe(id):
   """
   thisRecipe = Recipe.query.get(id)
   thisRecipeImage = RecipeImage.query.get(thisRecipe.recipe_images[0].id)
-  form = RecipeForm()
+  form = recipe_form.RecipeForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if not thisRecipe:
