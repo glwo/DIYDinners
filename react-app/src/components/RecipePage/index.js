@@ -19,7 +19,7 @@ const RecipePage = () => {
 
   useEffect(() => {
     dispatch(thunkLoadAllRecipes())
-    // dispatch(thunkLoadAllReviews())
+    dispatch(thunkLoadAllReviews())
   }, [dispatch, recipeId])
 
   const reviewFilter = (array, num) => {
