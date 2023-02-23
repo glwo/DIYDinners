@@ -12,7 +12,7 @@ const RecipePage = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(state => state.recipe.recipes)
   const currentRecipe = Object.values(recipes).find(recipe => recipe.id == recipeId)
-
+  const loggedInUser = useSelector(state => state.session.user)
   let recipeReviews;
   if (currentRecipe) {
     recipeReviews = currentRecipe.review
@@ -31,7 +31,7 @@ const RecipePage = () => {
     return null
   }
 
-  const totalReviews = useSelector(state => state.reviews.allReviews)
+  const totalReviews = useSelector(state => state.review.allReviews)
   const reviews = Object.values(totalReviews).filter(review => review.recipe_id == recipeId)
   if (!totalReviews) return null
 
@@ -75,9 +75,9 @@ const RecipePage = () => {
                             return (
                                 <div key={review.id} className='indiv-review'>
                                     <div className="review-name">
-                                    <h5><i class="fa-solid fa-user"></i>{review.User?.firstName}</h5>
+                                    <h5><i class="fa-solid fa-user"></i>{review.firstName}</h5>
                                     </div>
-                                    {review.review}
+                                    {review.content}
                                     <div>
                                     <button className="delReviewButton"
                                     onClick={() => dispatch(removeReview(review.id)).then(dispatch(thunkLoadAllReviews()))}
