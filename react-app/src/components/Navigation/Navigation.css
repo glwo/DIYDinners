@@ -5,3 +5,58 @@
 .hidden {
   display: none;
 }
+
+.permanentNavBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.permanentNavBar a {
+  text-decoration: none;
+}
+
+.dinnerHomeLink {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.dinnerHomeLink i {
+  font-size: 32px;
+  color: #e33d26;
+  padding: 10px;
+}
+
+.dinnerHomeLink h1 {
+  color: #e33d26;
+  padding: 10px;
+}
+
+.navButtonProfile {
+  border-radius: 5px;
+  align-items: flex-end;
+  list-style: none;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 85px;
+  right: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px black;
+  padding: 15px;
+  background: white;
+}
+
+.profile-dropdown li {
+  list-style: none;
+  padding: 10px 0;
+  list-style-type: none;
+}
