@@ -1,7 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from sqlalchemy.sql import func
 
-
 class Recipe(db.Model):
   __tablename__ = 'recipes'
 
@@ -24,7 +23,7 @@ class Recipe(db.Model):
 
   user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
   recipe_images = db.relationship("RecipeImage", back_populates="recipe")
-  reviews = db.relationship("Review", back_populates="recipe")
+  reviews = db.relationship("Review", back_populates="recipe", cascade="all, delete-orphan")
 
   def to_dict(self):
     if len([review.rating for review in self.reviews]) == 0:
@@ -36,6 +35,7 @@ class Recipe(db.Model):
       "id": self.id,
       "user_id": self.user_id,
       "recipe_name": self.recipe_name,
+      "recipe_type": self.recipe_type,
       "description": self.description,
       "ingredients": self.ingredients,
       "avg_rating": avg,

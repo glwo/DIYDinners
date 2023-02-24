@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import './RecipeCard.css'
 
 const RecipeCard = ({ recipe }) => {
-  const dispatch = useDispatch();
   if (!recipe) {
     return null
   }
