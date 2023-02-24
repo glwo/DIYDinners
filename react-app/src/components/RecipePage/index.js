@@ -59,12 +59,13 @@ const RecipePage = () => {
                                     hidden={(loggedInUser && loggedInUser?.id === currentRecipe.user_id ? false : true)}>
                                        Delete Your Recipe
                                     </button>
+                    <div hidden={(loggedInUser && loggedInUser?.id === currentRecipe.user_id ? false : true)}>
                     <OpenModalButton
                     className= "updateProfileButton"
                     buttonText="Update Your Recipe"
                     modalComponent={<UpdateRecipeModal recipe={currentRecipe} />}
-                    hidden={(loggedInUser && loggedInUser?.id === currentRecipe.user_id ? false : true)}
                     />
+                    </div>
                 </div>
                 <div className="recipeDesc">
                     <p id="recipe-description">{currentRecipe.description}</p>
