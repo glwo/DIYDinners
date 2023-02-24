@@ -97,8 +97,8 @@ const RecipePage = () => {
                                     {review.content}
                                     <div>
                                     <button className="delReviewButton"
-                                    onClick={() => dispatch(removeReview(review.id)).then(dispatch(thunkLoadAllReviews()))}
-                                    hidden={(loggedInUser && loggedInUser?.id === review.User?.id ? false : true)}>
+                                    onClick={() => dispatch(removeReview(review.id))}
+                                    hidden={(loggedInUser && loggedInUser?.id === review.user_id ? false : true)}>
                                         Delete Your Review
                                     </button>
                                     </div>
