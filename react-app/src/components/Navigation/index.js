@@ -12,6 +12,13 @@ function Navigation({ isLoaded }){
 			<li>
 				<NavLink exact to="/">Home</NavLink>
 			</li>
+			<li>
+				<div className='addRecipeNav'>
+        		<NavLink exact to="/recipe">
+          			Add Your Recipe!
+        		</NavLink>
+      			</div>
+			</li>
 			{isLoaded && (
 				<li>
 					<ProfileButton user={sessionUser} />

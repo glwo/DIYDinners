@@ -1,30 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { thunkCreateRecipe } from '../../store/recipe';
-import './CreateRecipe.css'
+import React, { useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useModal } from "../../context/Modal";
+import { thunkUpdateRecipe } from "../../store/recipe";
+import './UpdateRecipeModal.css'
 
-export default function CreateRecipe() {
+export default function UpdateRecipeModal({ recipe }) {
   const dispatch = useDispatch();
-  const history = useHistory();
-  const [recipe_name, setRecipeName] = useState('');
-  const [recipe_type, setRecipeType] = useState('');
-  const [description, setDescription] = useState('');
-  const [ingredients, setIngredients] = useState('');
-  const [image_url, setImageUrl] = useState('');
-  const [step_one, setStepOne] = useState('');
-  const [step_two, setStepTwo] = useState('');
-  const [step_three, setStepThree] = useState('');
-  const [step_four, setStepFour] = useState('');
+  const [recipe_name, setRecipeName] = useState(recipe.recipe_name);
+  const [recipe_type, setRecipeType] = useState(recipe.recipe_type);
+  const [description, setDescription] = useState(recipe.description);
+  const [ingredients, setIngredients] = useState(recipe.ingredients);
+  const [image_url, setImageUrl] = useState(recipe.recipe_images[0].image_url);
+  const [step_one, setStepOne] = useState(recipe.step_one);
+  const [step_two, setStepTwo] = useState(recipe.step_two);
+  const [step_three, setStepThree] = useState(recipe.step_three);
+  const [step_four, setStepFour] = useState(recipe.step_four);
   const [errors, setErrors] = useState([]);
-  const currentUser = useSelector(state => state.session.user)
+  const { closeModal } = useModal();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    if (currentUser == undefined) return history.push('/')
 
-    const recipe = {
+    const recipeData = {
+      ...recipe,
+      id: recipe.id,
       recipe_name,
       recipe_type,
       description,
@@ -36,12 +36,12 @@ export default function CreateRecipe() {
       step_four,
     };
 
-    const data = await dispatch(thunkCreateRecipe(recipe))
+    const data = await dispatch(thunkUpdateRecipe(recipeData))
     if (data.errors) {
       setErrors(data.errors)
     } else {
       setErrors([]);
-      history.push(`/recipe/${data.id}`);
+      closeModal();
     }
   }
 
@@ -140,7 +140,7 @@ export default function CreateRecipe() {
             />
           </div>
           <div>
-            <button className='create-button' type="submit">Create New Recipe</button>
+            <button className='create-button' type="submit">Update Recipe</button>
           </div>
         </form>
       </div>

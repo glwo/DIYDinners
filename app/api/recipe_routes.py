@@ -52,7 +52,7 @@ def post_recipe():
     # Add and commit recipe image
     newRecipeImage = RecipeImage(
       image_url = form.data['image_url'],
-      preview = form.data['preview'],
+      preview = True,
       recipe_id = newRecipe.id
     )
     db.session.add(newRecipeImage)

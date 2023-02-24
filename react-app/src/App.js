@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import RecipePage from "./components/RecipePage";
+import CreateRecipe from "./components/CreateRecipe";
 
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path='/recipe/:recipeId'>
             <RecipePage />
+          </Route>
+          <Route exact path="/recipe">
+            <CreateRecipe />
           </Route>
         </Switch>
       )}
