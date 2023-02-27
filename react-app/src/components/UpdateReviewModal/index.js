@@ -20,11 +20,13 @@ function UpdateReviewModal({ reviewDetails }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([]);
+
     const payload = {
       ...reviewDetails,
-      review,
-      stars,
-      url,
+      content: review,
+      rating: stars,
+      imgUrl: url,
     };
 
     const updatedReview = await dispatch(reviewUpdate(payload, reviewDetails.id));
@@ -39,7 +41,7 @@ function UpdateReviewModal({ reviewDetails }) {
 
   return (
     <div>
-    <h2>Edit Review</h2>
+    <h2>Update Review</h2>
     <form onSubmit={handleSubmit}>
       <div className='reviewForm'>
         <ul
@@ -66,13 +68,13 @@ function UpdateReviewModal({ reviewDetails }) {
                 onChange={updateReview}
             />
             <div class="rate">
-              <input type="radio" id="star5" name="rate" value="5" onChange={updateStars}/>
+              <input type="radio" id="star5" name="rate" value={5} onChange={updateStars}/>
               <label for="star5" title="text">5 stars</label>
-              <input type="radio" id="star4" name="rate" value="4" onChange={updateStars}/>
+              <input type="radio" id="star4" name="rate" value={4} onChange={updateStars}/>
               <label for="star4" title="text">4 stars</label>
-              <input type="radio" id="star3" name="rate" value="3" onChange={updateStars}/>
+              <input type="radio" id="star3" name="rate" value={3} onChange={updateStars}/>
               <label for="star3" title="text">3 stars</label>
-              <input type="radio" id="star2" name="rate" value="2" onChange={updateStars}/>
+              <input type="radio" id="star2" name="rate" value={2} onChange={updateStars}/>
               <label for="star2" title="text">2 stars</label>
               <input type="radio" id="star1" name="rate" value="1" onChange={updateStars}/>
               <label for="star1" title="text">1 star</label>
@@ -84,8 +86,9 @@ function UpdateReviewModal({ reviewDetails }) {
                 value={url}
                 onChange={updateImage}
             />
-            <button className='reviewSubmit'>Submit</button>
+
       </div>
+      <button className='reviewSubmit' type="submit" >Submit</button>
       </form>
       </div>
   );

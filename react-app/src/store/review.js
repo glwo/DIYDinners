@@ -85,14 +85,11 @@ export const thunkLoadAllReviews = () => async dispatch => {
 }
 
 export const reviewUpdate = (payload, reviewId) => async dispatch => {
-    // console.log('payload', payload)
     const response = await fetch(`/api/review/${reviewId}`, {
         method: 'PUT',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload)
       })
-      console.log('response', response)
-
 
     if(response.ok){
         const review = await response.json()

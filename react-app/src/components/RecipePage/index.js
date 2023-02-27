@@ -105,7 +105,7 @@ const RecipePage = () => {
                                     loggedInUser && review.user_id == loggedInUser.id ?
                                         <div className='editDeleteButton'>
                                         <OpenModalButton
-                                            buttonText={<i class="fa-solid fa-pen-to-square"></i>}
+                                            buttonText="Update Your Review"
                                             modalComponent={<UpdateReviewModal key={review.id} reviewDetails={review} />}
                                         />
                                         </div>
