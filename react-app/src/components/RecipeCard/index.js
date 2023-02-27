@@ -21,7 +21,7 @@ const RecipeCard = ({ recipe }) => {
           {recipe.avg_rating >= 4 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
           {recipe.avg_rating >= 5 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
         </div>
-        <div>{recipe.num_reviews} reviews</div>
+        <div>{recipe.num_reviews} review(s)</div>
       </div>
     </Link>
   )

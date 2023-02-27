@@ -77,6 +77,7 @@ def edit_review(id):
     form = review_form.ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
+        review.recipe_id= review.recipe_id
         review.content = form.data['content']
         review.rating = form.data['rating']
         review.imgUrl = form.data['imgUrl']

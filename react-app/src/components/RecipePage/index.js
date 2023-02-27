@@ -4,9 +4,11 @@ import { thunkRemoveRecipe, thunkLoadAllRecipes } from "../../store/recipe";
 import { thunkLoadAllReviews } from "../../store/review";
 import { Link, useParams, useHistory } from "react-router-dom";
 import "./RecipePage.css"
-import { removeReview } from "../../store/review";
+import { removeReview, reviewCreate, reviewUpdate } from "../../store/review";
 import OpenModalButton from "../OpenModalButton";
 import UpdateRecipeModal from "../UpdateRecipeModal";
+import UpdateReviewModal from "../UpdateReviewModal";
+
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -15,6 +17,7 @@ const RecipePage = () => {
   const recipes = useSelector(state => state.recipe.recipes)
   const currentRecipe = Object.values(recipes).find(recipe => recipe.id == recipeId)
   const loggedInUser = useSelector(state => state.session.user)
+  const [openModal, setOpenModal] = useState(false)
   let recipeReviews;
   if (currentRecipe) {
     recipeReviews = currentRecipe.review
@@ -53,18 +56,20 @@ const RecipePage = () => {
                 </div>
                         <img id="recipeImg" src={currentRecipe.recipe_images[0] ? currentRecipe.recipe_images[0].image_url : null} alt="No image available for this recipe!"></img>
                 <div>
+                    <h3>Ratings</h3>
                     {currentRecipe.avg_rating}
                     <button className="delRecipeButton"
                                     onClick={() => dispatch(thunkRemoveRecipe(currentRecipe.id)).then(dispatch(thunkLoadAllRecipes())).then(history.push("/"))}
                                     hidden={(loggedInUser && loggedInUser?.id === currentRecipe.user_id ? false : true)}>
                                        Delete Your Recipe
                                     </button>
+                    <div hidden={(loggedInUser && loggedInUser?.id === currentRecipe.user_id ? false : true)}>
                     <OpenModalButton
                     className= "updateProfileButton"
                     buttonText="Update Your Recipe"
                     modalComponent={<UpdateRecipeModal recipe={currentRecipe} />}
-                    hidden={(loggedInUser && loggedInUser?.id === currentRecipe.user_id ? false : true)}
                     />
+                    </div>
                 </div>
                 <div className="recipeDesc">
                     <p id="recipe-description">{currentRecipe.description}</p>
@@ -86,7 +91,7 @@ const RecipePage = () => {
                 </div>
                 <div id='page-bottom-container'>
                     <div className="review-container">
-                        <h3>Reviews</h3>
+                        <h3>Cooking Notes</h3>
                     {reviews.length > 0 && (
                         reviews.map(review => {
                             return (
@@ -96,6 +101,16 @@ const RecipePage = () => {
                                     </div>
                                     {review.content}
                                     <div>
+                                                            {
+                                    loggedInUser && review.user_id == loggedInUser.id ?
+                                        <div className='editDeleteButton'>
+                                        <OpenModalButton
+                                            buttonText="Update Your Review"
+                                            modalComponent={<UpdateReviewModal key={review.id} reviewDetails={review} />}
+                                        />
+                                        </div>
+                                        : ""
+                                    }
                                     <button className="delReviewButton"
                                     onClick={() => dispatch(removeReview(review.id))}
                                     hidden={(loggedInUser && loggedInUser?.id === review.user_id ? false : true)}>
