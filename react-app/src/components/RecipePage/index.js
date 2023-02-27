@@ -8,6 +8,7 @@ import { removeReview, reviewCreate, reviewUpdate } from "../../store/review";
 import OpenModalButton from "../OpenModalButton";
 import UpdateRecipeModal from "../UpdateRecipeModal";
 import UpdateReviewModal from "../UpdateReviewModal";
+import CreateReviewForm from "../CreateReviewForm";
 
 
 const RecipePage = () => {
@@ -92,6 +93,9 @@ const RecipePage = () => {
                 <div id='page-bottom-container'>
                     <div className="review-container">
                         <h3>Cooking Notes</h3>
+                    <div>
+                        <CreateReviewForm  recipeId={recipeId}/>
+                    </div>
                     {reviews.length > 0 && (
                         reviews.map(review => {
                             return (
@@ -122,7 +126,7 @@ const RecipePage = () => {
                         })
                             )}
                         </div>
-                    {!reviews.length && (<p> There are currently no reviews for this location </p>)}
+                    {!reviews.length && (<p> There are currently no reviews for this recipe. </p>)}
                 </div>
             </div>
         </div>
