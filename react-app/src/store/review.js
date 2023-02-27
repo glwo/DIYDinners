@@ -40,9 +40,9 @@ const deleteReview = (reviewId) => {
     }
 }
 
-export const reviewCreate = (business_id, review) => async dispatch => {
+export const reviewCreate = (recipe_id, review) => async dispatch => {
     // console.log('buiness_id', business_id)
-    const res = await fetch(`/api/review/business/${business_id}/reviews`, {
+    const res = await fetch(`/api/review/recipe/${recipe_id}/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(review)
