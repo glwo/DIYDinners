@@ -1,0 +1,4 @@
+.recipeNameImgRating {
+    display: flex;
+    flex-direction: row;
+}

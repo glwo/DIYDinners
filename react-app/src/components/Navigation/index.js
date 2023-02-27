@@ -18,9 +18,14 @@ function Navigation({ isLoaded }){
 			</NavLink>
 			<div className='addRecipeNav'>
         		<NavLink exact to="/recipe">
-          			Add Your Recipe!
+          			Add Your Recipe
         		</NavLink>
       		</div>
+			{/* <div>
+			<NavLink exact to="/recipeBox">
+          			Your Recipe Box
+        		</NavLink>
+			</div> */}
 			{isLoaded && (
 				<li className='navButtonProfile'>
 					<ProfileButton user={sessionUser} />

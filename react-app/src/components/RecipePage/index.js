@@ -50,6 +50,7 @@ const RecipePage = () => {
         {currentRecipe &&
         <div className="recipeDetails">
             <div id='recipe-details-inner'>
+                <div className="recipeNameImgRating">
                 <div>
                     <h2>{currentRecipe.recipe_name}</h2>
                         <p id="recipe-owner">{currentRecipe.user_id}</p>
@@ -59,6 +60,14 @@ const RecipePage = () => {
                 <div>
                     <h3>Ratings</h3>
                     {currentRecipe.avg_rating}
+                    <div>
+                    {currentRecipe.avg_rating >= 1 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
+                    {currentRecipe.avg_rating >= 2 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
+                    {currentRecipe.avg_rating >= 3 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
+                    {currentRecipe.avg_rating >= 4 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
+                    {currentRecipe.avg_rating >= 5 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
+                    </div>
+                    </div>
                     <button className="delRecipeButton"
                                     onClick={() => dispatch(thunkRemoveRecipe(currentRecipe.id)).then(dispatch(thunkLoadAllRecipes())).then(history.push("/"))}
                                     hidden={(loggedInUser && loggedInUser?.id === currentRecipe.user_id ? false : true)}>
@@ -126,7 +135,7 @@ const RecipePage = () => {
                         })
                             )}
                         </div>
-                    {!reviews.length && (<p> There are currently no reviews for this recipe. </p>)}
+                    {!reviews.length && (<p> There are currently no cooking notes for this recipe. </p>)}
                 </div>
             </div>
         </div>

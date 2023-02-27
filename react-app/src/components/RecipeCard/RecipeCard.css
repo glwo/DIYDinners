@@ -1,7 +1,7 @@
 .recipeCard-main-div {
     width: 300px;
     height: 360px;
-    padding: 15px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -9,6 +9,13 @@
     text-decoration: none;
     color: black;
     font-weight: 500;
+    border: 1px solid #ccc;;
+    background-color: white;
+
+}
+
+.recipeCard-main-div:hover {
+    box-shadow: 0px 0px 10px black;
 }
 
 .image-div {
