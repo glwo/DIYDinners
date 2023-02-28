@@ -29,15 +29,16 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0px 30px;
-    margin: 0px 10px;
+    padding: 0px 30px 0px 0px;
+    margin: 0px 10px 0px 0px;
+    margin-left: 27vh;
 }
 
 .RatingsDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 11vw;
+    /* margin-left: 6vw; */
 }
 
 .RatingStars {
@@ -55,7 +56,7 @@
 }
 
 .recipeDesc {
-    margin-left: 6.5vw;
+    margin-left: 10vw;
     margin-right: 13.5vw;
 }
 
@@ -73,11 +74,13 @@
 
 .recipeSteps {
     margin-right: 30vw;
+    min-width: 25vw;
     /* border-top: 5px solid black; */
 }
 
 .recipeIngredients {
     padding-right: 1vw;
+    min-width: 25vw;
     /* border-top: 5px solid black; */
 }
 
@@ -95,4 +98,26 @@
 
 .recipeSteps p {
     line-height: 1.5;
+}
+
+#page-bottom-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 13.5vw;
+}
+
+.review-container h3 {
+    /* margin-right: 30vw;
+    min-width: 25vw; */
+    border-top: 5px solid black;
+}
+
+.reviewRatingsDiv {
+    padding-right: 1vw;
+    min-width: 25vw;
+
+}
+
+.reviewRatingsDiv h3 {
+    border-top: 5px solid black;
 }

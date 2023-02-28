@@ -101,21 +101,6 @@ const RecipePage = () => {
                   )}
                 </div>
                 <div>({currentRecipe.num_reviews})</div>
-                <button
-                  className="delRecipeButton"
-                  onClick={() =>
-                    dispatch(thunkRemoveRecipe(currentRecipe.id))
-                      .then(dispatch(thunkLoadAllRecipes()))
-                      .then(history.push("/"))
-                  }
-                  hidden={
-                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
-                      ? false
-                      : true
-                  }
-                >
-                  Delete Your Recipe
-                </button>
                 <div
                   hidden={
                     loggedInUser && loggedInUser?.id === currentRecipe.user_id
@@ -131,6 +116,21 @@ const RecipePage = () => {
                     }
                   />
                 </div>
+                <button
+                  className="delRecipeButton"
+                  onClick={() =>
+                    dispatch(thunkRemoveRecipe(currentRecipe.id))
+                      .then(dispatch(thunkLoadAllRecipes()))
+                      .then(history.push("/"))
+                  }
+                  hidden={
+                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
+                      ? false
+                      : true
+                  }
+                >
+                  Delete Your Recipe
+                </button>
               </div>
               <div className="recipeDesc">
                 <p id="recipe-description">{currentRecipe.description}</p>
@@ -155,7 +155,13 @@ const RecipePage = () => {
               </div>
             </div>
             <div id="page-bottom-container">
+              <div className="reviewRatingsDiv">
+                <h3>Ratings</h3>
+                <div>{currentRecipe.avg_rating} out of Five</div>
+                <div>{currentRecipe.num_reviews} user ratings</div>
+              </div>
               <div className="review-container">
+                <div className="cookingNotes">
                 <h3>Cooking Notes</h3>
                 <div
                   hidden={
@@ -215,6 +221,7 @@ const RecipePage = () => {
               )}
             </div>
           </div>
+        </div>
         </div>
       )}
     </div>
