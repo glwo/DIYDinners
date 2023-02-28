@@ -47,7 +47,7 @@ export default function CreateRecipe() {
 
   return (
     <div className='main-div'>
-      <div className='create-business-form'>
+      <div className='createRecipeForm'>
         <h1>
           Create A New Recipe
         </h1>
@@ -140,7 +140,7 @@ export default function CreateRecipe() {
             />
           </div>
           <div>
-            <button className='create-button' type="submit">Create New Recipe</button>
+            <button className='createRecipeButton' type="submit">Create New Recipe</button>
           </div>
         </form>
       </div>
