@@ -9,15 +9,21 @@
 .permanentNavBar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
-  padding: 0 30px;
+  padding: 0 0px;
   position: sticky;
   top: 0;
   background-color: white;
+  border-bottom: 1px solid #ccc;
+  /* height: 8vw; */
 }
 
 .permanentNavBar a {
   text-decoration: none;
+  font-weight: bold;
+}
+
+.permanentNavBar .addRecipeNav:hover {
+  border-bottom: 2px solid #6f6f6f;
 }
 
 .dinnerHomeLink {
@@ -25,6 +31,7 @@
   display: flex;
   align-items: center;
   font-size: 14px;
+  border-right: 1px solid #ccc;
 }
 
 .dinnerHomeLink i {
@@ -35,13 +42,24 @@
 
 .dinnerHomeLink h1 {
   color: #e33d26;
-  padding: 10px;
+  padding: 15px;
+  /* font-weight: bold; */
 }
+
+/* .dinnerHomeLink h1 .dividerBar {
+  padding: 0px;
+} */
 
 .navButtonProfile {
   border-radius: 5px;
   align-items: flex-end;
   list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navButtonProfile i {
+  font-size: 2vw;
 }
 
 .profile-dropdown {
@@ -59,4 +77,10 @@
   list-style: none;
   padding: 10px 0;
   list-style-type: none;
+}
+
+.addRecipeNav {
+  display: flex;
+  justify-content: end;
+  margin-top: 4vw;
 }

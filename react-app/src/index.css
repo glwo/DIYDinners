@@ -1,1 +1,13 @@
 /* TODO Add site wide styles */
+* {
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #f2f3ef; */
+}
+
+.nl {
+  list-style-type: none;
+}
+
+body {
+  margin: 0;
+}

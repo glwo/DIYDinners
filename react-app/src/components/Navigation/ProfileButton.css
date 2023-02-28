@@ -1,0 +1,18 @@
+.openMenuButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+
+.openMenuButton i {
+    color: #999999;
+    /* height: 35vw;
+    width: 35vw; */
+}
+
+.openMenuButton i:hover {
+    color:
+    #eb7565;
+}

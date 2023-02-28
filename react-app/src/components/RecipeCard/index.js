@@ -14,13 +14,6 @@ const RecipeCard = ({ recipe }) => {
       </div>
       <div className="recipeInfoDiv">
         <div className="recipeStoreName">{recipe.recipe_name}</div>
-        <div>
-          {recipe.avg_rating >= 1 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
-          {recipe.avg_rating >= 2 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
-          {recipe.avg_rating >= 3 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
-          {recipe.avg_rating >= 4 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
-          {recipe.avg_rating >= 5 ? <i className="fas fa-solid fa-star red"></i> : <i className="fas fa-solid fa-star gray"></i>}
-        </div>
         <div>{recipe.num_reviews} review(s)</div>
       </div>
     </Link>
