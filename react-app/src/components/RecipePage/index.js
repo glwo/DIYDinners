@@ -72,7 +72,9 @@ const RecipePage = () => {
             <div className="RatingsAndDescription">
               <div className="RatingsDiv">
                 <h3>Ratings</h3>
+                <div>
                 {currentRecipe.avg_rating}
+                </div>
                 <div className="RatingStars">
                   {currentRecipe.avg_rating >= 1 ? (
                     <i className="fas fa-solid fa-star red"></i>
