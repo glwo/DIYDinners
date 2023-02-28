@@ -74,13 +74,15 @@
 
 .recipeSteps {
     margin-right: 30vw;
-    min-width: 25vw;
+    min-width: 28vw;
+    max-width: 28vw;
     /* border-top: 5px solid black; */
 }
 
 .recipeIngredients {
     padding-right: 1vw;
-    min-width: 25vw;
+    min-width: 28vw;
+    max-width: 28vw;
     /* border-top: 5px solid black; */
 }
 
@@ -112,12 +114,34 @@
     border-top: 5px solid black;
 }
 
+.review-container {
+    min-width: 28vw;
+    max-width: 28vw;
+}
+
 .reviewRatingsDiv {
     padding-right: 1vw;
-    min-width: 25vw;
-
+    min-width: 28vw;
+    max-width: 28vw;
 }
 
 .reviewRatingsDiv h3 {
     border-top: 5px solid black;
+}
+
+.allNotesHeader {
+    border-bottom: 1px solid #ccc;
+}
+
+.indiv-review {
+    border-bottom: 1px solid #ccc;
+}
+
+.reviewsAndStars {
+    display: flex;
+    flex-direction: row;
+}
+
+.reviewsAndStars i {
+    font-size: 2vw;
 }

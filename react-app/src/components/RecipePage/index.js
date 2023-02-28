@@ -157,71 +157,80 @@ const RecipePage = () => {
             <div id="page-bottom-container">
               <div className="reviewRatingsDiv">
                 <h3>Ratings</h3>
-                <div>{currentRecipe.avg_rating} out of Five</div>
-                <div>{currentRecipe.num_reviews} user ratings</div>
+                <div className="reviewsAndStars">
+                  <div>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div>
+                    <div>{currentRecipe.avg_rating} out of Five</div>
+                    <div>{currentRecipe.num_reviews} user ratings</div>
+                  </div>
+                </div>
               </div>
               <div className="review-container">
                 <div className="cookingNotes">
-                <h3>Cooking Notes</h3>
-                <div
-                  hidden={
-                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
-                      ? true
-                      : false
-                  }
-                >
-                  <CreateReviewForm recipeId={recipeId} />
+                  <h3>Cooking Notes</h3>
+                  <div
+                    hidden={
+                      loggedInUser && loggedInUser?.id === currentRecipe.user_id
+                        ? true
+                        : false
+                    }
+                  >
+                    <CreateReviewForm recipeId={recipeId} />
+                  </div>
+                  <h4 className="allNotesHeader">All Notes</h4>
+                  {reviews.length > 0 &&
+                    reviews.map((review) => {
+                      return (
+                        <div key={review.id} className="indiv-review">
+                          <div className="review-name">
+                            <h5>
+                              <i class="fa-solid fa-user"></i>
+                              {review.firstName}
+                            </h5>
+                          </div>
+                          {review.content}
+                          <div>
+                            {loggedInUser &&
+                            review.user_id == loggedInUser.id ? (
+                              <div className="editDeleteButton">
+                                <OpenModalButton
+                                  buttonText="Update Your Review"
+                                  modalComponent={
+                                    <UpdateReviewModal
+                                      key={review.id}
+                                      reviewDetails={review}
+                                    />
+                                  }
+                                />
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            <button
+                              className="delReviewButton"
+                              onClick={() => dispatch(removeReview(review.id))}
+                              hidden={
+                                loggedInUser &&
+                                loggedInUser?.id === review.user_id
+                                  ? false
+                                  : true
+                              }
+                            >
+                              Delete Your Review
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
-                {reviews.length > 0 &&
-                  reviews.map((review) => {
-                    return (
-                      <div key={review.id} className="indiv-review">
-                        <div className="review-name">
-                          <h5>
-                            <i class="fa-solid fa-user"></i>
-                            {review.firstName}
-                          </h5>
-                        </div>
-                        {review.content}
-                        <div>
-                          {loggedInUser && review.user_id == loggedInUser.id ? (
-                            <div className="editDeleteButton">
-                              <OpenModalButton
-                                buttonText="Update Your Review"
-                                modalComponent={
-                                  <UpdateReviewModal
-                                    key={review.id}
-                                    reviewDetails={review}
-                                  />
-                                }
-                              />
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                          <button
-                            className="delReviewButton"
-                            onClick={() => dispatch(removeReview(review.id))}
-                            hidden={
-                              loggedInUser &&
-                              loggedInUser?.id === review.user_id
-                                ? false
-                                : true
-                            }
-                          >
-                            Delete Your Review
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })}
+                {!reviews.length && (
+                  <p> There are currently no cooking notes for this recipe. </p>
+                )}
               </div>
-              {!reviews.length && (
-                <p> There are currently no cooking notes for this recipe. </p>
-              )}
             </div>
           </div>
-        </div>
         </div>
       )}
     </div>

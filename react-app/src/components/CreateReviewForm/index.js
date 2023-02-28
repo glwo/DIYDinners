@@ -89,7 +89,7 @@ function CreateReviewForm({ recipeId }) {
             <textarea style={{"borderRadius":"10px 10px 10px 10px", marginBottom:"10px"}}
                 className='reviewText'
                 type={'text'}
-                placeholder={'Leave a Note'}
+                placeholder={'Share your notes with other cooks...'}
                 required
                 value={review}
                 onChange={updateReview}
@@ -113,7 +113,9 @@ function CreateReviewForm({ recipeId }) {
                 value={image}
                 onChange={updateImage}
             />
+            <div>
             <button className='reviewSubmit'>Submit</button>
+            </div>
             </form>
         </div>
     )
