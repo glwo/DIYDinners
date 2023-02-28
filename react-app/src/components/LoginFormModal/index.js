@@ -42,7 +42,7 @@ function LoginFormModal() {
   return (
     <>
     <div className="logInModal">
-      <h1>Log in to Gulp</h1>
+      <h1>Log in</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
