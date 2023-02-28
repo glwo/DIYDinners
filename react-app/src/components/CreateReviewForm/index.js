@@ -15,6 +15,19 @@ function CreateReviewForm({ recipeId }) {
 
     // const { recipe_id } = useParams()
     const currentUser = useSelector(state => state.session.user)
+    const totalReviews = useSelector((state) => state.review.allReviews);
+    const reviews = Object.values(totalReviews).filter(
+    (review) => review.recipe_id == recipeId
+    );
+
+    const checkReviews = function(currentUser, userReviews){
+        for(let userReview of userReviews){
+            if (userReview.user_id === currentUser.id){
+                return false
+            }
+        }
+        return true
+    }
 
 
 
@@ -36,6 +49,10 @@ function CreateReviewForm({ recipeId }) {
         e.preventDefault()
         if (currentUser == undefined) return history.push('/login')
 
+        if(checkReviews(currentUser, reviews) !== true){
+            setErrors(["User already has a review for this recipe."])
+            return
+        }
         let payload;
 
             payload= {

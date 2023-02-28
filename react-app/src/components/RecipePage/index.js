@@ -72,9 +72,7 @@ const RecipePage = () => {
             <div className="RatingsAndDescription">
               <div className="RatingsDiv">
                 <h3>Ratings</h3>
-                <div>
-                {currentRecipe.avg_rating}
-                </div>
+                <div>{currentRecipe.avg_rating}</div>
                 <div className="RatingStars">
                   {currentRecipe.avg_rating >= 1 ? (
                     <i className="fas fa-solid fa-star red"></i>
@@ -102,6 +100,7 @@ const RecipePage = () => {
                     <i className="fas fa-solid fa-star gray"></i>
                   )}
                 </div>
+                <div>({currentRecipe.num_reviews})</div>
                 <button
                   className="delRecipeButton"
                   onClick={() =>
@@ -125,7 +124,7 @@ const RecipePage = () => {
                   }
                 >
                   <OpenModalButton
-                    className="updateProfileButton"
+                    className="updateRecipeButton"
                     buttonText="Update Your Recipe"
                     modalComponent={
                       <UpdateRecipeModal recipe={currentRecipe} />
@@ -137,24 +136,34 @@ const RecipePage = () => {
                 <p id="recipe-description">{currentRecipe.description}</p>
               </div>
             </div>
-            <div className="recipeIngredients">
-              <p>{currentRecipe.ingredients}</p>
-            </div>
-            <div className="recipeSteps">
-              <h3>Preparation</h3>
-              <h4>Step One</h4>
-              <p>{currentRecipe.step_one}</p>
-              <h4>Step Two</h4>
-              <p>{currentRecipe.step_two}</p>
-              <h4>Step Three</h4>
-              <p>{currentRecipe.step_three}</p>
-              <h4>Step Four</h4>
-              <p>{currentRecipe.step_four}</p>
+            <div className="IngredientsAndSteps">
+              <div className="recipeIngredients">
+                <h3>Ingredients</h3>
+                <h4>Yield: 2 to 4 servings</h4>
+                <p>{currentRecipe.ingredients}</p>
+              </div>
+              <div className="recipeSteps">
+                <h3>Preparation</h3>
+                <h4>Step One</h4>
+                <p>{currentRecipe.step_one}</p>
+                <h4>Step Two</h4>
+                <p>{currentRecipe.step_two}</p>
+                <h4>Step Three</h4>
+                <p>{currentRecipe.step_three}</p>
+                <h4>Step Four</h4>
+                <p>{currentRecipe.step_four}</p>
+              </div>
             </div>
             <div id="page-bottom-container">
               <div className="review-container">
                 <h3>Cooking Notes</h3>
-                <div>
+                <div
+                  hidden={
+                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
+                      ? true
+                      : false
+                  }
+                >
                   <CreateReviewForm recipeId={recipeId} />
                 </div>
                 {reviews.length > 0 &&
