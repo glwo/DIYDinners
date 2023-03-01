@@ -159,7 +159,7 @@ const RecipePage = () => {
                 <h3>Ratings</h3>
                 <div className="reviewsAndStars">
                   <div>
-                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                   </div>
                   <div>
                     <div>{currentRecipe.avg_rating} out of Five</div>
@@ -220,6 +220,7 @@ const RecipePage = () => {
                             >
                               Delete Your Review
                             </button>
+                            <div className="borderBottom"></div>
                           </div>
                         </div>
                       );
