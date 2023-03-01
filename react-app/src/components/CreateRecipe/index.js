@@ -8,7 +8,7 @@ export default function CreateRecipe() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [recipe_name, setRecipeName] = useState("");
-  const [recipe_type, setRecipeType] = useState("");
+  const [recipe_type, setRecipeType] = useState("vegetarian");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [image_url, setImageUrl] = useState("");
@@ -19,10 +19,16 @@ export default function CreateRecipe() {
   const [errors, setErrors] = useState([]);
   const currentUser = useSelector((state) => state.session.user);
 
+  function checkURL(imageUrl) {
+    return(imageUrl.match(/\.(jpeg|jpg|gif|png)$/) != null);
+}
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
     if (currentUser == undefined) return history.push("/login");
+
+
 
     if (recipe_name.length > 50) {
       setErrors(["Recipe name cannot exceed 50 characters."]);
@@ -42,6 +48,11 @@ export default function CreateRecipe() {
     if (ingredients.split(" ").length > 500){
       setErrors(["Recipe description cannot exceed 500 words"]);
       return;
+    }
+
+    if(checkURL(image_url) === false){
+      setErrors(["Please provide an image in jpg or png format"])
+      return
     }
 
     if (step_one.split(" ").length > 255 || step_two.split(" ").length > 255 || step_three.split(" ").length > 255 || step_four.split(" ").length > 255){
