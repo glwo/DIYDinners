@@ -62,7 +62,7 @@ function UpdateReviewModal({ reviewDetails }) {
         <textarea style={{"borderRadius":"10px 10px 10px 10px", marginBottom:"10px", width:"95%"}}
                 className='reviewText'
                 type={'text'}
-                placeholder={'Review'}
+                placeholder={'Note'}
                 required
                 value={review}
                 onChange={updateReview}
@@ -82,7 +82,7 @@ function UpdateReviewModal({ reviewDetails }) {
             <input style={{"borderRadius":"10px 10px 10px 10px", marginBottom:"10px", width:"95%"}}
                 className='formChildren'
                 type={'url'}
-                placeholder={'Image'}
+                placeholder={'Note Image'}
                 value={url}
                 onChange={updateImage}
             />
