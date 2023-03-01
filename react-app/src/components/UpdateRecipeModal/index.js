@@ -47,9 +47,9 @@ export default function UpdateRecipeModal({ recipe }) {
 
   return (
     <div className='main-div'>
-      <div className='create-business-form'>
+      <div className='updateRecipeModal'>
         <h1>
-          Create A New Recipe
+          Update Your Recipe
         </h1>
         <form onSubmit={handleSubmit}>
           <ul>
@@ -140,7 +140,7 @@ export default function UpdateRecipeModal({ recipe }) {
             />
           </div>
           <div>
-            <button className='create-button' type="submit">Update Recipe</button>
+            <button className='updateButton' type="submit">Update Recipe</button>
           </div>
         </form>
       </div>

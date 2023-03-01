@@ -72,7 +72,7 @@ const RecipePage = () => {
             <div className="RatingsAndDescription">
               <div className="RatingsDiv">
                 <h3>Ratings</h3>
-                <div>{currentRecipe.avg_rating}</div>
+                <div>{(+(currentRecipe.avg_rating)).toFixed(2)}</div>
                 <div className="RatingStars">
                   {currentRecipe.avg_rating >= 1 ? (
                     <i className="fas fa-solid fa-star red"></i>
@@ -162,7 +162,7 @@ const RecipePage = () => {
                     <i class="fa-regular fa-star"></i>
                   </div>
                   <div>
-                    <div>{currentRecipe.avg_rating} out of Five</div>
+                    <div>{(+(currentRecipe.avg_rating)).toFixed(2)} out of Five</div>
                     <div>{currentRecipe.num_reviews} user ratings</div>
                   </div>
                 </div>

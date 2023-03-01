@@ -1,28 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { thunkCreateRecipe } from '../../store/recipe';
-import './CreateRecipe.css'
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { thunkCreateRecipe } from "../../store/recipe";
+import "./CreateRecipe.css";
 
 export default function CreateRecipe() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [recipe_name, setRecipeName] = useState('');
-  const [recipe_type, setRecipeType] = useState('');
-  const [description, setDescription] = useState('');
-  const [ingredients, setIngredients] = useState('');
-  const [image_url, setImageUrl] = useState('');
-  const [step_one, setStepOne] = useState('');
-  const [step_two, setStepTwo] = useState('');
-  const [step_three, setStepThree] = useState('');
-  const [step_four, setStepFour] = useState('');
+  const [recipe_name, setRecipeName] = useState("");
+  const [recipe_type, setRecipeType] = useState("");
+  const [description, setDescription] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [image_url, setImageUrl] = useState("");
+  const [step_one, setStepOne] = useState("");
+  const [step_two, setStepTwo] = useState("");
+  const [step_three, setStepThree] = useState("");
+  const [step_four, setStepFour] = useState("");
   const [errors, setErrors] = useState([]);
-  const currentUser = useSelector(state => state.session.user)
+  const currentUser = useSelector((state) => state.session.user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    if (currentUser == undefined) return history.push('/')
+    if (currentUser == undefined) return history.push("/login");
+
+    if (recipe_name.length > 50) {
+      setErrors(["Recipe name cannot exceed 50 characters."]);
+      return;
+    }
+
+    if (!recipe_type) {
+      setErrors(["Please select a Recipe Type."]);
+      return;
+    }
+
+    if (description.split(" ").length > 500){
+      setErrors(["Recipe description cannot exceed 500 words"]);
+      return;
+    }
+
+    if (ingredients.split(" ").length > 500){
+      setErrors(["Recipe description cannot exceed 500 words"]);
+      return;
+    }
+
+    if (step_one.split(" ").length > 255 || step_two.split(" ").length > 255 || step_three.split(" ").length > 255 || step_four.split(" ").length > 255){
+      setErrors(["Recipe step instructions cannot exceed 255 words"]);
+      return;
+    }
 
     const recipe = {
       recipe_name,
@@ -36,29 +61,29 @@ export default function CreateRecipe() {
       step_four,
     };
 
-    const data = await dispatch(thunkCreateRecipe(recipe))
+    const data = await dispatch(thunkCreateRecipe(recipe));
     if (data.errors) {
-      setErrors(data.errors)
+      setErrors(data.errors);
     } else {
       setErrors([]);
       history.push(`/recipe/${data.id}`);
     }
-  }
+  };
 
   return (
-    <div className='main-div'>
-      <div className='createRecipeForm'>
-        <h1>
-          Create A New Recipe
-        </h1>
+    <div className="main-div">
+      <div className="createRecipeForm">
+        <h1>Create A New Recipe</h1>
         <form onSubmit={handleSubmit}>
           <ul>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
           </ul>
           <div className="input-form">
             <label>Recipe Name :</label>
             <input
-              type='text'
+              type="text"
               value={recipe_name}
               onChange={(e) => setRecipeName(e.target.value)}
               required
@@ -79,7 +104,7 @@ export default function CreateRecipe() {
           <div className="input-form">
             <label>Description :</label>
             <input
-              type='text'
+              type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
@@ -88,7 +113,7 @@ export default function CreateRecipe() {
           <div className="input-form">
             <label>Ingredients :</label>
             <input
-              type='text'
+              type="text"
               value={ingredients}
               onChange={(e) => setIngredients(e.target.value)}
               required
@@ -97,7 +122,7 @@ export default function CreateRecipe() {
           <div className="input-form">
             <label>Recipe Preview Image :</label>
             <input
-              type='text'
+              type="text"
               value={image_url}
               onChange={(e) => setImageUrl(e.target.value)}
               required
@@ -106,7 +131,7 @@ export default function CreateRecipe() {
           <div className="input-form">
             <label>Step One :</label>
             <input
-              type='text'
+              type="text"
               value={step_one}
               onChange={(e) => setStepOne(e.target.value)}
               required
@@ -115,7 +140,7 @@ export default function CreateRecipe() {
           <div className="input-form">
             <label>Step Two :</label>
             <input
-              type='text'
+              type="text"
               value={step_two}
               onChange={(e) => setStepTwo(e.target.value)}
               required
@@ -124,7 +149,7 @@ export default function CreateRecipe() {
           <div className="input-form">
             <label>Step Three :</label>
             <input
-              type='text'
+              type="text"
               value={step_three}
               onChange={(e) => setStepThree(e.target.value)}
               required
@@ -133,17 +158,19 @@ export default function CreateRecipe() {
           <div className="input-form">
             <label>Step Four :</label>
             <input
-              type='text'
+              type="text"
               value={step_four}
               onChange={(e) => setStepFour(e.target.value)}
               required
             />
           </div>
           <div>
-            <button className='createRecipeButton' type="submit">Create New Recipe</button>
+            <button className="createRecipeButton" type="submit">
+              Create New Recipe
+            </button>
           </div>
         </form>
       </div>
     </div>
-  )
+  );
 }
