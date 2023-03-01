@@ -42,7 +42,7 @@ function UpdateReviewModal({ reviewDetails }) {
   return (
     <div className="updateReviewModal">
       <div>
-        <h2>Update Your Note</h2>
+        <h1>Update Your Note</h1>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="reviewForm">
@@ -77,33 +77,13 @@ function UpdateReviewModal({ reviewDetails }) {
           </div>
           <input
             type="radio"
-            id="star5"
+            id="star1"
             name="rate"
-            value={5}
+            value="1"
             onChange={updateStars}
           />
-          <label for="star5" title="text">
-            5 stars
-          </label>
-          <input
-            type="radio"
-            id="star4"
-            name="rate"
-            value={4}
-            onChange={updateStars}
-          />
-          <label for="star4" title="text">
-            4 stars
-          </label>
-          <input
-            type="radio"
-            id="star3"
-            name="rate"
-            value={3}
-            onChange={updateStars}
-          />
-          <label for="star3" title="text">
-            3 stars
+          <label for="star1" title="text">
+            1 star
           </label>
           <input
             type="radio"
@@ -117,13 +97,33 @@ function UpdateReviewModal({ reviewDetails }) {
           </label>
           <input
             type="radio"
-            id="star1"
+            id="star3"
             name="rate"
-            value="1"
+            value={3}
             onChange={updateStars}
           />
-          <label for="star1" title="text">
-            1 star
+          <label for="star3" title="text">
+            3 stars
+          </label>
+          <input
+            type="radio"
+            id="star4"
+            name="rate"
+            value={4}
+            onChange={updateStars}
+          />
+          <label for="star4" title="text">
+            4 stars
+          </label>
+          <input
+            type="radio"
+            id="star5"
+            name="rate"
+            value={5}
+            onChange={updateStars}
+          />
+          <label for="star5" title="text">
+            5 stars
           </label>
           <div>
             <label>Note image :</label>
