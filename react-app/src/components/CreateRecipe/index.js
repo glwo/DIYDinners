@@ -8,7 +8,7 @@ export default function CreateRecipe() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [recipe_name, setRecipeName] = useState("");
-  const [recipe_type, setRecipeType] = useState("vegetarian");
+  const [recipe_type, setRecipeType] = useState("classic");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [image_url, setImageUrl] = useState("");
@@ -26,9 +26,11 @@ export default function CreateRecipe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    if (currentUser == undefined) return history.push("/login");
 
-
+    if (currentUser == undefined) {
+      setErrors(["Must be logged in to create a Recipe."]);
+      return;
+    }
 
     if (recipe_name.length > 50) {
       setErrors(["Recipe name cannot exceed 50 characters."]);
@@ -106,8 +108,8 @@ export default function CreateRecipe() {
               value={recipe_type}
               onChange={(e) => setRecipeType(e.target.value)}
             >
-              <option value="vegetarian">Vegetarian</option>
               <option value="classic">Classic</option>
+              <option value="vegetarian">Vegetarian</option>
               <option value="desert">Desert</option>
               <option value="pasta">Pasta</option>
             </select>

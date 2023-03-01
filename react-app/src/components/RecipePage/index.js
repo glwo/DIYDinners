@@ -9,6 +9,8 @@ import OpenModalButton from "../OpenModalButton";
 import UpdateRecipeModal from "../UpdateRecipeModal";
 import UpdateReviewModal from "../UpdateReviewModal";
 import CreateReviewForm from "../CreateReviewForm";
+import DeleteRecipeModal from "../DeleteRecipeModal";
+import DeleteReviewModal from "../DeleteReviewModal";
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -28,6 +30,7 @@ const RecipePage = () => {
   useEffect(() => {
     dispatch(thunkLoadAllRecipes());
     dispatch(thunkLoadAllReviews());
+    dispatch(removeReview())
   }, [dispatch, recipeId]);
 
   const reviewFilter = (array, num) => {
@@ -57,7 +60,7 @@ const RecipePage = () => {
               <div className="RecipeNameAndOwnerName">
                 <h2>{currentRecipe.recipe_name}</h2>
               </div>
-              <div>
+              <div className="recipeImgDiv">
                 <img
                   id="recipeImg"
                   src={
@@ -116,7 +119,7 @@ const RecipePage = () => {
                     }
                   />
                 </div>
-                <button
+                {/* <button
                   className="delRecipeButton"
                   onClick={() =>
                     dispatch(thunkRemoveRecipe(currentRecipe.id))
@@ -130,7 +133,22 @@ const RecipePage = () => {
                   }
                 >
                   Delete Your Recipe
-                </button>
+                </button> */}
+                <div
+                  hidden={
+                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
+                      ? false
+                      : true
+                  }
+                >
+                  <OpenModalButton
+                    className="updateRecipeButton"
+                    buttonText="Delete Your Recipe"
+                    modalComponent={
+                      <DeleteRecipeModal recipeId={currentRecipe.id} />
+                    }
+                  />
+                </div>
               </div>
               <div className="recipeDesc">
                 <p id="recipe-description">{currentRecipe.description}</p>
@@ -202,13 +220,30 @@ const RecipePage = () => {
                                       key={review.id}
                                       reviewDetails={review}
                                     />
+
                                   }
                                 />
                               </div>
                             ) : (
                               ""
                             )}
-                            <button
+                            {loggedInUser &&
+                            review.user_id == loggedInUser.id ? (
+                              <div className="editDeleteButton">
+                                <OpenModalButton
+                                  buttonText="Delete Your Review"
+                                  modalComponent={
+                                    <DeleteReviewModal
+                                      key={review.id}
+                                      reviewId={review.id}
+                                    />
+                                  }
+                                />
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            {/* <button
                               className="delReviewButton"
                               onClick={() => dispatch(removeReview(review.id))}
                               hidden={
@@ -219,7 +254,7 @@ const RecipePage = () => {
                               }
                             >
                               Delete Your Review
-                            </button>
+                            </button> */}
                             <div className="borderBottom"></div>
                           </div>
                         </div>

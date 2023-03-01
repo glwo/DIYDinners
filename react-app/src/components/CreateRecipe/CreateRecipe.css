@@ -42,3 +42,7 @@
 .createRecipeForm select {
     width: 100%;
 }
+
+.createRecipeForm h1 {
+    color: #e33d26;
+}
