@@ -101,21 +101,6 @@ const RecipePage = () => {
                   )}
                 </div>
                 <div>({currentRecipe.num_reviews})</div>
-                <button
-                  className="delRecipeButton"
-                  onClick={() =>
-                    dispatch(thunkRemoveRecipe(currentRecipe.id))
-                      .then(dispatch(thunkLoadAllRecipes()))
-                      .then(history.push("/"))
-                  }
-                  hidden={
-                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
-                      ? false
-                      : true
-                  }
-                >
-                  Delete Your Recipe
-                </button>
                 <div
                   hidden={
                     loggedInUser && loggedInUser?.id === currentRecipe.user_id
@@ -131,6 +116,21 @@ const RecipePage = () => {
                     }
                   />
                 </div>
+                <button
+                  className="delRecipeButton"
+                  onClick={() =>
+                    dispatch(thunkRemoveRecipe(currentRecipe.id))
+                      .then(dispatch(thunkLoadAllRecipes()))
+                      .then(history.push("/"))
+                  }
+                  hidden={
+                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
+                      ? false
+                      : true
+                  }
+                >
+                  Delete Your Recipe
+                </button>
               </div>
               <div className="recipeDesc">
                 <p id="recipe-description">{currentRecipe.description}</p>
@@ -155,64 +155,81 @@ const RecipePage = () => {
               </div>
             </div>
             <div id="page-bottom-container">
-              <div className="review-container">
-                <h3>Cooking Notes</h3>
-                <div
-                  hidden={
-                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
-                      ? true
-                      : false
-                  }
-                >
-                  <CreateReviewForm recipeId={recipeId} />
+              <div className="reviewRatingsDiv">
+                <h3>Ratings</h3>
+                <div className="reviewsAndStars">
+                  <div>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                  <div>
+                    <div>{currentRecipe.avg_rating} out of Five</div>
+                    <div>{currentRecipe.num_reviews} user ratings</div>
+                  </div>
                 </div>
-                {reviews.length > 0 &&
-                  reviews.map((review) => {
-                    return (
-                      <div key={review.id} className="indiv-review">
-                        <div className="review-name">
-                          <h5>
-                            <i class="fa-solid fa-user"></i>
-                            {review.firstName}
-                          </h5>
-                        </div>
-                        {review.content}
-                        <div>
-                          {loggedInUser && review.user_id == loggedInUser.id ? (
-                            <div className="editDeleteButton">
-                              <OpenModalButton
-                                buttonText="Update Your Review"
-                                modalComponent={
-                                  <UpdateReviewModal
-                                    key={review.id}
-                                    reviewDetails={review}
-                                  />
-                                }
-                              />
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                          <button
-                            className="delReviewButton"
-                            onClick={() => dispatch(removeReview(review.id))}
-                            hidden={
-                              loggedInUser &&
-                              loggedInUser?.id === review.user_id
-                                ? false
-                                : true
-                            }
-                          >
-                            Delete Your Review
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })}
               </div>
-              {!reviews.length && (
-                <p> There are currently no cooking notes for this recipe. </p>
-              )}
+              <div className="review-container">
+                <div className="cookingNotes">
+                  <h3>Cooking Notes</h3>
+                  <div
+                    hidden={
+                      loggedInUser && loggedInUser?.id === currentRecipe.user_id
+                        ? true
+                        : false
+                    }
+                  >
+                    <CreateReviewForm recipeId={recipeId} />
+                  </div>
+                  <h4 className="allNotesHeader">All Notes</h4>
+                  {reviews.length > 0 &&
+                    reviews.map((review) => {
+                      return (
+                        <div key={review.id} className="indiv-review">
+                          <div className="review-name">
+                            <h5>
+                              <i class="fa-solid fa-user"></i>
+                              {review.firstName}
+                            </h5>
+                          </div>
+                          {review.content}
+                          <div>
+                            {loggedInUser &&
+                            review.user_id == loggedInUser.id ? (
+                              <div className="editDeleteButton">
+                                <OpenModalButton
+                                  buttonText="Update Your Review"
+                                  modalComponent={
+                                    <UpdateReviewModal
+                                      key={review.id}
+                                      reviewDetails={review}
+                                    />
+                                  }
+                                />
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            <button
+                              className="delReviewButton"
+                              onClick={() => dispatch(removeReview(review.id))}
+                              hidden={
+                                loggedInUser &&
+                                loggedInUser?.id === review.user_id
+                                  ? false
+                                  : true
+                              }
+                            >
+                              Delete Your Review
+                            </button>
+                            <div className="borderBottom"></div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+                {!reviews.length && (
+                  <p> There are currently no cooking notes for this recipe. </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
