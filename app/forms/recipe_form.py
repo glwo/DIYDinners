@@ -14,4 +14,4 @@ class RecipeForm(FlaskForm):
   step_two = StringField('step_two', validators=[DataRequired()])
   step_three = StringField('step_three', validators=[DataRequired()])
   step_four = StringField('step_four', validators=[DataRequired()])
-  image_url = StringField('image_url', validators=[DataRequired(), URL()])
+  image_url = StringField('image_url', validators=[DataRequired()])

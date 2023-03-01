@@ -1,0 +1,63 @@
+.updateRecipeModal {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    padding: 50px;
+    height: 80vh;
+    overflow-y:scroll;
+}
+.updateRecipeModal::-webkit-scrollbar {
+    display: none;
+}
+
+.updateButton {
+    background-color: #e33d26;
+    width: 100%;
+    color: white;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.updateButton:hover {
+    background-color: #ef2b2b;
+    transition-duration: 1000ms;
+}
+
+.updateRecipeModal div {
+    padding: 10px;
+}
+
+
+.updateRecipeModal input {
+    width: 97%;
+}
+
+.updateRecipeModal select {
+    width: 97%;
+}
+
+.updateRecipeModal ul {
+    color: red;
+}
+
+.updateRecipeModal h1 {
+    color: #e33d26;
+}
+
+.signUpImage {
+    display: flex;
+    flex-direction: row;
+}
+
+.signUpImage {
+    display: block;
+    float: left;
+}
