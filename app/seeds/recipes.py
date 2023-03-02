@@ -62,9 +62,9 @@ Lemon slices, for garnish (optional)""",
         step_two='In a small bowl, combine 4 teaspoons of the lemon pepper seasoning and the salt. Add the flour to a separate shallow dish. Season both sides of each of the chicken breasts with the spice mixture. Dredge both sides of the seasoned chicken in the flour, shaking off any excess flour, then lay the dredged chicken on a wire rack or platter while you heat the pan.',
         step_three='In a large skillet, heat the oil and 2 tablespoons of the butter over medium heat. Once the butter is melted, swirl the pan a little to combine the two fats. Once the oil in the skillet begins to shimmer, lay your chicken cutlets in a single layer in the pan. You may need to fry in batches. Fry the chicken for 3 minutes without moving. Use a pair of tongs to flip the chicken and fry until they’re cooked through, an additional 2 1/2 to 3 minutes. Use your tongs to remove the chicken from the skillet to a platter.',
         step_four='Once the sauce has reduced slightly, return the chicken breasts to the pan. Turn them over to coat both sides in the sauce and turn the stove off. Allow the residual heat from the pan to warm the chicken up before sprinkling the chopped parsley over top. Garnish with lemon slices and serve. ',
-        user_id=1,
-        first_name="Demo",
-        last_name="Lition"
+        user_id=4,
+        first_name="Austin",
+        last_name="Smith"
     )
     demo3 = Recipe(
         recipe_name= 'Tamarind Cream Pie',
@@ -95,9 +95,9 @@ tablespoon confectioners’ sugar""",
         step_two='Place pie plate on a rimmed baking sheet, and transfer to oven. Bake until golden brown, about 10 to 12 minutes. Transfer to a wire rack to cool.',
         step_three='Meanwhile, prepare the filling: Halve the orange and squeeze the juice from one half. You should have ¼ cup. If not, squeeze some juice from the other half. Reserve squeezed halves for zesting for garnish.',
         step_four='Just before serving, make the topping: In the bowl of an electric mixer, using the whisk attachment, beat together cream and confectioners sugar until thick and fluffy. Dollop whipped cream on cooled pie. Finely grate the zest from one of the reserved orange halves over the top of the pie, and serve.',
-        user_id=1,
-        first_name="Demo",
-        last_name="Lition"
+        user_id=5,
+        first_name="Alex",
+        last_name="Gurley"
     )
     demo4 = Recipe(
         recipe_name= 'Crispy Lemon Chicken Cutlets With Salmoriglio Sauce',
