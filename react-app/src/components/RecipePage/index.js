@@ -30,7 +30,7 @@ const RecipePage = () => {
   useEffect(() => {
     dispatch(thunkLoadAllRecipes());
     dispatch(thunkLoadAllReviews());
-    dispatch(removeReview())
+    dispatch(removeReview());
   }, [dispatch, recipeId]);
 
   const reviewFilter = (array, num) => {
@@ -59,7 +59,10 @@ const RecipePage = () => {
             <div className="recipeNameImgRating">
               <div className="RecipeNameAndOwnerName">
                 <h2>{currentRecipe.recipe_name}</h2>
-                <h4>Recipe from {currentRecipe.first_name} {currentRecipe.last_name}</h4>
+                <h4>
+                  Recipe from {currentRecipe.first_name}{" "}
+                  {currentRecipe.last_name}
+                </h4>
               </div>
               <div className="recipeImgDiv">
                 <img
@@ -74,66 +77,74 @@ const RecipePage = () => {
               </div>
             </div>
             <div className="RatingsAndDescription">
-              <div className="RatingsDiv">
-                <h3>Ratings</h3>
-                <div>{(+(currentRecipe.avg_rating)).toFixed(2)}</div>
-                <div className="RatingStars">
-                  {currentRecipe.avg_rating >= 1 ? (
-                    <i className="fas fa-solid fa-star red"></i>
-                  ) : (
-                    <i className="fas fa-solid fa-star gray"></i>
-                  )}
-                  {currentRecipe.avg_rating >= 2 ? (
-                    <i className="fas fa-solid fa-star red"></i>
-                  ) : (
-                    <i className="fas fa-solid fa-star gray"></i>
-                  )}
-                  {currentRecipe.avg_rating >= 3 ? (
-                    <i className="fas fa-solid fa-star red"></i>
-                  ) : (
-                    <i className="fas fa-solid fa-star gray"></i>
-                  )}
-                  {currentRecipe.avg_rating >= 4 ? (
-                    <i className="fas fa-solid fa-star red"></i>
-                  ) : (
-                    <i className="fas fa-solid fa-star gray"></i>
-                  )}
-                  {currentRecipe.avg_rating >= 5 ? (
-                    <i className="fas fa-solid fa-star red"></i>
-                  ) : (
-                    <i className="fas fa-solid fa-star gray"></i>
-                  )}
-                </div>
-                <div>({currentRecipe.num_reviews})</div>
-                <div
-                  hidden={
-                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
-                      ? false
-                      : true
-                  }
-                >
-                  <OpenModalButton
-                    className="updateRecipeButton"
-                    buttonText="Update Your Recipe"
-                    modalComponent={
-                      <UpdateRecipeModal recipe={currentRecipe} />
-                    }
-                  />
-                </div>
-                <div
-                  hidden={
-                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
-                      ? false
-                      : true
-                  }
-                >
-                  <OpenModalButton
-                    className="updateRecipeButton"
-                    buttonText="Delete Your Recipe"
-                    modalComponent={
-                      <DeleteRecipeModal recipeId={currentRecipe.id} />
-                    }
-                  />
+              <div className="RecipeRatingsAndButtonsDiv">
+                <div className="RatingsDiv">
+                  <h3>Ratings</h3>
+                  <div className="RatingsStarsAndReviewsRow">
+                    <div>{(+currentRecipe.avg_rating).toFixed(2)}</div>
+                    <div className="RatingStars">
+                      {currentRecipe.avg_rating >= 1 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {currentRecipe.avg_rating >= 2 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {currentRecipe.avg_rating >= 3 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {currentRecipe.avg_rating >= 4 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {currentRecipe.avg_rating >= 5 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                    </div>
+                    <div>({currentRecipe.num_reviews})</div>
+                  </div>
+                  <div className="UpdateAndDeleteRecipeButtons">
+                    <div
+                      hidden={
+                        loggedInUser &&
+                        loggedInUser?.id === currentRecipe.user_id
+                          ? false
+                          : true
+                      }
+                    >
+                      <OpenModalButton
+                        className="updateRecipeButton"
+                        buttonText="Update Your Recipe"
+                        modalComponent={
+                          <UpdateRecipeModal recipe={currentRecipe} />
+                        }
+                      />
+                    </div>
+                    <div
+                      hidden={
+                        loggedInUser &&
+                        loggedInUser?.id === currentRecipe.user_id
+                          ? false
+                          : true
+                      }
+                    >
+                      <OpenModalButton
+                        className="updateRecipeButton"
+                        buttonText="Delete Your Recipe"
+                        modalComponent={
+                          <DeleteRecipeModal recipeId={currentRecipe.id} />
+                        }
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="recipeDesc">
@@ -165,9 +176,13 @@ const RecipePage = () => {
                   <div>
                     <i class="fa-regular fa-star"></i>
                   </div>
-                  <div>
-                    <div>{(+(currentRecipe.avg_rating)).toFixed(2)} out of Five</div>
-                    <div>{currentRecipe.num_reviews} user ratings</div>
+                  <div className="avgUserRatingsDiv">
+                    <div className="avgRatingFixed">
+                      {(+currentRecipe.avg_rating).toFixed(2)} out of Five
+                    </div>
+                    <p className="userRatings">
+                      {currentRecipe.num_reviews} user ratings
+                    </p>
                   </div>
                 </div>
               </div>
@@ -188,7 +203,7 @@ const RecipePage = () => {
                     reviews.map((review) => {
                       return (
                         <div key={review.id} className="indiv-review">
-                          <div className="review-name">
+                          <div className="">
                             <h5>
                               <i class="fa-solid fa-user"></i>
                               {review.firstName}
@@ -206,7 +221,6 @@ const RecipePage = () => {
                                       key={review.id}
                                       reviewDetails={review}
                                     />
-
                                   }
                                 />
                               </div>
