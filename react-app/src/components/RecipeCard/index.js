@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe }) => {
       </div>
       <div className="recipeInfoDiv">
         <div className="recipeStoreName">{recipe.recipe_name}</div>
-        <div>{recipe.num_reviews} review(s)</div>
+        <div>{recipe.first_name} {recipe.last_name}</div>
       </div>
     </Link>
   )

@@ -38,6 +38,8 @@ def post_recipe():
       recipe_name = form.data['recipe_name'],
       recipe_type = form.data['recipe_type'],
       user_id = current_user.id,
+      first_name = current_user.first_name,
+      last_name = current_user.last_name,
       description = form.data['description'],
       ingredients = form.data['ingredients'],
       avg_rating = form.data['avg_rating'],

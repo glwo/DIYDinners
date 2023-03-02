@@ -145,3 +145,9 @@
 .borderBottom {
     border-bottom: 1px solid #ccc;
 }
+
+.recipeImgDiv {
+    border: 1px solid #ccc;
+    width: 75vh;
+    height: 50vh;
+}

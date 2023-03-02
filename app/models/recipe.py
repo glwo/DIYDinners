@@ -22,6 +22,8 @@ class Recipe(db.Model):
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
   user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
+  first_name = db.Column(db.String, db.ForeignKey(add_prefix_for_prod("users.first_name")))
+  last_name = db.Column(db.String, db.ForeignKey(add_prefix_for_prod("users.last_name")))
   recipe_images = db.relationship("RecipeImage", back_populates="recipe")
   reviews = db.relationship("Review", back_populates="recipe", cascade="all, delete-orphan")
 
@@ -34,6 +36,8 @@ class Recipe(db.Model):
     return {
       "id": self.id,
       "user_id": self.user_id,
+      "first_name": self.first_name,
+      "last_name": self.last_name,
       "recipe_name": self.recipe_name,
       "recipe_type": self.recipe_type,
       "description": self.description,

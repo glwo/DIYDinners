@@ -47,7 +47,11 @@ function CreateReviewForm({ recipeId }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if (currentUser == undefined) return history.push('/login')
+        
+        if (currentUser == undefined) {
+            setErrors(["Must be logged in to create a Recipe Note."]);
+            return;
+          }
 
         if(review.split(" ").length > 250){
             setErrors(["Note cannot exceed 250 words."])

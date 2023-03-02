@@ -21,6 +21,7 @@
 .image-div {
     height: 80vw;
     width: 100vw;
+    /* border-bottom: 2px solid grey; */
 }
 
 .recipe-preview-image {
