@@ -38,3 +38,16 @@
 .gray {
     color: gray;
 }
+
+.recipeInfoDiv {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.recipeInfoDiv p {
+    font-size: 1.4vh;
+}
+
+.recipeName {
+    margin-top: 0px;
+}

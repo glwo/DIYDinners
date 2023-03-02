@@ -120,21 +120,6 @@ const RecipePage = () => {
                     }
                   />
                 </div>
-                {/* <button
-                  className="delRecipeButton"
-                  onClick={() =>
-                    dispatch(thunkRemoveRecipe(currentRecipe.id))
-                      .then(dispatch(thunkLoadAllRecipes()))
-                      .then(history.push("/"))
-                  }
-                  hidden={
-                    loggedInUser && loggedInUser?.id === currentRecipe.user_id
-                      ? false
-                      : true
-                  }
-                >
-                  Delete Your Recipe
-                </button> */}
                 <div
                   hidden={
                     loggedInUser && loggedInUser?.id === currentRecipe.user_id
