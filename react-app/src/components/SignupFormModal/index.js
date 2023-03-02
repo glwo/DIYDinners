@@ -18,6 +18,10 @@ function SignupFormModal() {
 	const [errors, setErrors] = useState([]);
 	const { closeModal } = useModal();
 
+	function checkURL(imageUrl) {
+		return(imageUrl.match(/\.(jpeg|jpg|gif|png)$/) != null);
+	}
+
 	function validateEmail(email) {
 		var re = /\S+@\S+\.\S+/;
 		return re.test(email);
@@ -29,10 +33,16 @@ function SignupFormModal() {
 			setErrors(["Please provide a valid email"])
 			return
 		}
+		if(checkURL(img_url) === false){
+			setErrors(["Please provide an image in jpg or png format"])
+			return
+		}
+
 		if (password.length < 6){
 			setErrors(["Password must be at least six characters long"])
 			return
 		}
+		
 		if (password === confirmPassword) {
 			const data = await dispatch(signUp(first_name, last_name, username, email, img_url, bio, password));
 			if (data) {

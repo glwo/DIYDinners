@@ -13,8 +13,8 @@ const RecipeCard = ({ recipe }) => {
         <img className="recipe-preview-image" src={recipe.recipe_images[0] !== undefined ? recipe.recipe_images[0].image_url : null} alt="No Recipe Image found" />
       </div>
       <div className="recipeInfoDiv">
-        <div className="recipeStoreName">{recipe.recipe_name}</div>
-        <div>{recipe.first_name} {recipe.last_name}</div>
+        <h4 className="recipeName">{recipe.recipe_name}</h4>
+        <p>{recipe.first_name} {recipe.last_name}</p>
       </div>
     </Link>
   )
