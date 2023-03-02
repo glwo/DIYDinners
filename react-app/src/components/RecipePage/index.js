@@ -59,6 +59,7 @@ const RecipePage = () => {
             <div className="recipeNameImgRating">
               <div className="RecipeNameAndOwnerName">
                 <h2>{currentRecipe.recipe_name}</h2>
+                <h4>{currentRecipe.first_name} {currentRecipe.last_name}</h4>
               </div>
               <div className="recipeImgDiv">
                 <img

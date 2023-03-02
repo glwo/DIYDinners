@@ -37,7 +37,9 @@ Roti or pita (optional), for serving""",
         step_two='Add the remaining 1 tablespoon ghee to the same frying pan and heat over medium-high until it melts. Add ginger and garlic and stir for about 30 seconds, until the raw smell dissipates. Add onion and cook, stirring frequently, until onions begin to soften, about 3 to 5 minutes. (The onions should still have a little bite.)',
         step_three='Lower the heat to medium and add red chile, coriander and turmeric, and stir until the masalas are uniformly mixed with the onion, about 30 seconds. Add tomato and salt. Continue cooking on medium until tomatoes break down, about 5 minutes.',
         step_four='Add okra back to the pan and mix until incorporated. Sprinkle with lime juice and garam masala. Serve with roti, store-bought pita or by itself.',
-        user_id=1
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
     )
     demo2 = Recipe(
         recipe_name= 'Lemon Pepper Chicken Breasts',
@@ -60,7 +62,9 @@ Lemon slices, for garnish (optional)""",
         step_two='In a small bowl, combine 4 teaspoons of the lemon pepper seasoning and the salt. Add the flour to a separate shallow dish. Season both sides of each of the chicken breasts with the spice mixture. Dredge both sides of the seasoned chicken in the flour, shaking off any excess flour, then lay the dredged chicken on a wire rack or platter while you heat the pan.',
         step_three='In a large skillet, heat the oil and 2 tablespoons of the butter over medium heat. Once the butter is melted, swirl the pan a little to combine the two fats. Once the oil in the skillet begins to shimmer, lay your chicken cutlets in a single layer in the pan. You may need to fry in batches. Fry the chicken for 3 minutes without moving. Use a pair of tongs to flip the chicken and fry until they’re cooked through, an additional 2 1/2 to 3 minutes. Use your tongs to remove the chicken from the skillet to a platter.',
         step_four='Once the sauce has reduced slightly, return the chicken breasts to the pan. Turn them over to coat both sides in the sauce and turn the stove off. Allow the residual heat from the pan to warm the chicken up before sprinkling the chopped parsley over top. Garnish with lemon slices and serve. ',
-        user_id=1
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
     )
     demo3 = Recipe(
         recipe_name= 'Tamarind Cream Pie',
@@ -91,7 +95,9 @@ tablespoon confectioners’ sugar""",
         step_two='Place pie plate on a rimmed baking sheet, and transfer to oven. Bake until golden brown, about 10 to 12 minutes. Transfer to a wire rack to cool.',
         step_three='Meanwhile, prepare the filling: Halve the orange and squeeze the juice from one half. You should have ¼ cup. If not, squeeze some juice from the other half. Reserve squeezed halves for zesting for garnish.',
         step_four='Just before serving, make the topping: In the bowl of an electric mixer, using the whisk attachment, beat together cream and confectioners sugar until thick and fluffy. Dollop whipped cream on cooled pie. Finely grate the zest from one of the reserved orange halves over the top of the pie, and serve.',
-        user_id=1
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
     )
     demo4 = Recipe(
         recipe_name= 'Crispy Lemon Chicken Cutlets With Salmoriglio Sauce',
@@ -124,7 +130,9 @@ garlic clove, minced""",
         step_two='Zest 1 lemon, reserving the zest for the bread crumbs, then halve the lemon and squeeze all its juice into a medium bowl. Add the eggs to the juice and beat to combine. Add the seasoned chicken and turn to coat. Let rest while you make the sauce and bread crumb mixture.',
         step_three='Heat about ⅓ cup of oil in a large skillet over medium-high. Working in batches, leaving 1 to 2 inches of space between, add 2 to 3 chicken pieces and cook until golden brown, turning once, about 2 minutes per side. Transfer to a serving dish and sprinkle immediately with salt. Repeat with remaining chicken, adding and heating more oil as needed.',
         step_four='Once all the chicken is plated, slowly pour the garlic oil into the lemon and parsley mixture and whisk to combine. Before serving, spoon the salmoriglio sauce liberally over the chicken.',
-        user_id=1
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
     )
     demo5 = Recipe(
         recipe_name= 'Blackened Shrimp Tacos',
@@ -149,7 +157,9 @@ Lime wedges""",
         step_two='Season the shrimp: In a large bowl combine the shrimp, blackening seasoning, and salt.',
         step_three='Cook the shrimp: In a large nonstick skillet over medium-high heat, add in the oil. Once it’s hot, add the shrimp. Cook, until the shrimp have slightly browned on the outside and they have cooked through turning pink throughout, flipping halfway through, 2 to 3 minutes per side.',
         step_four='Assemble the tortillas: Place the tortillas in a serving platter or plates. Divide the shrimp and slaw equally between the tortillas. Garnish with cheese and cilantro. Serve with lime wedges. Serve.',
-        user_id=1
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
     )
 
 
