@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, unique=True)
     first_name = db.Column(db.String(40), nullable=False, unique=True)
     last_name = db.Column(db.String(40), nullable=False, unique=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
