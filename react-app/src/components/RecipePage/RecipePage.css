@@ -184,6 +184,10 @@
     border: none;
     border-radius: 1vh;
     padding: 1vh;
+    cursor: pointer;
+}
+.UpdateAndDeleteRecipeButtons button:hover {
+    background-color: #c62914;
 }
 
 .RecipeRatingsAndButtonsDiv {

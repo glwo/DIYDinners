@@ -73,6 +73,7 @@ const RecipePage = () => {
                       : null
                   }
                   alt="No image available for this recipe!"
+                  onError={e => { e.currentTarget.src = "https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png"; }}
                 ></img>
               </div>
             </div>
@@ -122,7 +123,7 @@ const RecipePage = () => {
                     >
                       <OpenModalButton
                         className="updateRecipeButton"
-                        buttonText="Update Your Recipe"
+                        buttonText={<><i class="fa-regular fa-pen-to-square"></i>Update</>}
                         modalComponent={
                           <UpdateRecipeModal recipe={currentRecipe} />
                         }
@@ -138,7 +139,7 @@ const RecipePage = () => {
                     >
                       <OpenModalButton
                         className="updateRecipeButton"
-                        buttonText="Delete Your Recipe"
+                        buttonText={<><i class="fa-solid fa-trash"></i>Delete</>}
                         modalComponent={
                           <DeleteRecipeModal recipeId={currentRecipe.id} />
                         }

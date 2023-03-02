@@ -9,7 +9,7 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className="permanentNavBar">
-      <NavLink exact to="/">
+      <NavLink exact to="/recipes">
         <div className="dinnerHomeLink">
           <i class="fa-solid fa-utensils"></i>
           <h1> | </h1>
