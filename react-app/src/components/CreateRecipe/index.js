@@ -37,8 +37,8 @@ export default function CreateRecipe() {
       return;
     }
 
-    if (recipe_name.split(" ").length > 6) {
-      setErrors(["Recipe name cannot exceed 6 words."]);
+    if (recipe_name.split(" ").length > 10) {
+      setErrors(["Recipe name cannot exceed 10 words."]);
       return;
     }
 
@@ -49,6 +49,11 @@ export default function CreateRecipe() {
 
     if (description.split(" ").length > 500){
       setErrors(["Recipe description cannot exceed 500 words"]);
+      return;
+    }
+
+    if (description.split(" ").length === 1 && description.length > 25){
+      setErrors(["Recipe description cannot exceed 25 characters"]);
       return;
     }
 

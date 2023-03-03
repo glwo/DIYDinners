@@ -251,3 +251,15 @@ background-image: none;
 .reviewContentDiv div {
     padding-bottom: 1vh;
 }
+
+.avgRatingToFixed {
+    margin-top: 0.65vh;
+}
+
+.currentRecipeNumReviews {
+    margin-top: 0.55vh;
+}
+
+.avgUserRatingsDiv {
+    margin-top: 0.3vh;
+}

@@ -144,7 +144,7 @@ function CreateReviewForm({ recipeId }) {
             <input style={{"borderRadius":"10px 10px 10px 10px", marginBottom:"10px"}}
                 className='formChildren'
                 type={'url'}
-                placeholder={'Provide a photo...'}
+                placeholder={'Please provide a photo...'}
                 value={image}
                 onChange={updateImage}
             />
