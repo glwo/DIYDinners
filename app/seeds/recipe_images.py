@@ -4,12 +4,12 @@ from app.models import db, RecipeImage, environment, SCHEMA
 # Adds a demo user, you can add other users here if you want
 def seed_recipeImages():
     Masala_image1 = RecipeImage(
-    image_url="https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG",
+    image_url="https://www.recipetineats.com/wp-content/uploads/2018/04/Chicken-Tikka-Masala_0-SQ.jpg",
     preview=True,
     recipe_id=1
   )
     Masala_image2 = RecipeImage(
-    image_url="https://www.recipetineats.com/wp-content/uploads/2018/04/Chicken-Tikka-Masala_0-SQ.jpg",
+    image_url="https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG",
     preview=True,
     recipe_id=1
   )

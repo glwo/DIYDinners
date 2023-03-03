@@ -52,8 +52,18 @@ export default function CreateRecipe() {
       return;
     }
 
+    if (description.split(" ").length === 1 && description.length > 25){
+      setErrors(["Recipe description cannot exceed 25 characters"]);
+      return;
+    }
+
+    if (ingredients.split(" ").length === 1 && ingredients.length > 25){
+      setErrors(["Recipe ingredients cannot exceed 25 characters"]);
+      return;
+    }
+
     if (ingredients.split(" ").length > 500){
-      setErrors(["Recipe description cannot exceed 500 words"]);
+      setErrors(["Recipe ingredients cannot exceed 500 words"]);
       return;
     }
 

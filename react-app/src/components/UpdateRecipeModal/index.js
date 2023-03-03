@@ -18,9 +18,63 @@ export default function UpdateRecipeModal({ recipe }) {
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal();
 
+  function checkURL(imageUrl) {
+    return(imageUrl.match(/\.(jpeg|jpg|gif|png)$/) != null);
+}
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
+
+    if (recipe_name.split(" ").length === 1 && recipe_name.length > 15) {
+      setErrors(["Recipe name cannot exceed 15 characters."]);
+      return;
+    }
+
+    if (recipe_name.split(" ").length > 10) {
+      setErrors(["Recipe name cannot exceed 10 words."]);
+      return;
+    }
+
+    if (!recipe_type) {
+      setErrors(["Please select a Recipe Type."]);
+      return;
+    }
+
+    if (description.split(" ").length > 500){
+      setErrors(["Recipe description cannot exceed 500 words"]);
+      return;
+    }
+
+    if (description.split(" ").length === 1 && description.length > 25){
+      setErrors(["Recipe description cannot exceed 25 characters"]);
+      return;
+    }
+
+    if (ingredients.split(" ").length === 1 && ingredients.length > 25){
+      setErrors(["Recipe ingredients cannot exceed 25 characters"]);
+      return;
+    }
+
+    if (ingredients.split(" ").length > 500){
+      setErrors(["Recipe ingredients cannot exceed 500 words"]);
+      return;
+    }
+
+    if(checkURL(image_url) === false){
+      setErrors(["Please provide an image in jpg or png format"])
+      return
+    }
+
+    if (step_one.split(" ").length === 1 && step_one.length > 25 || step_two.split(" ").length === 1 && step_two.length > 25 || step_three.split(" ").length === 1 && step_three.length > 25 || step_four.split(" ").length === 1 && step_four.length > 25){
+      setErrors(["Recipe step instructions cannot exceed 25 characters"]);
+      return;
+    }
+
+    if (step_one.split(" ").length > 255 || step_two.split(" ").length > 255 || step_three.split(" ").length > 255 || step_four.split(" ").length > 255){
+      setErrors(["Recipe step instructions cannot exceed 255 words"]);
+      return;
+    }
 
     const recipeData = {
       ...recipe,

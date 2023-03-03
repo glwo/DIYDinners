@@ -16,3 +16,9 @@
     color:
     #eb7565;
 }
+
+.logoutButtonProfileDropDown {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 import { reviewCreate } from '../../store/review'
 import { thunkLoadAllReviews } from '../../store/review'
+import { thunkLoadAllRecipes } from '../../store/recipe'
 import './CreateReviewForm.css'
 
 function CreateReviewForm({ recipeId }) {
@@ -13,7 +14,7 @@ function CreateReviewForm({ recipeId }) {
     const [ image, setImage ] = useState('')
     const [ errors, setErrors ] = useState([])
 
-    // const { recipe_id } = useParams()
+    // const { recipeId } = useParams()
     const currentUser = useSelector(state => state.session.user)
     const totalReviews = useSelector((state) => state.review.allReviews);
     const reviews = Object.values(totalReviews).filter(
@@ -33,7 +34,8 @@ function CreateReviewForm({ recipeId }) {
 
     useEffect(() => {
         dispatch(thunkLoadAllReviews())
-    }, [dispatch])
+        // dispatch(reviewCreate())
+    }, [dispatch, recipeId])
 
     const updateReview = (e) => setReview(e.target.value)
     const updateStars = (e) => setStars(e.target.value)
@@ -89,11 +91,17 @@ function CreateReviewForm({ recipeId }) {
             }
 
         let newReview = await dispatch(reviewCreate(recipeId, payload))
+            // .then(() => dispatch(thunkLoadAllReviews()))
+
+        // dispatch(reviewCreate(recipeId, payload))
+        //     .then(() => dispatch(thunkLoadAllReviews()))
 
         if(newReview.errors){
             setErrors(newReview.errors)
         } else {
             clearData(newReview)
+            // dispatch(thunkLoadAllReviews())
+            dispatch(thunkLoadAllRecipes())
         }
     }
 
@@ -136,7 +144,7 @@ function CreateReviewForm({ recipeId }) {
             <input style={{"borderRadius":"10px 10px 10px 10px", marginBottom:"10px"}}
                 className='formChildren'
                 type={'url'}
-                placeholder={'Note Image'}
+                placeholder={'Please provide a photo...'}
                 value={image}
                 onChange={updateImage}
             />

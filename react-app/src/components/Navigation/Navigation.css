@@ -1,5 +1,20 @@
 .profile-dropdown {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+.profile-dropdown button {
+  background-color: #df321b;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    margin: 0.5vh;
+    cursor: pointer;
+}
+
+.profile-dropdown button:hover {
+  background-color: #c62914;
 }
 
 .hidden {
@@ -20,6 +35,7 @@
 .permanentNavBar a {
   text-decoration: none;
   font-weight: bold;
+
 }
 
 .permanentNavBar .addRecipeNav:hover {
@@ -80,10 +96,23 @@
 }
 
 .addRecipeNav {
-  display: flex;
-  justify-content: end;
-  margin-top: 4vw;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: inline-block;
+  margin-top: 40px;
+  margin-right: 20px;
+  /* text-align: center; */
 }
+.addRecipeNav a {
+  text-align: center;
+  color: #6f6f6f;
+}
+
+/* .addRecipeNav a {
+  text-align: center;
+  position: fixed;
+} */
 
 .addRecipeAndProfile {
   display: flex;
