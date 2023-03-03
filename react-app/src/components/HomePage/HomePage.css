@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+}
+
+body .HomePageCompleteDiv {
+    background-image:url('./DIYDhomepage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+/* .HomePageTitle {
+    margin-top: 10vh;
+} */
+
+.homePageButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.homePageButtons div {
+    padding: 0vh 2vh 2vh 2vh;
+}
+
+.homePageButtons button {
+    background-color: #df321b;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.homePageButtons button:hover {
+    background-color: #c62914;
+}
+
+.footers {
+    background-color:
+    #121212;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer {
+    color: white;
+    width: 35vw;
+    padding: 5vh;
+}
+
+.rightside-footer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 5vh;
+}
+
+.rightside-footer div{
+    padding: 0.5vh;
+}
+
+.rightside-footer a {
+    color: white;
+    text-decoration: none;
+}

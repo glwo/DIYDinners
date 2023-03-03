@@ -21,7 +21,7 @@ export default function DeleteRecipeModal({recipeId}) {
 
         dispatch(thunkRemoveRecipe(recipeId))
             .then(() => dispatch(thunkLoadAllRecipes()))
-            .then(() => history.push(`/`))
+            .then(() => history.push(`/recipes`))
             .then(closeModal)
     };
 

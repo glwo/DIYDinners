@@ -2,3 +2,29 @@
     width: 100%;
     height: 5vw;
 }
+
+.reviewSubmit button{
+    background-color: #df321b;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.reviewSubmit button:hover {
+    background-color: #c62914;
+}
+
+.reviewSubmitButton {
+    background-color: #df321b;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.reviewSubmitButton:hover {
+    background-color: #c62914;
+}

@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import RecipePage from "./components/RecipePage";
 import CreateRecipe from "./components/CreateRecipe";
+import HomePage from "./components/HomePage";
 
 
 function App() {
@@ -29,13 +30,16 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route exact path='/'>
-            <SplashPage />
+            <HomePage />
           </Route>
           <Route exact path='/recipe/:recipeId'>
             <RecipePage />
           </Route>
           <Route exact path="/recipe">
             <CreateRecipe />
+          </Route>
+          <Route exact path='/recipes'>
+            <SplashPage />
           </Route>
         </Switch>
       )}

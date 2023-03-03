@@ -32,8 +32,13 @@ export default function CreateRecipe() {
       return;
     }
 
-    if (recipe_name.length > 50) {
-      setErrors(["Recipe name cannot exceed 50 characters."]);
+    if (recipe_name.split(" ").length === 1 && recipe_name.length > 15) {
+      setErrors(["Recipe name cannot exceed 15 characters."]);
+      return;
+    }
+
+    if (recipe_name.split(" ").length > 10) {
+      setErrors(["Recipe name cannot exceed 10 words."]);
       return;
     }
 
@@ -55,6 +60,11 @@ export default function CreateRecipe() {
     if(checkURL(image_url) === false){
       setErrors(["Please provide an image in jpg or png format"])
       return
+    }
+
+    if (step_one.split(" ").length === 1 && step_one.length > 25 || step_two.split(" ").length === 1 && step_two.length > 25 || step_three.split(" ").length === 1 && step_three.length > 25 || step_four.split(" ").length === 1 && step_four.length > 25){
+      setErrors(["Recipe step instructions cannot exceed 25 characters"]);
+      return;
     }
 
     if (step_one.split(" ").length > 255 || step_two.split(" ").length > 255 || step_three.split(" ").length > 255 || step_four.split(" ").length > 255){

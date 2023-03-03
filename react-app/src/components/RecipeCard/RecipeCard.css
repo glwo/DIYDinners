@@ -19,8 +19,9 @@
 }
 
 .image-div {
-    height: 80vw;
-    width: 100vw;
+    height: fit-content;
+    width: fit-content;
+
     /* border-bottom: 2px solid grey; */
 }
 

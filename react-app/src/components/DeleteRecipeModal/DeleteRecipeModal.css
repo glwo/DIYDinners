@@ -12,6 +12,24 @@
     padding: 50px;
 }
 
+.deleteRecipe h1 {
+    text-align: center;
+    color: #e33d26;
+}
+
+.deleteRecipe button {
+    background-color: #df321b;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.deleteRecipe button:hover {
+    background-color: #c62914;
+}
+
 /* .form-header {
     display: flex;
     position: fixed;
