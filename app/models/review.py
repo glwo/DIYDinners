@@ -12,7 +12,7 @@ class Review(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     firstName = db.Column(db.String(40), nullable=False)
     lastInitial = db.Column(db.String(1), nullable=False)
-    content = db.Column(db.String(255), nullable=False)
+    content = db.Column(db.String, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
     imgUrl = db.Column(db.String, nullable=False)
     created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
