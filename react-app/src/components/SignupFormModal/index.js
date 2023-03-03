@@ -41,6 +41,11 @@ function SignupFormModal() {
 			return
 		}
 
+		if(username.length > 10){
+			setErrors(["Username cannot exceed 10 characters"])
+			return
+		}
+
 		if(validateEmail(email) === false){
 			setErrors(["Please provide a valid email"])
 			return
