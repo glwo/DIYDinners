@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 597511aa4949
+Revision ID: e282954bb57e
 Revises:
-Create Date: 2023-03-03 02:52:55.385467
+Create Date: 2023-03-03 03:18:12.379148
 
 """
 from alembic import op
@@ -14,7 +14,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '597511aa4949'
+revision = 'e282954bb57e'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -80,7 +80,7 @@ def upgrade():
     sa.Column('lastInitial', sa.String(length=1), nullable=False),
     sa.Column('content', sa.String(length=255), nullable=False),
     sa.Column('rating', sa.Integer(), nullable=False),
-    sa.Column('imgUrl', sa.String(length=255), nullable=False),
+    sa.Column('imgUrl', sa.String(), nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
     sa.ForeignKeyConstraint(['recipe_id'], ['recipes.id'], ),
