@@ -56,6 +56,11 @@ export default function UpdateRecipeModal({ recipe }) {
       return;
     }
 
+    if (description.split.length > 1000){
+      setErrors(["Recipe description cannot exceed 1000 characters"]);
+      return;
+    }
+
     if (ingredients.split(" ").length === 1 && ingredients.length > 25){
       setErrors(["Recipe ingredients cannot exceed 25 characters"]);
       return;
