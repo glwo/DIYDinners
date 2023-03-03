@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { signUp } from "../../store/session";
 import { login } from "../../store/session";
+import { useHistory } from "react-router-dom";
 import "./SignupForm.css";
 
 function SignupFormModal() {
@@ -17,6 +18,7 @@ function SignupFormModal() {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errors, setErrors] = useState([]);
 	const { closeModal } = useModal();
+	const history = useHistory()
 
 	function checkURL(imageUrl) {
 		return(imageUrl.match(/\.(jpeg|jpg|gif|png)$/) != null);
@@ -42,13 +44,14 @@ function SignupFormModal() {
 			setErrors(["Password must be at least six characters long"])
 			return
 		}
-		
+
 		if (password === confirmPassword) {
 			const data = await dispatch(signUp(first_name, last_name, username, email, img_url, bio, password));
 			if (data) {
 				setErrors(data);
 			} else {
 				closeModal();
+				history.push("/recipes")
 			}
 		} else {
 			setErrors([
@@ -73,6 +76,7 @@ function SignupFormModal() {
 			if (data && data.errors) setErrors(data.errors);
 		  }
 		);
+		history.push("/recipes")
 	}
 
 	return (

@@ -6,6 +6,13 @@
     /* margin: 0px 10px 0px 0px; */
     margin-left: 13.5vh;
 }
+/* .recipeRootDiv body{
+background-image: none;
+} */
+
+/* body{
+    background-image:none;
+} */
 
 #recipe-details-inner {
     display: flex;
