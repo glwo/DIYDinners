@@ -97,7 +97,6 @@ function CreateReviewForm({ recipeId }) {
         }
     }
 
-    console.log(stars)
 
     return (
         <div className='reviewForm'>
@@ -111,7 +110,7 @@ function CreateReviewForm({ recipeId }) {
 
                 </ul>
             }
-            <h4>Add Note</h4>
+            <h4>Add a Note</h4>
             <textarea style={{"borderRadius":"10px 10px 10px 10px", marginBottom:"10px"}}
                 className='reviewText'
                 type={'text'}
@@ -121,6 +120,7 @@ function CreateReviewForm({ recipeId }) {
                 onChange={updateReview}
             />
             <div class="rate">
+                Rating :
               <input type="radio" id="star1" name="rate" value="1" onChange={updateStars}/>
               <label for="star1" title="text">1 star</label>
               <input type="radio" id="star2" name="rate" value="2" onChange={updateStars}/>
@@ -132,6 +132,7 @@ function CreateReviewForm({ recipeId }) {
               <input type="radio" id="star5" name="rate" value="5" onChange={updateStars}/>
               <label for="star5" title="text">5 stars</label>
             </div>
+            <div> Note Image :
             <input style={{"borderRadius":"10px 10px 10px 10px", marginBottom:"10px"}}
                 className='formChildren'
                 type={'url'}
@@ -139,8 +140,9 @@ function CreateReviewForm({ recipeId }) {
                 value={image}
                 onChange={updateImage}
             />
+            </div>
             <div>
-            <button className='reviewSubmit'>Submit</button>
+            <button className='reviewSubmitButton'><i class="fa-solid fa-check"></i> Submit</button>
             </div>
             </form>
         </div>

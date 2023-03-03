@@ -33,12 +33,13 @@ const RecipePage = () => {
     dispatch(removeReview());
   }, [dispatch, recipeId]);
 
-  const reviewFilter = (array, num) => {
-    if (array) {
-      const result = array.filter((review) => review.rating == num);
-      return result.length;
+  const checkReviews = (user, reviews) => {
+    for (let review of reviews) {
+      if (review.user_id === user.id) {
+        return true;
+      }
     }
-    return null;
+    return false;
   };
 
   const totalReviews = useSelector((state) => state.review.allReviews);
@@ -73,7 +74,10 @@ const RecipePage = () => {
                       : null
                   }
                   alt="No image available for this recipe!"
-                  onError={e => { e.currentTarget.src = "https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png"; }}
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png";
+                  }}
                 ></img>
               </div>
             </div>
@@ -123,7 +127,11 @@ const RecipePage = () => {
                     >
                       <OpenModalButton
                         className="updateRecipeButton"
-                        buttonText={<><i class="fa-regular fa-pen-to-square"></i>Update</>}
+                        buttonText={
+                          <>
+                            <i class="fa-regular fa-pen-to-square"></i>Update
+                          </>
+                        }
                         modalComponent={
                           <UpdateRecipeModal recipe={currentRecipe} />
                         }
@@ -139,7 +147,11 @@ const RecipePage = () => {
                     >
                       <OpenModalButton
                         className="updateRecipeButton"
-                        buttonText={<><i class="fa-solid fa-trash"></i>Delete</>}
+                        buttonText={
+                          <>
+                            <i class="fa-solid fa-trash"></i>Delete
+                          </>
+                        }
                         modalComponent={
                           <DeleteRecipeModal recipeId={currentRecipe.id} />
                         }
@@ -192,7 +204,9 @@ const RecipePage = () => {
                   <h3>Cooking Notes</h3>
                   <div
                     hidden={
-                      loggedInUser && loggedInUser?.id === currentRecipe.user_id
+                      (loggedInUser &&
+                        loggedInUser?.id === currentRecipe.user_id) ||
+                      checkReviews(loggedInUser, recipeReviews) === true
                         ? true
                         : false
                     }
@@ -204,19 +218,33 @@ const RecipePage = () => {
                     reviews.map((review) => {
                       return (
                         <div key={review.id} className="indiv-review">
-                          <div className="">
+                          <div className="reviewContentDiv">
                             <h5>
                               <i class="fa-solid fa-user"></i>
                               {review.firstName}
                             </h5>
+                            <div>{review.content}</div>
+                            <img
+                              id="reviewImg"
+                              src={review.imgUrl ? review.imgUrl : null}
+                              alt="No image available for this review!"
+                              onError={(e) => {
+                                e.currentTarget.src =
+                                  "https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg";
+                              }}
+                            ></img>
                           </div>
-                          {review.content}
-                          <div>
+                          <div className="editDeleteButton">
                             {loggedInUser &&
                             review.user_id == loggedInUser.id ? (
-                              <div className="editDeleteButton">
+                              <div>
                                 <OpenModalButton
-                                  buttonText="Update Your Review"
+                                  buttonText={
+                                    <>
+                                      <i class="fa-regular fa-pen-to-square"></i>{" "}
+                                      Update
+                                    </>
+                                  }
                                   modalComponent={
                                     <UpdateReviewModal
                                       key={review.id}
@@ -230,9 +258,13 @@ const RecipePage = () => {
                             )}
                             {loggedInUser &&
                             review.user_id == loggedInUser.id ? (
-                              <div className="editDeleteButton">
+                              <div>
                                 <OpenModalButton
-                                  buttonText="Delete Your Review"
+                                  buttonText={
+                                    <>
+                                      <i class="fa-solid fa-trash"></i> Delete
+                                    </>
+                                  }
                                   modalComponent={
                                     <DeleteReviewModal
                                       key={review.id}

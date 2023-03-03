@@ -28,8 +28,8 @@ export default function DeleteReviewModal({reviewId}) {
     return (
         <div className='deleteNote'>
             <div className="form-header">
-                <h1>Delete Review?</h1>
-                <p>(Your review will be deleted permanently and this cannot be undone.)</p>
+                <h1>Delete Note?</h1>
+                <p>(Your note will be deleted permanently and this cannot be undone.)</p>
             </div>
             <form onSubmit={handleSubmit}>
               <button className="delete-button" type="submit">Confirm Delete</button>

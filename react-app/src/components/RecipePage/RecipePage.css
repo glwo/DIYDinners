@@ -206,3 +206,41 @@ background-image: none;
     display: flex;
     flex-direction: row;
 }
+
+.editDeleteButton {
+    display: flex;
+    flex-direction: row;
+}
+
+.editDeleteButton div {
+    padding: 1vh 1vh 1vh 0vh;
+}
+
+.editDeleteButton button{
+    background-color: #df321b;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.editDeleteButton button:hover{
+    background-color: #c62914;
+}
+
+#reviewImg {
+    height: 10vh;
+    width: 10vw;
+    border-radius: 2vh;
+    /* padding-top: 1vh; */
+}
+
+.reviewContentDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewContentDiv div {
+    padding-bottom: 1vh;
+}

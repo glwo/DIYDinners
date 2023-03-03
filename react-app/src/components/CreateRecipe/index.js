@@ -32,7 +32,7 @@ export default function CreateRecipe() {
       return;
     }
 
-    if (recipe_name.length > 15) {
+    if (recipe_name.split(" ").length === 1 && recipe_name.length > 15) {
       setErrors(["Recipe name cannot exceed 15 characters."]);
       return;
     }

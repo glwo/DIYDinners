@@ -22,7 +22,7 @@ body .HomePageCompleteDiv {
 }
 
 .homePageButtons div {
-    padding: 2vh;
+    padding: 0vh 2vh 2vh 2vh;
 }
 
 .homePageButtons button {

@@ -31,6 +31,16 @@ function SignupFormModal() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if(first_name.length > 10){
+			setErrors(["First Name cannot exceed 10 characters"])
+			return
+		}
+
+		if(last_name.length > 10){
+			setErrors(["Last Name cannot exceed 10 characters"])
+			return
+		}
+
 		if(validateEmail(email) === false){
 			setErrors(["Please provide a valid email"])
 			return

@@ -111,7 +111,7 @@ export const removeReview = (reviewId) => async dispatch => {
     if(response.ok) {
         const review = await response.json()
         dispatch(deleteReview(reviewId))
-        dispatch(thunkLoadAllReviews())
+        // dispatch(thunkLoadAllReviews())
         return review
     }
 }

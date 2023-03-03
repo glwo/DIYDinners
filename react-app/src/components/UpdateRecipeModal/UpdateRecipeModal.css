@@ -17,7 +17,7 @@
 }
 
 .updateButton {
-    background-color: #e33d26;
+    background-color: #df321b;
     width: 100%;
     color: white;
     border: none;
@@ -27,8 +27,8 @@
 }
 
 .updateButton:hover {
-    background-color: #ef2b2b;
-    transition-duration: 1000ms;
+    background-color: #c62914;
+    /* transition-duration: 1000ms; */
 }
 
 .updateRecipeModal div {

@@ -11,3 +11,21 @@
     justify-content: center;
     padding: 50px;
 }
+
+.deleteNote h1 {
+    text-align: center;
+    color: #e33d26;
+}
+
+.deleteNote button {
+    background-color: #df321b;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.deleteNote button:hover {
+    background-color: #c62914;
+}
