@@ -4,7 +4,7 @@
     /* justify-content: center; */
     /* padding: 0px 30px 0px 0px; */
     /* margin: 0px 10px 0px 0px; */
-    margin-left: 13.5vh;
+    margin-left: 13.5vw;
 }
 /* .recipeRootDiv body{
 background-image: none;
@@ -23,17 +23,22 @@ background-image: none;
     width: 75vh;
     height: 50vh;
     /* margin: 1vh; */
+    margin-right: 30vw;
 }
+
+
 
 .RecipeNameAndOwnerName {
     border-bottom: 1px solid #ccc;
     width: 40vh;
-    margin-right: 5vh;
+    margin-right: 1vw;
     /* margin-left: 8vh; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
+    min-width: 28vw;
+    max-width: 28vw;
 }
 
 .RatingsAndDescription {
@@ -42,7 +47,7 @@ background-image: none;
     /* justify-content: center; */
     /* padding: 0px 30px 0px 0px;
     margin: 0px 10px 0px 0px; */
-    margin-left: 13.5vh;
+    margin-left: 13.5vw;
     /* margin-right: 30vw; */
 }
 
@@ -50,7 +55,7 @@ background-image: none;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
     padding-right: 1vw;
     min-width: 28vw;
     max-width: 28vw;
@@ -67,12 +72,14 @@ background-image: none;
 }
 
 .RatingsDiv h3 {
-    padding: 10px 10px 10px 0px;
+    /* padding: 10px 10px 10px 0px; */
 }
 
 .recipeDesc {
     /* margin-left: 10vw; */
-    margin-right: 13.5vw;
+    margin-right: 30vw;
+    min-width: 36vw;
+    max-width: 36vw;
 }
 
 .RatingsDiv * {

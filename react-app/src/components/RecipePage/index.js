@@ -30,12 +30,12 @@ const RecipePage = () => {
   useEffect(() => {
     dispatch(thunkLoadAllRecipes());
     dispatch(thunkLoadAllReviews());
-    dispatch(removeReview());
+    // dispatch(removeReview());
   }, [dispatch, recipeId]);
 
   const checkReviews = (user, reviews) => {
     for (let review of reviews) {
-      if (review.user_id === user.id) {
+      if (review?.user_id === user?.id) {
         return true;
       }
     }

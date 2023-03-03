@@ -82,7 +82,8 @@
 .addRecipeNav {
   display: flex;
   justify-content: end;
-  margin-top: 4vw;
+  align-items: center;
+  position: relative;
 }
 
 .addRecipeAndProfile {

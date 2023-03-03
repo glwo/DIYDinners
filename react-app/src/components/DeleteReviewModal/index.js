@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { thunkLoadAllReviews, removeReview } from '../../store/review';
+import { thunkLoadAllRecipes } from '../../store/recipe';
 import { useHistory } from 'react-router-dom';
 import { useModal } from '../../context/Modal';
 import "./DeleteReviewModal.css"
@@ -21,6 +22,7 @@ export default function DeleteReviewModal({reviewId}) {
 
         dispatch(removeReview(reviewId))
             .then(() => dispatch(thunkLoadAllReviews()))
+            .then(() => dispatch(thunkLoadAllRecipes()))
             // .then(() => history.push(`/`))
             .then(closeModal)
     };

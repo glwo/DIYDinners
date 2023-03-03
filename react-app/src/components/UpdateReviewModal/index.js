@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import OpenModalButton from "../OpenModalButton";
 import { useModal } from "../../context/Modal";
 import { reviewUpdate } from "../../store/review";
+import { thunkLoadAllRecipes } from "../../store/recipe";
 import "./UpdateReviewModal.css";
 
 function UpdateReviewModal({ reviewDetails }) {
@@ -35,6 +36,7 @@ function UpdateReviewModal({ reviewDetails }) {
       setErrors(updatedReview.errors);
     } else {
       setErrors([]);
+      dispatch(thunkLoadAllRecipes())
       closeModal();
     }
   };
