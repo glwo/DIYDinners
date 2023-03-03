@@ -100,7 +100,7 @@ tablespoon confectioners’ sugar""",
         last_name="Gurley"
     )
     demo4 = Recipe(
-        recipe_name= 'Crispy Lemon Chicken Cutlets With Salmoriglio Sauce',
+        recipe_name= 'Crispy Lemon Chicken Cutlets',
         recipe_type = 'classic',
         description='Derived from the Italian word for brine, “salamoia,” salmoriglio is a lemon sauce from Sicily and Calabria that is used to marinate and dress grilled meats and fish. This pleasantly sharp, all-purpose dressing is equally suited to chicken breasts: It soaks into the crust and lends a citrus punch to the meat. Fresh parsley, oregano or a combination of fresh herbs can be used, based on preference. The breading is inspired by the store-bought bread crumbs that are often labeled as Italian seasoned and often used for what Italian Americans simply call chicken cutlets: coated chicken breasts that are shallow-fried in olive oil. The addition of this simple lemon sauce gives this easy weeknight meal a restaurant-quality finish. ',
         ingredients="""1½

@@ -65,6 +65,11 @@ function CreateReviewForm({ recipeId }) {
             return
         }
 
+        if (review.length > 700){
+            setErrors(["Note cannot exceed 700 characters."])
+            return
+          }
+
         if(!stars){
             setErrors(["Please select a rating for your note."])
             return

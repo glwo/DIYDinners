@@ -14,6 +14,8 @@ function UpdateReviewModal({ reviewDetails }) {
   const [errors, setErrors] = useState([]);
   const [url, setUrl] = useState(reviewDetails.imgUrl);
 
+  // const initialStars = useState(reviewDetails.rating);
+
   const updateReview = (e) => setReview(e.target.value);
   const updateStars = (e) => setStars(e.target.value);
   const updateImage = (e) => setUrl(e.target.value);
@@ -28,6 +30,11 @@ function UpdateReviewModal({ reviewDetails }) {
 
     if(review.split(" ").length > 100){
       setErrors(["Note cannot exceed 100 words."])
+      return
+    }
+
+    if (review.length > 700){
+      setErrors(["Note cannot exceed 700 characters."])
       return
     }
 
@@ -86,6 +93,7 @@ function UpdateReviewModal({ reviewDetails }) {
             <label>Rating :</label>
           </div>
           <input
+            // checked={initialStars === 1 ? true : false}
             type="radio"
             id="star1"
             name="rate"
@@ -96,6 +104,7 @@ function UpdateReviewModal({ reviewDetails }) {
             1 star
           </label>
           <input
+            // checked={initialStars === 2 ? true : false}
             type="radio"
             id="star2"
             name="rate"
@@ -106,6 +115,7 @@ function UpdateReviewModal({ reviewDetails }) {
             2 stars
           </label>
           <input
+            // checked={initialStars === 3 ? true : false}
             type="radio"
             id="star3"
             name="rate"
@@ -116,6 +126,7 @@ function UpdateReviewModal({ reviewDetails }) {
             3 stars
           </label>
           <input
+            // checked={initialStars === 4 ? true : false}
             type="radio"
             id="star4"
             name="rate"
@@ -126,6 +137,7 @@ function UpdateReviewModal({ reviewDetails }) {
             4 stars
           </label>
           <input
+            // checked={initialStars === 5 ? true : false}
             type="radio"
             id="star5"
             name="rate"

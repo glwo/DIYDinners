@@ -42,6 +42,11 @@ export default function CreateRecipe() {
       return;
     }
 
+    if (recipe_name.length > 40){
+      setErrors(["Recipe name cannot exceed 40 characters"]);
+      return;
+    }
+
     if (!recipe_type) {
       setErrors(["Please select a Recipe Type."]);
       return;
