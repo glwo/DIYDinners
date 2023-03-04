@@ -22,15 +22,17 @@ The technologies I used for this project are:
   - Frontend: JavaScript, React, Redux, HTML, CSS
 
 ## Splash Page
-![image]()
+![DIYDhomepage](https://user-images.githubusercontent.com/112520930/222933028-deeb66fa-9b40-48d8-a87c-6d88cd216026.png)
 
 
 ## Recipes Page
-![image]()
-![image]()
+![recipesPage](https://user-images.githubusercontent.com/112520930/222933117-f8af6ccd-2b27-43a2-ab7a-2580e178cc83.PNG)
+
 
 ## Recipe Details Page
-![image]()
+![RecipePageTop](https://user-images.githubusercontent.com/112520930/222933126-7ae9410d-5539-4a15-a1d6-ec76d000a6e7.PNG)
+![recipePageBottom](https://user-images.githubusercontent.com/112520930/222933134-eba1abf6-a407-415c-9f93-067b9ea4a679.PNG)
+
 
 ## Getting started
 1. Clone this repository (only this branch)
