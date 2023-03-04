@@ -1,6 +1,36 @@
-# Flask React Project
+# DIYDinners Project
 
-This is the starter for the Flask React project.
+Welcome to DIYDinners! This small project is a clone of the New York Times Cooking website, which I worked on to round off my experience as a student at AppAcademy.
+
+Deployed Live Link: https://diydinners.onrender.com/
+
+## Major Features
+- There are 2 deployed features that currently have full CRUD (Create, Read, Update, Delete) in this project:
+  - Recipes
+  - Recipe Notes (Reviews)
+
+## Future Features
+- Features that are coming soon:
+  - Recipe Box
+  - Profile Page
+  - Search
+  - Shopping list
+
+## Technology
+The technologies I used for this project are:
+  - Backend: Python, Flask
+  - Frontend: JavaScript, React, Redux, HTML, CSS
+
+## Splash Page
+![image]()
+
+
+## Recipes Page
+![image]()
+![image]()
+
+## Recipe Details Page
+![image]()
 
 ## Getting started
 1. Clone this repository (only this branch)
