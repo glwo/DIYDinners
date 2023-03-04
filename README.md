@@ -1,6 +1,6 @@
 # DIYDinners Project
 
-Welcome to DIYDinners! This small project is a clone of the New York Times Cooking website, which I worked on to round off my experience as a student at AppAcademy.
+Welcome to DIYDinners! This is a clone of the New York Times Cooking website, which I worked on to round off my experience as a student at AppAcademy.
 
 Deployed Live Link: https://diydinners.onrender.com/
 
@@ -13,7 +13,7 @@ Deployed Live Link: https://diydinners.onrender.com/
 - Features that are coming soon:
   - Recipe Box
   - Profile Page
-  - Search
+  - Search Bar
   - Shopping list
 
 ## Technology
