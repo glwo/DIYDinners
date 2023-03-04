@@ -31,6 +31,8 @@ The technologies I used for this project are:
 
 ## Recipe Details Page
 ![RecipePageTop](https://user-images.githubusercontent.com/112520930/222933126-7ae9410d-5539-4a15-a1d6-ec76d000a6e7.PNG)
+
+## Recipe Reviews Section
 ![recipePageBottom](https://user-images.githubusercontent.com/112520930/222933134-eba1abf6-a407-415c-9f93-067b9ea4a679.PNG)
 
 
