@@ -49,7 +49,7 @@ function App() {
                 to lose you.
               </p>
               <p>Return to our recipes page to browse our popular content.</p>
-              <NavLink to="/">Go back to home page</NavLink>
+              <NavLink to="/recipes">Go back to recipes page</NavLink>
             </div>
           </Route>
         </Switch>

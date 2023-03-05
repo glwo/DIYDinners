@@ -56,9 +56,19 @@ export default function UpdateRecipeModal({ recipe }) {
       return;
     }
 
-    if (description.split.length > 1000){
+    if (description.length > 1000){
       setErrors(["Recipe description cannot exceed 1000 characters"]);
       return;
+    }
+
+    if (description.split(" ").length > 1){
+      let words = description.split(" ")
+      for(let word of words){
+        if (word.length > 30) {
+          setErrors(["Words within description cannot exceed 30 characters"]);
+          return;
+        }
+      }
     }
 
     if (ingredients.split(" ").length === 1 && ingredients.length > 25){
@@ -70,6 +80,16 @@ export default function UpdateRecipeModal({ recipe }) {
       setErrors(["Recipe ingredients cannot exceed 500 words"]);
       return;
     }
+
+    // if (ingredients.split(" ").length > 1){
+    //   let words = ingredients.split(" ")
+    //   for(let word of words){
+    //     if (word.length > 30) {
+    //       setErrors(["Words within ingredients cannot exceed 30 characters"]);
+    //       return;
+    //     }
+    //   }
+    // }
 
     if(checkURL(image_url) === false){
       setErrors(["Please provide an image in jpg or png format"])
@@ -84,6 +104,46 @@ export default function UpdateRecipeModal({ recipe }) {
     if (step_one.split(" ").length > 255 || step_two.split(" ").length > 255 || step_three.split(" ").length > 255 || step_four.split(" ").length > 255){
       setErrors(["Recipe step instructions cannot exceed 255 words"]);
       return;
+    }
+
+    if (step_one.split(" ").length > 1){
+      let words = step_one.split(" ")
+      for(let word of words){
+        if (word.length > 30) {
+          setErrors(["Words within steps cannot exceed 30 characters"]);
+          return;
+        }
+      }
+    }
+
+    if (step_two.split(" ").length > 1){
+      let words = step_two.split(" ")
+      for(let word of words){
+        if (word.length > 30) {
+          setErrors(["Words within steps cannot exceed 30 characters"]);
+          return;
+        }
+      }
+    }
+
+    if (step_three.split(" ").length > 1){
+      let words = step_three.split(" ")
+      for(let word of words){
+        if (word.length > 30) {
+          setErrors(["Words within steps cannot exceed 30 characters"]);
+          return;
+        }
+      }
+    }
+
+    if (step_four.split(" ").length > 1){
+      let words = step_four.split(" ")
+      for(let word of words){
+        if (word.length > 30) {
+          setErrors(["Words within steps cannot exceed 30 characters"]);
+          return;
+        }
+      }
     }
 
     const recipeData = {
