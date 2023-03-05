@@ -9,7 +9,7 @@ import SplashPage from "./components/SplashPage";
 import RecipePage from "./components/RecipePage";
 import CreateRecipe from "./components/CreateRecipe";
 import HomePage from "./components/HomePage";
-
+import { NavLink } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,23 +23,34 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login" >
+          <Route path="/login">
             <LoginFormPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path='/'>
+          <Route exact path="/">
             <HomePage />
           </Route>
-          <Route exact path='/recipe/:recipeId'>
+          <Route exact path="/recipe/:recipeId">
             <RecipePage />
           </Route>
           <Route exact path="/recipe">
             <CreateRecipe />
           </Route>
-          <Route exact path='/recipes'>
+          <Route exact path="/recipes">
             <SplashPage />
+          </Route>
+          <Route>
+            <div className="errorpageDiv">
+              <h1>Page Not Found</h1>
+              <p>
+                We’re sorry, we seem to have lost this page, but we don’t want
+                to lose you.
+              </p>
+              <p>Return to our recipes page to browse our popular content.</p>
+              <NavLink to="/">Go back to home page</NavLink>
+            </div>
           </Route>
         </Switch>
       )}
