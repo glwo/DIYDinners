@@ -23,26 +23,35 @@ function UpdateReviewModal({ reviewDetails }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(review.split(" ").length === 1 && review.length > 25){
-      setErrors(["Note cannot exceed 25 characters."])
-      return
+    if (review.split(" ").length === 1 && review.length > 25) {
+      setErrors(["Note cannot exceed 25 characters."]);
+      return;
     }
 
-    if(review.split(" ").length > 100){
-      setErrors(["Note cannot exceed 100 words."])
-      return
+    if (review.split(" ").length > 100) {
+      setErrors(["Note cannot exceed 100 words."]);
+      return;
     }
 
-    if (review.length > 700){
-      setErrors(["Note cannot exceed 700 characters."])
-      return
+    if (review.length > 700) {
+      setErrors(["Note cannot exceed 700 characters."]);
+      return;
     }
 
-    if(!url){
-      setErrors(["Please provide an image for your note."])
-      return
-  }
+    if (!url) {
+      setErrors(["Please provide an image for your note."]);
+      return;
+    }
 
+    if (review.split(" ").length > 1) {
+      let words = review.split(" ");
+      for (let word of words) {
+        if (word.length > 30) {
+          setErrors(["Words within review cannot exceed 30 characters"]);
+          return;
+        }
+      }
+    }
 
     const payload = {
       ...reviewDetails,
@@ -58,7 +67,7 @@ function UpdateReviewModal({ reviewDetails }) {
       setErrors(updatedReview.errors);
     } else {
       setErrors([]);
-      dispatch(thunkLoadAllRecipes())
+      dispatch(thunkLoadAllRecipes());
       closeModal();
     }
   };
@@ -70,12 +79,15 @@ function UpdateReviewModal({ reviewDetails }) {
       </div>
       <form onSubmit={handleSubmit}>
         <div className="reviewForm">
-        {errors.length !== 0 &&
-                <ul style={{"marginBottom":"0px"}}>
-                    {errors.map((error, idx) => <li key={idx} style={{"color":"red"}}>{error}</li>)}
-
-                </ul>
-            }
+          {errors.length !== 0 && (
+            <ul style={{ marginBottom: "0px" }}>
+              {errors.map((error, idx) => (
+                <li key={idx} style={{ color: "red" }}>
+                  {error}
+                </li>
+              ))}
+            </ul>
+          )}
           <textarea
             style={{
               borderRadius: "10px 10px 10px 10px",
