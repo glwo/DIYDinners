@@ -4,7 +4,7 @@ from app.models import db, Recipe, environment, SCHEMA
 # Adds a demo user, you can add other users here if you want
 def seed_recipes():
     demo = Recipe(
-        recipe_name= 'Bhindi Masala (Okra With Red Onion and Tomato)',
+        recipe_name= 'Bhindi Masala',
         recipe_type = 'vegetarian',
         description='Ready in less than 30 minutes, bhindi masala is a hot and spicy vegetarian main dish perfect for any weeknight. Okra often gets a bad rap, but in this recipe, searing it in ghee preserves its structure, adds texture and seals any potential stickiness. Onion, tomato, red chile powder, ginger and garlic come together to make this a zinger of a dish. Finishing with lime juice adds fresh tartness that balances the heat. If you can’t find fresh okra, frozen works just as well. ',
         ingredients="""3
