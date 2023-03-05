@@ -39,6 +39,10 @@
     color: red;
 }
 
+.logInModal li{
+    /* list-style: none; */
+}
+
 .logInModal h1{
     color: #e33d26
 }
