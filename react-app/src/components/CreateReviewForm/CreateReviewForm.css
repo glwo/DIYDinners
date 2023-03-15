@@ -29,3 +29,19 @@
 .reviewSubmitButton:hover {
     background-color: #c62914;
 }
+
+.reviewRatingandPhoto {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.provideAPhoto {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5vw;
+}
+
+.provideAPhoto input {
+    margin-top: 1.5vh;
+}
