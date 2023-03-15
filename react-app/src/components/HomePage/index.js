@@ -60,6 +60,17 @@ const HomePage = () => {
           <div>
             <a
               className="link-footer"
+              href="https://www.linkedin.com/in/glen-wojnar-74449b269/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Glen's LinkedIn
+              | <i className="fa-brands fa-linkedin fa-xl" />
+            </a>
+          </div>
+          <div>
+            <a
+              className="link-footer"
               href="https://github.com/glwo/DIYDinners"
               rel="noreferrer"
               target="_blank"
