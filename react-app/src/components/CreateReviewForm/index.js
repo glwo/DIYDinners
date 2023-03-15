@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { reviewCreate } from "../../store/review";
 import { thunkLoadAllReviews } from "../../store/review";
 import { thunkLoadAllRecipes } from "../../store/recipe";
+import StarsRating from "stars-rating";
 import "./CreateReviewForm.css";
 
 function CreateReviewForm({ recipeId }) {
@@ -142,8 +143,8 @@ function CreateReviewForm({ recipeId }) {
           value={review}
           onChange={updateReview}
         />
-        <div class="rate">
-          Rating :
+        {/* <div class="rate"> */}
+        {/* Rating :
           <input
             type="radio"
             id="star1"
@@ -193,11 +194,23 @@ function CreateReviewForm({ recipeId }) {
           />
           <label for="star5" title="text">
             5 stars
-          </label>
-        </div>
+          </label> */}
+        {/* </div> */}
+        <div className="reviewRatingandPhoto">
         <div>
-          {" "}
-          Note Image :
+          Your rating
+          <StarsRating
+            count={5}
+            onChange={setStars}
+            size={35}
+            half={false}
+            value={stars}
+            color2={"#222222"}
+            color1={"#80808f"}
+          />
+        </div>
+        <div className="provideAPhoto">
+          Have you cooked this?
           <input
             style={{
               borderRadius: "10px 10px 10px 10px",
@@ -209,6 +222,7 @@ function CreateReviewForm({ recipeId }) {
             value={image}
             onChange={updateImage}
           />
+        </div>
         </div>
         <div>
           <button className="reviewSubmitButton">

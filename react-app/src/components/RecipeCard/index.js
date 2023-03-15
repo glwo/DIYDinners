@@ -10,7 +10,10 @@ const RecipeCard = ({ recipe }) => {
   return (
     <Link className="recipeCard-main-div" to={`/recipe/${recipe.id}`}>
       <div className="image-div">
-        <img className="recipe-preview-image" src={recipe.recipe_images[0] !== undefined ? recipe.recipe_images[0].image_url : null} alt="No Recipe Image found"  onError={e => { e.currentTarget.src = "https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png"; }}/>
+        <img className="recipe-preview-image"
+        src={recipe.recipe_images[0] !== undefined ? recipe.recipe_images[0].image_url : null}
+         alt="No Recipe Image found"
+         onError={e => { e.currentTarget.src = "https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png"; }}/>
       </div>
       <div className="recipeInfoDiv">
         <h4 className="recipeName">{recipe.recipe_name}</h4>
