@@ -172,13 +172,13 @@ const RecipePage = () => {
               </div>
               <div className="recipeSteps">
                 <h3>Preparation</h3>
-                <h4>Step One</h4>
+                <h4>Step 1</h4>
                 <p>{currentRecipe.step_one}</p>
-                <h4>Step Two</h4>
+                <h4>Step 2</h4>
                 <p>{currentRecipe.step_two}</p>
-                <h4>Step Three</h4>
+                <h4>Step 3</h4>
                 <p>{currentRecipe.step_three}</p>
-                <h4>Step Four</h4>
+                <h4>Step 4</h4>
                 <p>{currentRecipe.step_four}</p>
               </div>
             </div>
