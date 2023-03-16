@@ -221,8 +221,36 @@ const RecipePage = () => {
                           <div className="reviewContentDiv">
                             <h5>
                               <i class="fa-solid fa-user"></i>
-                              {review.firstName}
+
+                              {review.firstName} {review.lastInitial}.
                             </h5>
+                            <p><div className="RatingStars">
+                      {review.rating >= 1 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {review.rating >= 2 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {review.rating >= 3 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {review.rating >= 4 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                      {review.rating >= 5 ? (
+                        <i className="fas fa-solid fa-star red"></i>
+                      ) : (
+                        <i className="fas fa-solid fa-star gray"></i>
+                      )}
+                    </div></p>
                             <div>{review.content}</div>
                             <img
                               id="reviewImg"
@@ -295,7 +323,7 @@ const RecipePage = () => {
                     })}
                 </div>
                 {!reviews.length && (
-                  <p> There are currently no cooking notes for this recipe. </p>
+                  <p> There aren't any notes yet. Be the first to leave one. </p>
                 )}
               </div>
             </div>
