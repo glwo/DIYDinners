@@ -44,4 +44,9 @@
 
 .provideAPhoto input {
     margin-top: 1.5vh;
+    padding-left: 0.5vw;
+}
+
+.reviewForm textarea {
+    padding-left: 0.5vw;
 }

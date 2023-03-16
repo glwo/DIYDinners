@@ -263,3 +263,7 @@ background-image: none;
 .avgUserRatingsDiv {
     margin-top: 0.3vh;
 }
+
+.reviewContentDiv i{
+    padding-right: 0.5vw;
+}
