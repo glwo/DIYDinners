@@ -323,7 +323,7 @@ const RecipePage = () => {
                     })}
                 </div>
                 {!reviews.length && (
-                  <p> There are currently no cooking notes for this recipe. </p>
+                  <p> There aren't any notes yet. Be the first to leave one. </p>
                 )}
               </div>
             </div>
