@@ -267,3 +267,7 @@ background-image: none;
 .reviewContentDiv i{
     padding-right: 0.5vw;
 }
+
+#recipe-details-inner {
+    margin-top: 3vh;
+}
