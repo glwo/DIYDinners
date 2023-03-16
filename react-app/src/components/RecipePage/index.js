@@ -219,7 +219,7 @@ const RecipePage = () => {
                       return (
                         <div key={review.id} className="indiv-review">
                           <div className="reviewContentDiv">
-                            <h5>
+                            <h5 className="firstNamelastInitheader">
                               <i class="fa-solid fa-user"></i>
 
                               {review.firstName} {review.lastInitial}.

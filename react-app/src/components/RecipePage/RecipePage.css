@@ -271,3 +271,11 @@ background-image: none;
 #recipe-details-inner {
     margin-top: 3vh;
 }
+
+.allNotesHeader {
+    margin-bottom: 0;
+}
+
+.firstNamelastInitheader {
+    margin-bottom: 0;
+}
