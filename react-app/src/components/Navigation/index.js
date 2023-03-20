@@ -17,12 +17,12 @@ function Navigation({ isLoaded }) {
         </div>
       </NavLink>
       <div className="addRecipeAndProfile">
-        <div className="addRecipeNav" >
-          <NavLink exact to="/recipe" hidden={
-                      (sessionUser && sessionUser !== null)
-                        ? false
-                        : true
-                    }>
+        <div className="addRecipeNav">
+          <NavLink
+            exact
+            to="/recipe"
+            hidden={sessionUser && sessionUser !== null ? false : true}
+          >
             Add Your Recipe
           </NavLink>
         </div>
