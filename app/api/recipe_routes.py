@@ -135,13 +135,15 @@ def search_all_recipes(keyword):
   """
   Query for all recipes by search and return them in a list of recipe dictionaries
   """
-  recipes = Recipe.query.filter(Recipe.name.ilike(f'%{keyword}%')).all()
-  return {"recipes": [recipe.to_dict() for recipe in recipes]}
+  recipes = Recipe.query.filter(Recipe.recipe_name.ilike(f'%{keyword}%')).all()
+  return {recipe.id: recipe.to_dict() for recipe in recipes}
+  # return {"recipes": [recipe.to_dict() for recipe in recipes]}
 
 @recipe_routes.route('/search/<keyword>')
 def search_recipes(keyword):
   """
   Query for recipes by search and return them in a list of recipe dictionaries
   """
-  recipes = Recipe.query.filter(Recipe.name.ilike(f'%{keyword}%')).limit(10)
-  return {"recipes": [recipe.to_dict() for recipe in recipes]}
+  recipes = Recipe.query.filter(Recipe.recipe_name.ilike(f'%{keyword}%')).limit(5)
+  return {recipe.id: recipe.to_dict() for recipe in recipes}
+  # return {"recipes": [recipe.to_dict() for recipe in recipes]}

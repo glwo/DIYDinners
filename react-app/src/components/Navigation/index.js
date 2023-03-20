@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
+import SearchBar from "./SearchBar";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -16,6 +17,7 @@ function Navigation({ isLoaded }) {
           <h1>DIYDinners</h1>
         </div>
       </NavLink>
+      <SearchBar />
       <div className="addRecipeAndProfile">
         <div className="addRecipeNav">
           <NavLink

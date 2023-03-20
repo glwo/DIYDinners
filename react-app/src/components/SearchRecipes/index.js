@@ -15,22 +15,26 @@ const SearchRecipes = () => {
         if (res.ok) return res.json();
         throw new Error();
       })
+    //   .then(res => setRecipes(res))
       .then((res) => {
-        setRecipes(Object.values(res));
+        setRecipes(res);
       })
       .catch(() => history.push("/recipes"))
       .finally(() => setIsLoaded(true));
   }, [keyword]);
-//   if (!allRecipes) {
-//     return null;
-//   }
+  if (!recipes) {
+    setRecipes(null);
+  }
+
+console.log(Object.values(recipes))
 
   return (
     <>
-      {!!recipes.length ? (
+    <div className="">Search results with "{keyword}"</div>
+      {Object.keys(recipes).length !== 0 ? (
         <div className="homePageBox">
           <div className="recipeHomePageBox">
-            {recipes.map((recipe) => (
+            {Object.values(recipes).map((recipe) => (
               <RecipeCard recipe={recipe} key={recipe.id} />
             ))}
           </div>
