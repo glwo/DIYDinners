@@ -307,6 +307,268 @@ Pinch cayenne pepper, optional
         first_name="Marnie",
         last_name="Higgins"
     )
+    demo12 = Recipe(
+        recipe_name= 'Carrot Maqluba',
+        recipe_type = 'classic',
+        description='Maqluba is a traditional Palestinian dish made of rice, meat and fried vegetables, most often eggplants (in summer) or cauliflower (in winter), although some like to combine both, and add carrots as well. There are probably as many variations of this dish as there are families. A very popular, easy version is the one made with only carrots. Although maqluba is usually perceived as a time-consuming dish — you typically make broth, fry all the vegetables, assemble in layers and so on — this version uses a boneless, tender cut of meat, ready-made broth and a single pot. The whole dish is quick, and easy enough that you can make it on any weeknight in under an hour.',
+        ingredients="""1
+pound jasmine or other long-grain rice (about 2¼ cups)
+2
+teaspoons kosher salt, plus more as needed
+1
+teaspoon black pepper
+1
+teaspoon ground cinnamon
+½
+teaspoon ground turmeric
+½
+teaspoon ground cumin
+4
+tablespoons olive oil or ghee (or a combination)
+1
+pound boneless rib-eye steak, cut into bite-size cubes
+1
+yellow onion, halved and sliced into ½-inch strips
+14
+ounces carrots (about 4 medium-large), peeled and cut into 2½-by-½-inch matchsticks
+4
+cups good-quality store-bought or homemade chicken broth
+¼ to ½
+cup toasted or fried slivered almonds
+""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='Wash the rice until the water runs clear. Add rice to a bowl with water to cover and leave to soak for 15 minutes, then drain. To the drained rice, add 1 teaspoon each salt and pepper, plus all the spices. Mix to combine, then set aside.',
+        step_two='Add the carrots and cook, stirring regularly, until carrots are glossy and just starting to soften, about 3 to 5 minutes.',
+        step_three='Cook for 10 minutes, then reduce the heat to low, remove the plate but return the lid, and simmer until the rice is fully cooked with no remaining bite, about 5 to 10 minutes. Remove from the heat, cover the bottom of the lid with a tea towel or kitchen paper towels and cover again. Set aside to rest for 10 to 15 minutes.',
+        step_four='To serve, remove the lid and place a large, inverted serving platter over the pot of rice. Using both hands, flip the pot, and slowly lift to reveal a beautiful cake-shaped dish. Garnish with toasted almonds and serve.',
+        user_id=2,
+        first_name="Marnie",
+        last_name="Higgins"
+    )
+    demo13 = Recipe(
+        recipe_name= 'Vegetarian Reuben Sandwich',
+        recipe_type = 'vegetarian',
+        description='The Reuben sandwich — corned beef, sauerkraut, Swiss cheese and Russian dressing on rye bread — has inspired many meat-free versions. Tempeh, seitan, vegetables and mushrooms have stood in for the corned beef, but they’re not really needed, because outsize quantities of the other traditional elements make a punchy, gooey sandwich on their own. Both sides of the buttered rye get melted Swiss. The mountain of sauerkraut doesn’t warm long enough to lose its crunch.',
+        ingredients="""1
+tablespoon mayonnaise
+1
+tablespoon ketchup
+½
+teaspoon hot sauce, or to taste
+¼
+teaspoon ground coriander
+Salt and pepper
+2
+slices rye bread
+2
+slices Swiss cheese
+½
+tablespoon unsalted butter
+¼
+cup thinly sliced white onion or shallot
+½
+cup very well drained and squeezed sauerkraut
+1
+dill pickle, sliced, or 2 dill pickle sandwich slices
+""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='In a small bowl, stir together the mayonnaise, ketchup, hot sauce and coriander. Season with salt and pepper. Taste and adjust pepper and hot sauce until the dressing is just a bit too intense, as it will be tamed by the sandwich fillings.',
+        step_two='Spread the dressing on both slices of bread. Reserve the bowl and any remaining dressing. Top each bread slice with a slice of Swiss cheese. In a large skillet, melt the butter over medium-low. Add the bread, cheese side up. Swirl the bread slices around the skillet to mop up the butter.',
+        step_three='Cover the skillet and cook until the cheese is melted and the bread is golden, 4 to 5 minutes. Meanwhile, add the onion and a pinch of salt to the reserved bowl and stir to coat in the residual dressing.',
+        step_four='Top one slice of bread with the sauerkraut, pickles and onions. Flip the other slice on top of the fillings and press lightly to adhere. Cook for just a minute on each side until the sandwich has melded. Cut and eat warm.',
+        user_id=3,
+        first_name="Bobbie",
+        last_name="Coffee"
+    )
+    demo14 = Recipe(
+        recipe_name= 'Spaghetti and Meatballs',
+        recipe_type = 'classic',
+        description='Spaghetti and meatballs is such a comfort food classic. The meatballs are made from ground beef and Italian sausage and served with a sauce made with mushrooms, onions, basil, and Parmesan.',
+        ingredients="""1 pound ground beef (at least 16% fat)
+1/2 pound fresh bulk Italian-style pork sausage
+2 tablespoons finely chopped basil
+2 tablespoons finely chopped Italian parsley
+1/2 cup finely chopped cremini brown mushrooms
+2 large eggs
+3/4 cup unseasoned breadcrumbs
+1/4 cup grated Parmesan-Romano cheese blend
+2 teaspoons sea salt
+2 teaspoons fresh ground black pepper
+1 tablespoon extra virgin olive oil
+1 splash red wine
+1 1/2 pounds dry 100% semolina spaghetti, thin spaghetti, or bucatini
+Salt, for the pasta water
+""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='In a large bowl, use your hands to mix the beef, Italian sausage, basil, parsley, mushrooms, eggs, breadcrumbs, cheese, salt, and pepper. Do not over-mix or the meatballs will be tough.Use a small melon baller, cookie scoop, or heaping teaspoon to form 1-inch round meatballs. Roll and compress into tight balls, but do not overwork the mixture.',
+        step_two='In a separate wide, shallow pan, heat the olive oil on medium-high heat. Brown the meatballs on all sides, about 2 to 3 minutes. Depending on pan size you may need to brown 2 batches of the meatballs. Cook them in a single layer; do not crowd the pan by stacking them.',
+        step_three='While the sauce is simmering, bring a large pot with 4 quarts of salted water to a boil (1 tablespoon of salt for every 2 quarts of water). When the water returns to a boil add the pasta to the pot. Leave the pot uncovered while you cook the pasta on high heat with a vigorous boil. Put a timer on for 8 to 10 minutes, or according to package directions for al dente pasta (cooked but still a little firm). Drain.',
+        step_four='To serve, place a thin layer of sauce on each plate, add the pasta, add sauce and meatballs, and then sprinkle with grated Parmesan-Romano cheese.',
+        user_id=3,
+        first_name="Bobbie",
+        last_name="Coffee"
+    )
+    demo15 = Recipe(
+        recipe_name= 'Grilled Pork Tenderloin',
+        recipe_type = 'classic',
+        description='Grilled pork tenderloin topped with a tasty orange marmalade glaze.',
+        ingredients="""1/3 cup soy sauce (use gluten-free soy sauce for gluten-free version)
+1/3 cup orange marmalade
+1/3 cup honey
+1 tablepoon rice wine vinegar plus 1 teaspoon
+Pinch crushed red pepper flakes
+1 pound pork tenderloin
+2 scallions, thinly sliced (optional)
+Olive oil (for grill)""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='In a small saucepan, bring the soy sauce, marmalade, honey, rice wine vinegar, and red pepper flakes to a simmer over medium heat. Remove from the flame and let cool. Reserve half of the marinade for serving as a sauce with the finished tenderloin. With the remaining half of the marinade, marinate the tenderloin for 1 hour.',
+        step_two='Remove the tenderloin from the marinade and coat with olive oil. Place on the hot side of the grill, with the narrower end of the tenderloin more toward the cool side of the grill. As soon as the tenderloin gets grill marks on one side (a minute or two), turn it to get grill marks on another side. Continue until all sides are lightly seared.',
+        step_three='Move the tenderloin to the cool side of the grill. Cover and cook a few minutes more, until the internal temperature of the tenderloin reaches 140°F (no higher). Remove from heat.',
+        step_four='If you have let the temp get too high above 140°F, you may need to slice the pork immediately or the meat will continue to cook as it rests and become overcooked. If you have taken it out in time, tent the tenderloin with foil and let it rest 10 minutes.',
+        user_id=5,
+        first_name="Alex",
+        last_name="Gurley"
+    )
+    demo16 = Recipe(
+        recipe_name= 'Pancit Bihon',
+        recipe_type = 'classic',
+        description='Pancit bihon is a classic Filipino dish of stir-fried rice noodles, crunchy veggies, pork, and a savory sauce. This recipe is worthy of a celebration but easy enough for a family dinner.',
+        ingredients="""8 ounces dried pancit bihon noodles
+2 tablespoons vegetable oil
+2 cloves garlic, minced
+1 medium white or yellow onion, chopped
+1 large rib celery, chopped
+2 green onions, chopped, white and green parts divided
+1 tablespoon patis (fish sauce)
+1 medium carrot, peeled and julienned
+2 cups green beans, edges trimmed, sliced into 1-inch pieces
+3 cups shredded green cabbage
+1 1/2 cups broth, from cooking the pork
+2 tablespoons toyo (soy sauce)
+1 tablespoon calamansi juice (or lemon juice)
+1 pinch salt
+1/4 teaspoon ground black pepper""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='In a medium-sized stockpot, combine the pork with about 3 cups of water, or enough to cover the meat. Sprinkle with salt and ground pepper. Bring to a simmer over medium heat, then cover and adjust the heat to maintain a simmer. Cook until tender, about 45 minutes. ',
+        step_two='Place the dry noodles in a large bowl. Pour some water into a small bowl, and use your fingers to sprinkle water over the noodles until they become damp. Continue sprinkling water until the noodles get soft and pliable but not mushy. Set aside.',
+        step_three='Place a wok or large skillet over medium heat. Add the oil. When the oil is hot, add the garlic, onion, celery, and the white parts of the green onion and stir fry until soft and fragrant, for about 2 minutes.',
+        step_four='Sprinkle salt and pepper all over, to taste. Garnish with the green parts of the green onions. Serve warm with a dipping sauce of patis mixed with calamansi juice.',
+        user_id=5,
+        first_name="Alex",
+        last_name="Gurley"
+    )
+    demo17 = Recipe(
+        recipe_name= 'Vegetarian Pad Thai',
+        recipe_type = 'vegetarian',
+        description='Salty, sweet, and tangy vegetarian pad thai is easy to cook at home. A delicious combination of chewy noodles, tofu, and veggies with lots of crunchy toppings makes a dinner everyone will love.',
+        ingredients="""1 (16-ounce) pack firm or extra-firm tofu, cubed
+3 to 4 tablespoons vegetable or canola oil
+2 large eggs
+4 cloves garlic, minced
+1 large shallot, minced
+1 medium carrot, shredded (about 1 cup)
+1/4 head cabbage, shredded
+1 cup mung bean sprouts
+3 green onions, trimmed and julienned into 2-inch long pieces
+1/4 cup peanuts, roughly chopped
+Salt, if needed, to taste
+1 bunch fresh cilantro, leaves roughly chopped
+2 limes, quartered
+1/4 cup peanuts, roughly chopped
+1 green onion, sliced
+Red chili flakes, to taste""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='Add all of the sauce ingredients to a medium bowl or large measuring pitcher and whisk to combine and dissolve the sugar. Taste, adding more sugar or salt if needed. It should be salty, tangy, and lightly sweet. Set aside until you are ready to stir-fry your noodles.',
+        step_two='Place a few layers of paper towels onto a sturdy plate and place the cubed tofu on top in a single layer. Add another few layers of paper towels on top, then place a sturdy plate on top. Give it a light press until some liquid is released from the tofu.',
+        step_three='Heat up a large wok, a 14 to 16-inch, deep non-stick frying pan, or a large electric skillet to medium-high and add 2 tablespoons of oil. Once hot, add the prepared tofu. Let one side sear for about 1 minute or until it is golden. Use tongs or a spatula to flip your tofu pieces so 2 sides are golden.',
+        step_four='Add the drained rice noodles and toss with the vegetables. Give the sauce a stir and pour it into the frying pan. Serve the pad thai hot with fresh cilantro, lime wedges, chopped peanuts, green onions, and red pepper flakes for topping.',
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
+    )
+    demo18 = Recipe(
+        recipe_name= 'Shrimp and Chorizo Chowder',
+        recipe_type = 'classic',
+        description='Savory Spanish chorizo and plump shrimp meet smoked paprika for an easy chowder recipe with a broth so good, you’ll be licking the bowl.',
+        ingredients="""4 ounces Spanish dry-cured chorizo
+1 tablespoon olive oil
+1/2 yellow onion, diced
+1 carrot, peeled and diced
+2 cloves garlic, minced
+1 russet potato, peeled and diced
+2 teaspoons Spanish smoked paprika (regular paprika will work also)
+1/2 teaspoon kosher salt
+1/4 teaspoon black pepper
+1 (15-ounce) can diced tomatoes
+4 cups chicken stock
+1 cup half and half
+1 cup frozen corn (no need to defrost)
+1 pound large shrimp, peeled and deveined
+Fresh parsley, for garnish
+Baguette toasts, for dipping""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='In a large pot over medium heat, add olive oil and cubed chorizo. Cook for a few minutes until the chorizo is browning slightly and starting to render some fat. Remove the chorizo from the pot with a slotted spoon so it doesn’t burn.',
+        step_two='Add onions, carrot, and garlic to the pot. Cook, stirring occasionally, until the vegetables soften slightly, 3-4 minutes. Then add potato, paprika, salt, and pepper. Stir to combine. Add the diced tomatoes and chicken stock and bring soup to a slight simmer. Return chorizo to the pot. Simmer for 15-20 minutes until potatoes are tender.',
+        step_three='When potatoes are tender, turn heat very low so the soup is on the lowest of simmers. Stir in the frozen corn and half and half. At the very end add the peeled shrimp and poach for 2-3 minutes until they are opaque and pink and just cooked through.',
+        step_four='Serve the chowder in big bowls with a side of toasted baguette and garnished with parsley. If you have leftover chowder, it will keep well in the fridge for a few days. Reheat gently on low heat on the stove.',
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
+    )
+    demo19 = Recipe(
+        recipe_name= 'Dirt Cake',
+        recipe_type = 'dessert',
+        description='Make a kid’s or kid-like adult’s dream come true with these fun dirt cakes. They are a breeze to make!',
+        ingredients="""15 Oreo sandwich cookies
+4 ounces cream cheese, at room temperature
+4 tablespoons unsalted butter, at room temperature
+1/2 cup powdered sugar
+1 teaspoon vanilla extract
+1 1/2 cups whole milk
+1 (3.9-ounce) package instant chocolate pudding mix
+1 (8-ounce) container Cool Whip, thawed
+18 gummy worms""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='Add the cream cheese, butter, powdered sugar, and vanilla extract in a large bowl and use a handheld mixer to beat on medium-high speed until light and fluffy, 3 to 4 minutes. Set aside.',
+        step_two='In a medium bowl, whisk the milk and pudding mix until combined and thickened. Use a rubber spatula to gently fold in the Cool Whip.',
+        step_three='Scrape the pudding mixture into the cream cheese mixture, and mix until smooth and fully combined.',
+        step_four='Add 2 tablespoons Oreo crumbs into the bottom of each cup. Top with about 1/4 cup pudding. Repeat until filled, ending with crumbs on top. Garnish with gummy worms.',
+        user_id=1,
+        first_name="Demo",
+        last_name="Lition"
+    )
+    demo20 = Recipe(
+        recipe_name= 'Super Lemony Lemon Bars',
+        recipe_type = 'dessert',
+        description='Writer Ariane Resnick found it hard to make friends with other queer women until she met someone on Myspace and started talking about lemons.',
+        ingredients="""2 Lisbon lemons, knobby ends trimmed off
+2 cups sugar
+4 large eggs
+1/4 teaspoon salt
+1 3/4 cups (188g) all-purpose flour
+3/4 cup unsalted butter, chilled and cut into cubes
+1/3 cup (35g) powdered sugar, plus more for sprinkling on top
+1/2 teaspoon salt
+1 large egg yolk""",
+        avg_rating=0,
+        num_reviews=0,
+        step_one='Preheat the oven to 350°F. Line the bottom of a 7x11-inch baking dish (glass or ceramic) with parchment. Then, spray it generously with cooking spray. You could use a 9x9-inch baking dish.',
+        step_two='In a food processor, pulse the flour, butter, powdered sugar, and 1/2 teaspoon salt until pebbly in texture, about 30 seconds. Add the egg yolk and pulse for 10 to 15 seconds. The mixture should be crumbly and hold together when pressed between your fingers.',
+        step_three='Bake the lemon bars: Bake it until set around the edges but still slightly jiggly in the center, about 25 minutes. Allow them to fully cool on your kitchen counter.',
+        step_four='Serve: Sprinkle the top with powdered sugar. Cut into squares and serve. These are gooey lemon bars, so you will not get clean cuts.',
+        user_id=5,
+        first_name="Alex",
+        last_name="Gurley"
+    )
+
 
 
     db.session.add(demo)
@@ -320,6 +582,15 @@ Pinch cayenne pepper, optional
     db.session.add(demo9)
     db.session.add(demo10)
     db.session.add(demo11)
+    db.session.add(demo12)
+    db.session.add(demo13)
+    db.session.add(demo14)
+    db.session.add(demo15)
+    db.session.add(demo16)
+    db.session.add(demo17)
+    db.session.add(demo18)
+    db.session.add(demo19)
+    db.session.add(demo20)
 
     db.session.commit()
 

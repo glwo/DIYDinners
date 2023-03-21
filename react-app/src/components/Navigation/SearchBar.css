@@ -34,10 +34,10 @@
 
 .searchResult {
     position: absolute;
-    /* width: 40vw; */
+    width: 40vw;
     background-color: white;
     top: 55px;
-    width: calc(40vw- 80px);
+    /* width: calc(40vw- 80px); */
     /* left: 20px; */
     /* right: 100px; */
     list-style: none;
@@ -49,6 +49,7 @@
 }
 .searchResult li {
     /* width: 40vw; */
+    margin-right: 0px;
 }
 
 .searchResultContainer {
@@ -57,12 +58,14 @@
 }
 
 .recipesFound {
-    width: calc(40vw - 80px);
+    /* width: calc(40vw - 2.55vw); */
+    width: 40vw;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
     padding: 4px 1rem;
+    margin-right: 0px;
 }
 
 .noRecipeFound {
@@ -74,8 +77,10 @@
 }
 
 .recipesFound:hover {
-    background-color: #9b9b9b;
-    color: white;
+    /* background-color: #9b9b9b;
+    color: white; */
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .cancelButton {

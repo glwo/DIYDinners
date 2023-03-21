@@ -83,6 +83,52 @@ def seed_recipeImages():
     preview=True,
     recipe_id=11
   )
+    carrot_image1 = RecipeImage(
+    image_url="https://static01.nyt.com/images/2021/04/07/dining/05Nafasrex2/merlin_185308044_d86614f1-5f30-4124-9d83-85da702bbed9-superJumbo.jpg",
+    preview=True,
+    recipe_id=12
+  )
+    reuben_image1 = RecipeImage(
+    image_url="https://static01.nyt.com/images/2023/03/14/multimedia/as-vegetarian-reuben-pwzv/as-vegetarian-reuben-pwzv-superJumbo.jpg",
+    preview=True,
+    recipe_id=13
+  )
+    spag_image1 = RecipeImage(
+    image_url="https://www.simplyrecipes.com/thmb/PvWQycvTKbrMtlfKZis9tlCy4uw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Spaghetti-And-Meatballs-METHOD-6-7e3400378ab94a0fb9fc21039f4a4add.jpg",
+    preview=True,
+    recipe_id=14
+  )
+    pork_image1 = RecipeImage(
+    image_url="https://www.simplyrecipes.com/thmb/ls8WBSbOai4VPhHBWKDRJ2GCf70=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2007__05__grilled-pork-tenderloin-orange-marmalade-vertical-a-1600-784c460b393f4b638c168f6581971ba0.jpg",
+    preview=True,
+    recipe_id=15
+  )
+    bihon_image1 = RecipeImage(
+    image_url="https://www.simplyrecipes.com/thmb/zZhvuethnoJtA1PQHVUMZHKP8ck=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Pancit-Bihon-Bowls-METHOD-12-49f23801ac364e44acf8ad8bcbab3ca6.jpg",
+    preview=True,
+    recipe_id=16
+  )
+    pad_image1 = RecipeImage(
+    image_url="https://www.simplyrecipes.com/thmb/2cohLcyORnWvNCCERGjZKWsixA0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Vegetarian-Pad-Thai-METHOD-5b-10ede0dfe7104461bdb1591c4123c073.jpg",
+    preview=True,
+    recipe_id=17
+  )
+    chorizo_image1 = RecipeImage(
+    image_url="https://www.simplyrecipes.com/thmb/WREWFcQKVqMcTE8lDbbrgEBH0Yo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Shrimp-Chorizo-Chowder-LEAD-03-9e71f26b6a7143b293162ba5deda721a.jpg",
+    preview=True,
+    recipe_id=18
+  )
+    dirt_image1 = RecipeImage(
+    image_url="https://www.simplyrecipes.com/thmb/a4N4AMcOlwGTrv73-7n-kj-LeHA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Dirt-Cake-Lead-01-be85a66fe317433bbcbb92174a792142.jpg",
+    preview=True,
+    recipe_id=19
+  )
+    lemonbar_image1 = RecipeImage(
+    image_url="https://www.simplyrecipes.com/thmb/aTkDukbaTKmKKsMpe8q50cX7yqA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Lemon-Bars-LEAD-09-531f9985a5d04e8aa94822a7b4bdd045.jpg",
+    preview=True,
+    recipe_id=20
+  )
+
 
     db.session.add(Masala_image1)
     db.session.add(Masala_image2)
@@ -100,7 +146,15 @@ def seed_recipeImages():
     db.session.add(sloppyJoes_image1)
     db.session.add(bananaBread_image1)
     db.session.add(smores_image1)
-
+    db.session.add(carrot_image1)
+    db.session.add(reuben_image1)
+    db.session.add(spag_image1)
+    db.session.add(pork_image1)
+    db.session.add(bihon_image1)
+    db.session.add(pad_image1)
+    db.session.add(chorizo_image1)
+    db.session.add(dirt_image1)
+    db.session.add(lemonbar_image1)
     db.session.commit()
 
 
