@@ -9,6 +9,7 @@ import SplashPage from "./components/SplashPage";
 import RecipePage from "./components/RecipePage";
 import CreateRecipe from "./components/CreateRecipe";
 import HomePage from "./components/HomePage";
+import SearchRecipes from "./components/SearchRecipes";
 import { NavLink } from "react-router-dom";
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route exact path="/recipe/search/:keyword">
+            <SearchRecipes />
           </Route>
           <Route exact path="/recipe/:recipeId">
             <RecipePage />

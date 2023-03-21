@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
+import SearchBar from "./SearchBar";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -16,27 +17,30 @@ function Navigation({ isLoaded }) {
           <h1>DIYDinners</h1>
         </div>
       </NavLink>
-      <div className="addRecipeAndProfile">
-        <div className="addRecipeNav" >
-          <NavLink exact to="/recipe" hidden={
-                      (sessionUser && sessionUser !== null)
-                        ? false
-                        : true
-                    }>
-            Add Your Recipe
-          </NavLink>
+        <div className="searchBarNav">
+          <SearchBar />
         </div>
-        {/* <div>
+        <div className="addRecipeAndProfile">
+          <div className="addRecipeNav">
+            <NavLink
+              exact
+              to="/recipe"
+              hidden={sessionUser && sessionUser !== null ? false : true}
+            >
+              Add Your Recipe
+            </NavLink>
+          </div>
+          {/* <div>
 			<NavLink exact to="/recipeBox">
           			Your Recipe Box
         		</NavLink>
 			</div> */}
-        {isLoaded && (
-          <li className="navButtonProfile">
-            <ProfileButton user={sessionUser} />
-          </li>
-        )}
-      </div>
+          {isLoaded && (
+            <li className="navButtonProfile">
+              <ProfileButton user={sessionUser} />
+            </li>
+          )}
+        </div>
     </div>
   );
 }
