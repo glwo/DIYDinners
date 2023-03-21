@@ -57,7 +57,7 @@ const SearchBar = () => {
         />
         {!!keyword.length && (
           <div
-            className=""
+            className="cancelButton"
             onClick={() => {
               setKeyword("");
             }}
