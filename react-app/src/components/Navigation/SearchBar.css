@@ -52,7 +52,7 @@
 }
 
 .recipesFound {
-    width: 38.5vw;
+    width: calc(40vw - 80px);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -61,7 +61,7 @@
 }
 
 .noRecipeFound {
-    width: 40vw;
+    width: calc(40vw - 80px);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
