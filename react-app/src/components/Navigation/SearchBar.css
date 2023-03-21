@@ -48,11 +48,11 @@
     border-radius: 8px;
 }
 .searchResult li {
-    width: 40vw;
+    /* width: 40vw; */
 }
 
 .recipesFound {
-    width: 40vw;
+    width: 38.5vw;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
