@@ -51,6 +51,11 @@
     /* width: 40vw; */
 }
 
+.searchResultContainer {
+    /* position: relative;
+    width: 100%; */
+}
+
 .recipesFound {
     width: calc(40vw - 80px);
     text-overflow: ellipsis;
