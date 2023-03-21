@@ -16,7 +16,7 @@
 .searchBarContainer input {
     padding: 9px 30px 9px 10px;
     border: none;
-    width: 100%;
+    width: 40vw;
     font-size: 16px;
     outline: none;
     background-color: transparent;
@@ -34,9 +34,10 @@
 
 .searchResult {
     position: absolute;
-    width: 40vw;
+    /* width: 40vw; */
     background-color: white;
     top: 55px;
+    width: calc(40vw- 80px);
     /* left: 20px; */
     /* right: 100px; */
     list-style: none;
@@ -46,9 +47,12 @@
     z-index: 99;
     border-radius: 8px;
 }
+.searchResult li {
+    width: 40vw;
+}
 
 .recipesFound {
-    width: 100%;
+    width: 40vw;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -57,7 +61,7 @@
 }
 
 .noRecipeFound {
-    width: 100%;
+    width: 40vw;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -65,7 +69,8 @@
 }
 
 .recipesFound:hover {
-    text-decoration: underline;
+    background-color: #9b9b9b;
+    color: white;
 }
 
 .cancelButton {
