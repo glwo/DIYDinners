@@ -34,18 +34,17 @@ const SearchBar = () => {
     setResult([]);
   }
   return (
-    <div className="">
+    <div className="searchResultContainer">
       <form
         ref={searchBarContainer}
-        style={{ backgroundColor: "rgb(226, 226, 226, 0.3)" }}
-        className=""
+        className="searchBarContainer"
         method="GET"
         action=""
         onSubmit={handleSubmit}
       >
-        <button ref={submitBtn} type="submit" className="">
+        <div className="srcImg">
           <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+        </div>
         <input
           className=""
           type="text"
@@ -69,7 +68,7 @@ const SearchBar = () => {
       </form>
       {(showResult || isOnResult) && (
         <ul
-          className=""
+          className="searchResult"
           onMouseOver={() => setIsOnResult(true)}
           onMouseLeave={() => setIsOnResult(false)}
         >
@@ -77,7 +76,7 @@ const SearchBar = () => {
           {Object.keys(result).length ? (
             Object.values(result).map((recipe) => (
               <li
-                className=""
+                className="recipesFound"
                 onClick={() => {
                   history.push(`/recipe/${recipe.id}`);
                   setIsOnResult(false);
@@ -88,7 +87,7 @@ const SearchBar = () => {
               </li>
             ))
           ) : (
-            <li className="">No recipe found</li>
+            <li className="noRecipeFound">No recipe found</li>
           )}
         </ul>
       )}

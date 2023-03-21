@@ -29,6 +29,7 @@
   top: 0;
   background-color: white;
   border-bottom: 1px solid #ccc;
+  /* justify-content: flex-start; */
   /* height: 8vw; */
 }
 
@@ -117,4 +118,18 @@
 .addRecipeAndProfile {
   display: flex;
   justify-content: row;
+  margin-right: 1vw;
 }
+
+.searchBarNav {
+  display: flex;
+  align-items: center;
+  /* margin-left: 1vw; */
+  /* justify-content: flex-start; */
+}
+
+/* .searchAndProfileNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
