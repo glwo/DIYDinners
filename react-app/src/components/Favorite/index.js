@@ -8,11 +8,6 @@ const Favorite = ({ recipeId }) => {
   const dispatch = useDispatch();
 //   const [isMessageOn, setIsMessageOn] = useState(false);
 
-  // useEffect(() => {
-  //     const timeoutId = setTimeout(() => setHeartStyle(`${styles.heart} ${styles.appear}`), 0)
-
-  //     return () => clearTimeout(timeoutId)
-  // }, [])
 
   const handleFavorite = async () => {
     const res = user.likes[recipeId]
