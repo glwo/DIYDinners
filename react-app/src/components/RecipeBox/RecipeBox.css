@@ -1,0 +1,44 @@
+.likedRecipesBox {
+    padding: 45px 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 80vw;
+    background-color: #f2f3ef;
+    /* height: 50vh; */
+}
+
+.recipeBoxMainDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f3ef;
+}
+
+.savedRecipes {
+    padding-left: 200px;
+}
+
+.savedRecipes p {
+    color: #666666;
+}
+
+.noSavedRecipes{
+    height: 60.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.noSavedRecipes a {
+    text-decoration: none;
+    color: #e33d26;
+    padding-top: 10px;
+}
+
+.noSavedRecipes a:hover {
+    text-decoration: underline;
+}

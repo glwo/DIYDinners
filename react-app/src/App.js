@@ -10,6 +10,7 @@ import RecipePage from "./components/RecipePage";
 import CreateRecipe from "./components/CreateRecipe";
 import HomePage from "./components/HomePage";
 import SearchRecipes from "./components/SearchRecipes";
+import RecipeBox from "./components/RecipeBox/RecipeBox";
 import { NavLink } from "react-router-dom";
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route exact path="/recipes">
             <SplashPage />
+          </Route>
+          <Route exact path="/recipebox">
+            <RecipeBox />
           </Route>
           <Route>
             <div className="errorpageDiv">

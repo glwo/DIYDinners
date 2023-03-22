@@ -30,6 +30,15 @@ function Navigation({ isLoaded }) {
               Add Your Recipe
             </NavLink>
           </div>
+          <div className="recipeBoxNav">
+          <NavLink
+              exact
+              to="/recipebox"
+              hidden={sessionUser && sessionUser !== null ? false : true}
+            >
+              Your Recipe Box
+            </NavLink>
+          </div>
           {/* <div>
 			<NavLink exact to="/recipeBox">
           			Your Recipe Box

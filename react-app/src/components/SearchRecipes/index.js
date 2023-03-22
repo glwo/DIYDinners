@@ -26,7 +26,7 @@ const SearchRecipes = () => {
     setRecipes(null);
   }
 
-  console.log(Object.values(recipes));
+  // console.log(Object.values(recipes));
 
   return (
     <>

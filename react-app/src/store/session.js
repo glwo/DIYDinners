@@ -115,6 +115,7 @@ export const signUp =
 export const likeRecipe = (recipeId) => async (dispatch) => {
   const res = await fetch(`/api/likes/${recipeId}`, { method: "POST" });
 
+  // const res = await fetch(`/api/recipe/${recipeId}`, { method: "GET" });
   if (res.ok) {
     dispatch(addRecipeToLikes(recipeId));
     return true;
