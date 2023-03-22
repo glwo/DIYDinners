@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Favorite from "../Favorite";
 import "./RecipeCard.css";
 
 const RecipeCard = ({ recipe }) => {
+  const sessionUser = useSelector((state) => state.session.user);
   const [showFavorite, setShowFavorite] = useState(true);
   if (!recipe) {
     return null;
@@ -39,7 +40,12 @@ const RecipeCard = ({ recipe }) => {
         </p>
       </Link>
       <div className="favIconContainer">
-      <div className="favoriteIcon">{showFavorite && <Favorite recipeId={recipe.id} />}</div>
+        <div
+          className="favoriteIcon"
+          hidden={sessionUser && sessionUser !== null ? false : true}
+        >
+          {showFavorite && <Favorite recipeId={recipe.id} />}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 .recipeCard-main-div {
     width: 300px;
+    /* width: 30vw; */
     height: 385px;
+    /* height: 100%; */
     padding: 0px;
     display: flex;
     flex-direction: column;
