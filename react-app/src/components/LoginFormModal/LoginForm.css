@@ -33,6 +33,7 @@
 
 .logInModal input {
     width: 96%;
+    padding-left: 0.5vw;
 }
 
 .logInModal ul {
