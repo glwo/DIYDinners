@@ -1,6 +1,6 @@
 .recipeCard-main-div {
     width: 300px;
-    height: 360px;
+    height: 385px;
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
 }
 
 .recipeCard-main-div:hover {
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px 2px rgb(78, 77, 77);
 }
 
 .image-div {
@@ -45,6 +45,11 @@
     padding-right: 1vw;
 }
 
+.recipeCard-main-div a{
+    text-decoration: none;
+    color: black;
+}
+
 .recipeInfoDiv p {
     font-size: 1.4vh;
 }
@@ -52,3 +57,26 @@
 .recipeName {
     margin-top: 0px;
 }
+
+.favIconContainer {
+    display: flex;
+    justify-content: right;
+}
+
+.favoriteIcon {
+    /* text-align: right; */
+    height: fit-content;
+    width: fit-content;
+    color: #b3b3b3;
+    padding-right: 0.5vw;
+    /* padding-bottom: 1vw; */
+    /* margin-right: 0px; */
+}
+
+.favoriteIcon  i {
+    font-size: 24px;
+}
+
+/* .favoriteIcon:hover {
+    background-color: grey;
+} */
