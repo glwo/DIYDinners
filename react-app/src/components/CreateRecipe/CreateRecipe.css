@@ -28,7 +28,8 @@
 }
 
 .createRecipeForm input {
-    width: 98%;
+    width: 96%;
+    padding-left: 0.5vw;
 }
 
 .createRecipeForm button {
