@@ -46,4 +46,5 @@ class User(db.Model, UserMixin):
             'bio': self.bio,
             'last_initial': (self.last_name[0]).upper(),
             # 'recipe_box': []
+            'likes': {like.recipe_id: True for like in self.likes}
         }

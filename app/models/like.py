@@ -16,4 +16,4 @@ class Like(db.Model):
     updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
     user = db.relationship('User', back_populates='likes')
-    recipes = db.relationship('Recipe', back_populates='likes')
+    recipe = db.relationship('Recipe', back_populates='likes')

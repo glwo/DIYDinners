@@ -1,26 +1,48 @@
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import './RecipeCard.css'
+import Favorite from "../Favorite";
+import "./RecipeCard.css";
 
 const RecipeCard = ({ recipe }) => {
+  const [showFavorite, setShowFavorite] = useState(true);
   if (!recipe) {
-    return null
+    return null;
   }
 
   return (
-    <Link className="recipeCard-main-div" to={`/recipe/${recipe.id}`}>
-      <div className="image-div">
-        <img className="recipe-preview-image"
-        src={recipe.recipe_images[0] !== undefined ? recipe.recipe_images[0].image_url : null}
-         alt="No Recipe Image found"
-         onError={e => { e.currentTarget.src = "https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png"; }}/>
-      </div>
-      <div className="recipeInfoDiv">
+    <div
+      className="recipeCard-main-div"
+      to={`/recipe/${recipe.id}`}
+      // onMouseOver={() => setShowFavorite(true)}
+      // onMouseLeave={() => setShowFavorite(false)}
+    >
+      <Link className="image-div" to={`/recipe/${recipe.id}`}>
+        <img
+          className="recipe-preview-image"
+          src={
+            recipe.recipe_images[0] !== undefined
+              ? recipe.recipe_images[0].image_url
+              : null
+          }
+          alt="No Recipe Image found"
+          onError={(e) => {
+            e.currentTarget.src =
+              "https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png";
+          }}
+        />
+      </Link>
+      <Link className="recipeInfoDiv" to={`/recipe/${recipe.id}`}>
         <h4 className="recipeName">{recipe.recipe_name}</h4>
-        <p>{recipe.first_name} {recipe.last_name}</p>
+        <p>
+          {recipe.first_name} {recipe.last_name}
+        </p>
+      </Link>
+      <div className="favIconContainer">
+      <div className="favoriteIcon">{showFavorite && <Favorite recipeId={recipe.id} />}</div>
       </div>
-    </Link>
-  )
+    </div>
+  );
 };
 
 export default RecipeCard;

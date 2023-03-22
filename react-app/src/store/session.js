@@ -142,11 +142,11 @@ export default function reducer(state = initialState, action) {
       return { user: null };
 	case ADD_RECIPE_TO_LIKES:
       const addLike = {...state.user.likes}
-      addLike[action.itemId] = true
+      addLike[action.recipeId] = true
       return { user: { ...state.user, likes: {...addLike}}}
     case REMOVE_RECIPE_FROM_LIKES:
       const removeLike = {...state.user.likes}
-      delete removeLike[action.itemId]
+      delete removeLike[action.recipeId]
       return { user: { ...state.user, likes: {...removeLike}}}
     default:
       return state;
