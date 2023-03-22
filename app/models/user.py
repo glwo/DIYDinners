@@ -22,6 +22,7 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
     reviews = db.relationship("Review", back_populates="user")
+    likes = db.relationship('Like', back_populates='user', cascade='all, delete-orphan')
 
     @property
     def password(self):
@@ -44,4 +45,5 @@ class User(db.Model, UserMixin):
             'img_url': self.img_url,
             'bio': self.bio,
             'last_initial': (self.last_name[0]).upper(),
+            # 'recipe_box': []
         }

@@ -26,6 +26,7 @@ class Recipe(db.Model):
   last_name = db.Column(db.String, db.ForeignKey(add_prefix_for_prod("users.last_name")))
   recipe_images = db.relationship("RecipeImage", back_populates="recipe")
   reviews = db.relationship("Review", back_populates="recipe", cascade="all, delete-orphan")
+  likes = db.relationship('Like', back_populates='recipe', cascade='all, delete-orphan')
 
   def to_dict(self):
     if len([review.rating for review in self.reviews]) == 0:
