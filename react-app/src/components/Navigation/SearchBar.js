@@ -72,7 +72,7 @@ const SearchBar = () => {
           onMouseOver={() => setIsOnResult(true)}
           onMouseLeave={() => setIsOnResult(false)}
         >
-          <div>{console.log(Object.values(result))}</div>
+          
           {Object.keys(result).length ? (
             Object.values(result).map((recipe) => (
               <li

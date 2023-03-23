@@ -13,6 +13,7 @@
     font-weight: 500;
     border: 1px solid #ccc;;
     background-color: white;
+    /* align-items: center; */
 
 }
 
@@ -45,6 +46,7 @@
 .recipeInfoDiv {
     padding-left: 1vw;
     padding-right: 1vw;
+    height: 8vh;
 }
 
 .recipeCard-main-div a{
@@ -71,6 +73,7 @@
     width: fit-content;
     color: #b3b3b3;
     padding-right: 0.5vw;
+    /* position: relative; */
 
     /* padding-bottom: 1vw; */
     /* margin-right: 0px; */
@@ -79,6 +82,7 @@
 .favoriteIcon  i {
     font-size: 24px;
     cursor: pointer;
+    position: static;
 }
 
 /* .favoriteIcon:hover {
