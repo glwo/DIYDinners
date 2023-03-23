@@ -22,32 +22,6 @@ const RecipeBox = () => {
     likedRecipes.push(allRecipes.find((recipe) => recipe?.id == id));
   }
 
-  // console.log(likedRecipes)
-
-  // useEffect(() => {
-  //     const itemIds = Object.keys(likedItems)
-
-  //     if(itemIds.length){
-  //         const method = 'POST'
-  //         const headers = {'Content-type': 'application/json'}
-  //         const body = JSON.stringify({itemIds})
-  //         const options = {method, headers, body}
-
-  //         fetch('/api/items/get', options)
-  //             .then(res => {
-  //                 if(res.ok) return res.json()
-  //                 throw new Error()
-  //             })
-  //             .then(res => {
-  //                 setData(Object.values(res))
-  //             })
-  //             .catch(() => setIsError(true))
-  //             .finally(() => setIsLoaded(true))
-  //     }else {
-  //         setData([])
-  //         setIsLoaded(true)
-  //     }
-  // }, [likedItems])
 
   return (
     <>
