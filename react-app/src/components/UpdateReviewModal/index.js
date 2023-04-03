@@ -4,6 +4,7 @@ import OpenModalButton from "../OpenModalButton";
 import { useModal } from "../../context/Modal";
 import { reviewUpdate } from "../../store/review";
 import { thunkLoadAllRecipes } from "../../store/recipe";
+import StarsRating from "stars-rating";
 import "./UpdateReviewModal.css";
 
 function UpdateReviewModal({ reviewDetails }) {
@@ -96,12 +97,12 @@ function UpdateReviewModal({ reviewDetails }) {
             }}
             className="reviewText"
             type={"text"}
-            placeholder={"Note"}
+            placeholder={"Update your note..."}
             required
             value={review}
             onChange={updateReview}
           />
-          <div>
+          {/* <div>
             <label>Rating :</label>
           </div>
           <input
@@ -158,8 +159,22 @@ function UpdateReviewModal({ reviewDetails }) {
           />
           <label for="star5" title="text">
             5 stars
-          </label>
-          <div>
+          </label> */}
+          <div className="yourRating">
+            Your rating :
+            </div>
+            <StarsRating
+            className="updateReviewStars"
+              count={5}
+              onChange={setStars}
+              size={35}
+              half={false}
+              value={stars}
+              color2={"#222222"}
+              color1={"#80808f"}
+            />
+
+          <div className="noteImage">
             <label>Note image :</label>
           </div>
           <input

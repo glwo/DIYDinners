@@ -18,7 +18,7 @@
 }
 
 .updateReviewModal  div{
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .updateReviewModal textarea {
@@ -43,4 +43,25 @@
 
 .rate {
     padding: 0px;
+}
+
+.yourRating {
+    padding: 0px;
+    /* text-align: center; */
+}
+
+.reviewForm {
+    min-width: 18vw;
+}
+
+.updateReviewStars {
+    display: flex;
+}
+
+.noteImage {
+    padding-bottom: 10px;
+}
+
+.reviewForm input {
+    padding-left: 10px;
 }
