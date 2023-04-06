@@ -24,7 +24,7 @@ const SplashPage = () => {
 
   return (
     <>
-    {/* <RecipeOTD /> */}
+    <RecipeOTD />
     <div className="homePageBox">
     <div className="recipeHomePageBox">
       {allRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}
