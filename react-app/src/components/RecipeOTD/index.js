@@ -22,7 +22,7 @@ const RecipeOTD = () => {
   function selectRandomRecipe() {
     const randomIndex = Math.floor(Math.random() * allRecipes.length);
     const randomRecipe = allRecipes[randomIndex];
-    setSelectedRecipeId(randomRecipe.id);
+    setSelectedRecipeId(randomRecipe?.id);
   }
 
 
@@ -50,14 +50,14 @@ if(!recipe) {
 
   return (
     <div
-      className="recipeCard-main-div"
+      className="recipeOTD-main-div"
       to={`/recipe/${recipe.id}`}
       // onMouseOver={() => setShowFavorite(true)}
       // onMouseLeave={() => setShowFavorite(false)}
     >
-      <Link className="image-div" to={`/recipe/${recipe.id}`}>
+      <Link className="recipe-OTD-image-div" to={`/recipe/${recipe.id}`}>
         <img
-          className="recipe-preview-image"
+          className="recipeOTD-preview-image"
           src={
             recipe.recipe_images[0] !== undefined
               ? recipe.recipe_images[0].image_url
@@ -70,8 +70,8 @@ if(!recipe) {
           }}
         />
       </Link>
-      <Link className="recipeInfoDiv" to={`/recipe/${recipe.id}`}>
-        <h4 className="recipeName">{recipe.recipe_name}</h4>
+      <Link className="recipeOTDInfoDiv" to={`/recipe/${recipe.id}`}>
+        <h4 className="recipeOTDName">{recipe.recipe_name}</h4>
         <p>
           {recipe.first_name} {recipe.last_name}
         </p>

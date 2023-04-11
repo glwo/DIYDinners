@@ -1,0 +1,39 @@
+.recipeOTD-main-div {
+    position: relative;
+    height: 100vh;
+  }
+
+  .recipe-OTD-image-div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .recipeOTD-preview-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .recipeOTDInfoDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    color: black;
+    background-color: white;
+  }
+
+  .recipeOTDName {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .favIconContainer {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
