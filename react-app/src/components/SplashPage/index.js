@@ -4,6 +4,7 @@ import { thunkLoadAllRecipes } from "../../store/recipe";
 import { thunkLoadAllReviews } from "../../store/review";
 import { NavLink } from "react-router-dom";
 import RecipeCard from "../RecipeCard";
+import RecipeOTD from "../RecipeOTD";
 import "./SplashPage.css";
 
 
@@ -23,6 +24,7 @@ const SplashPage = () => {
 
   return (
     <>
+    <RecipeOTD />
     <div className="homePageBox">
     <div className="recipeHomePageBox">
       {allRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}

@@ -29,6 +29,7 @@
   top: 0;
   background-color: white;
   border-bottom: 1px solid #ccc;
+  z-index: 1000;
   /* justify-content: flex-start; */
   /* height: 8vw; */
 }
