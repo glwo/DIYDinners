@@ -70,13 +70,21 @@ if(!recipe) {
           }}
         />
       </Link>
+      <Link className="recipe-OTD-circle" to={`/recipe/${recipe.id}`}>
+        <div>
+          <p>
+            Recipe of the Day
+          </p>
+        </div>
+      </Link>
       <Link className="recipeOTDInfoDiv" to={`/recipe/${recipe.id}`}>
         <h4 className="recipeOTDName">{recipe.recipe_name}</h4>
+        {/* <p>{recipe.avg}</p> */}
         <p>
           {recipe.first_name} {recipe.last_name}
         </p>
       </Link>
-      <div className="favIconContainer">
+      <div className="favIconOTDContainer">
         <div
           className="favoriteIcon"
           hidden={sessionUser && sessionUser !== null ? false : true}
