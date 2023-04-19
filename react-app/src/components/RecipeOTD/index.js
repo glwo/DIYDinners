@@ -26,40 +26,57 @@ const RecipeOTD = () => {
   }
 
 
-  useEffect(() => {
-    selectRandomRecipe();
-  }, []);
+  // useEffect(() => {
+  //   selectRandomRecipe();
+  // }, []);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      selectRandomRecipe();
-    }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     selectRandomRecipe();
+  //   }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        selectRandomRecipe();
+      }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
 
     return () => {
       clearInterval(intervalId);
     };
   }, []);
 
-if (!allRecipesData) {
-    return null;
-  }
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     const randomIndex = Math.floor(Math.random() * allRecipes.length);
+  //     const randomRecipe = allRecipes[randomIndex];
+  //     setSelectedRecipeId(randomRecipe?.id);
+  //   }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
 
-if(!recipe) {
-    return null;
-}
+  //   return () => {
+  //     clearInterval(intervalId);
+  //   };
+  // }, [allRecipes]);
+
+// if (!allRecipesData) {
+//     return null;
+//   }
+
+// if(!recipe) {
+//     return null;
+// }
 
   return (
     <div
       className="recipeOTD-main-div"
-      to={`/recipe/${recipe.id}`}
+      to={`/recipe/${recipe?.id}`}
       // onMouseOver={() => setShowFavorite(true)}
       // onMouseLeave={() => setShowFavorite(false)}
     >
-      <Link className="recipe-OTD-image-div" to={`/recipe/${recipe.id}`}>
+      <Link className="recipe-OTD-image-div" to={`/recipe/${recipe?.id}`}>
         <img
           className="recipeOTD-preview-image"
           src={
-            recipe.recipe_images[0] !== undefined
+            recipe?.recipe_images[0] !== undefined
               ? recipe.recipe_images[0].image_url
               : null
           }
@@ -70,18 +87,18 @@ if(!recipe) {
           }}
         />
       </Link>
-      <Link className="recipe-OTD-circle" to={`/recipe/${recipe.id}`}>
+      <Link className="recipe-OTD-circle" to={`/recipe/${recipe?.id}`}>
         <div>
           <p>
             Recipe of the Day
           </p>
         </div>
       </Link>
-      <Link className="recipeOTDInfoDiv" to={`/recipe/${recipe.id}`}>
-        <h4 className="recipeOTDName">{recipe.recipe_name}</h4>
+      <Link className="recipeOTDInfoDiv" to={`/recipe/${recipe?.id}`}>
+        <h4 className="recipeOTDName">{recipe?.recipe_name}</h4>
         {/* <p>{recipe.avg}</p> */}
         <p>
-          {recipe.first_name} {recipe.last_name}
+          {recipe?.first_name} {recipe?.last_name}
         </p>
       </Link>
       <div className="favIconOTDContainer">
@@ -89,7 +106,7 @@ if(!recipe) {
           className="favoriteIcon"
           hidden={sessionUser && sessionUser !== null ? false : true}
         >
-          {showFavorite && <Favorite recipeId={recipe.id} />}
+          {showFavorite && <Favorite recipeId={recipe?.id} />}
         </div>
       </div>
     </div>
