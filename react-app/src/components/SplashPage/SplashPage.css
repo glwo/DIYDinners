@@ -9,6 +9,11 @@
     background-color: #f2f3ef;
 }
 
+.ClassicRecipeDiv {
+    display: flex;
+    flex-direction: column;
+}
+
 /* .recipeHomePageBox {
     padding: 45px 0;
     display: flex;

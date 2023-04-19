@@ -7,11 +7,10 @@ import RecipeCard from "../RecipeCard";
 import RecipeOTD from "../RecipeOTD";
 import "./SplashPage.css";
 
-
 const SplashPage = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-  const allRecipesData = useSelector(state => state.recipe.recipes)
+  const allRecipesData = useSelector((state) => state.recipe.recipes);
   const VegRecipes = Object.values(allRecipesData).filter(
     (recipe) => recipe.recipe_type == "vegetarian"
   );
@@ -21,29 +20,39 @@ const SplashPage = () => {
   let allRecipes;
   if (allRecipesData) allRecipes = Object.values(allRecipesData);
   useEffect(() => {
-    dispatch(thunkLoadAllRecipes())
-    dispatch(thunkLoadAllReviews())
-  }, [dispatch])
+    dispatch(thunkLoadAllRecipes());
+    dispatch(thunkLoadAllReviews());
+  }, [dispatch]);
   if (!allRecipes) {
-    return null
+    return null;
   }
 
   return (
     <>
-    <RecipeOTD />
-    <div className="homePageBox">
-    <div className="recipeHomePageBox">
-      {allRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}
-    </div>
-    <div className="recipeHomePageBox">
-      {ClassicRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}
-    </div>
-    <div className="recipeHomePageBox">
-      {VegRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}
-    </div>
-    </div>
+      <RecipeOTD />
+      <div className="homePageBox">
+        <div className="recipeHomePageBox">
+          {allRecipes.map((recipe) => (
+            <RecipeCard recipe={recipe} key={recipe.id} />
+          ))}
+        </div>
+        <div className="ClassicRecipeDiv">
+            <h2>Classic Recipes</h2>
+            <h4>Traditional dishes we think you'll love</h4>
+          </div>
+        <div className="recipeHomePageBox">
+          {ClassicRecipes.map((recipe) => (
+            <RecipeCard recipe={recipe} key={recipe.id} />
+          ))}
+        </div>
+        <div className="recipeHomePageBox">
+          {VegRecipes.map((recipe) => (
+            <RecipeCard recipe={recipe} key={recipe.id} />
+          ))}
+        </div>
+      </div>
     </>
-  )
+  );
 };
 
 export default SplashPage;
