@@ -11,59 +11,30 @@ const RecipeOTD = () => {
 
   const allRecipesData = useSelector(state => state.recipe.recipes)
 
-  let allRecipes;
-  if (allRecipesData) allRecipes = Object.values(allRecipesData);
-
   const recipe = Object.values(allRecipesData).find(
     (recipe) => recipe.id == selectedRecipeId
   );
 
+  let allRecipes;
+  if (allRecipesData) allRecipes = Object.values(allRecipesData);
+
+  useEffect(() => {
+    const recipeOTD = JSON.parse(localStorage.getItem('recipeOTD'));
+    if (recipeOTD && recipeOTD.expirationTime > new Date().getTime()) {
+      setSelectedRecipeId(recipeOTD.recipeId);
+    } else {
+      selectRandomRecipe();
+    }
+  }, []);
 
   function selectRandomRecipe() {
     const randomIndex = Math.floor(Math.random() * allRecipes.length);
     const randomRecipe = allRecipes[randomIndex];
     setSelectedRecipeId(randomRecipe?.id);
+
+    const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    localStorage.setItem('recipeOTD', JSON.stringify({ recipeId: randomRecipe?.id, expirationTime }));
   }
-
-
-  // useEffect(() => {
-  //   selectRandomRecipe();
-  // }, []);
-
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     selectRandomRecipe();
-  //   }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
-
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        selectRandomRecipe();
-      }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     const randomIndex = Math.floor(Math.random() * allRecipes.length);
-  //     const randomRecipe = allRecipes[randomIndex];
-  //     setSelectedRecipeId(randomRecipe?.id);
-  //   }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
-
-  //   return () => {
-  //     clearInterval(intervalId);
-  //   };
-  // }, [allRecipes]);
-
-// if (!allRecipesData) {
-//     return null;
-//   }
-
-// if(!recipe) {
-//     return null;
-// }
 
   return (
     <div
