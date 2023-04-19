@@ -12,6 +12,12 @@ const SplashPage = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const allRecipesData = useSelector(state => state.recipe.recipes)
+  const VegRecipes = Object.values(allRecipesData).filter(
+    (recipe) => recipe.recipe_type == "vegetarian"
+  );
+  const ClassicRecipes = Object.values(allRecipesData).filter(
+    (recipe) => recipe.recipe_type == "classic"
+  );
   let allRecipes;
   if (allRecipesData) allRecipes = Object.values(allRecipesData);
   useEffect(() => {
@@ -28,6 +34,12 @@ const SplashPage = () => {
     <div className="homePageBox">
     <div className="recipeHomePageBox">
       {allRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}
+    </div>
+    <div className="recipeHomePageBox">
+      {ClassicRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}
+    </div>
+    <div className="recipeHomePageBox">
+      {VegRecipes.map(recipe => <RecipeCard recipe={recipe} key={recipe.id} />)}
     </div>
     </div>
     </>
