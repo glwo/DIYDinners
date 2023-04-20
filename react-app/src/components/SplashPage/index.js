@@ -31,19 +31,23 @@ const SplashPage = () => {
     <>
       <RecipeOTD />
       <div className="homePageBox">
-        <div className="recipeHomePageBox">
+        {/* <div className="recipeHomePageBox">
           {allRecipes.map((recipe) => (
             <RecipeCard recipe={recipe} key={recipe.id} />
           ))}
-        </div>
+        </div> */}
         <div className="ClassicRecipeDiv">
-            <h2>Classic Recipes</h2>
-            <h4>Traditional dishes we think you'll love</h4>
-          </div>
+          <h2>Classic Recipes</h2>
+          <h4>Traditional dishes we think you'll love.</h4>
+        </div>
         <div className="recipeHomePageBox">
           {ClassicRecipes.map((recipe) => (
             <RecipeCard recipe={recipe} key={recipe.id} />
           ))}
+        </div>
+        <div className="ClassicRecipeDiv">
+          <h2>Vegetarian Recipes</h2>
+          <h4>Traditional dishes we think you'll love.</h4>
         </div>
         <div className="recipeHomePageBox">
           {VegRecipes.map((recipe) => (

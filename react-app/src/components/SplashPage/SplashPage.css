@@ -12,6 +12,16 @@
 .ClassicRecipeDiv {
     display: flex;
     flex-direction: column;
+    padding-left: 200px;
+    background-color: #f2f3ef;
+}
+
+.ClassicRecipeDiv h2{
+    border-top: 5px solid black;
+}
+
+.ClassicRecipeDiv h4{
+    color: grey;
 }
 
 /* .recipeHomePageBox {
