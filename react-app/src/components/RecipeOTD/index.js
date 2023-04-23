@@ -11,7 +11,7 @@ const RecipeOTD = () => {
 
   const allRecipesData = useSelector(state => state.recipe.recipes)
 
-  const recipe = Object.values(allRecipesData).find(
+  let recipe = Object.values(allRecipesData).find(
     (recipe) => recipe.id == selectedRecipeId
   );
 
@@ -36,6 +36,10 @@ const RecipeOTD = () => {
     localStorage.setItem('recipeOTD', JSON.stringify({ recipeId: randomRecipe?.id, expirationTime }));
   }
 
+  if (!recipe){
+    recipe = allRecipes[0]
+  }
+
   return (
     <div
       className="recipeOTD-main-div"
@@ -48,7 +52,7 @@ const RecipeOTD = () => {
           className="recipeOTD-preview-image"
           src={
             recipe?.recipe_images[0] !== undefined
-              ? recipe.recipe_images[0].image_url
+              ? recipe?.recipe_images[0].image_url
               : null
           }
           alt="No Recipe Image found"
