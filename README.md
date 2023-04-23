@@ -8,12 +8,12 @@ Deployed Live Link: https://diydinners.onrender.com/
 - There are 2 deployed features that currently have full CRUD (Create, Read, Update, Delete) in this project:
   - Recipes
   - Recipe Notes (Reviews)
+  - Recipe Box
+  - Search Bar
 
 ## Future Features
 - Features that are coming soon:
-  - Recipe Box
   - Profile Page
-  - Search Bar
   - Shopping list
 
 ## Technology
