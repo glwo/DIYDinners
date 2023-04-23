@@ -5,15 +5,15 @@ Welcome to DIYDinners! This is a clone of the New York Times Cooking website, wh
 Deployed Live Link: https://diydinners.onrender.com/
 
 ## Major Features
-- There are 2 deployed features that currently have full CRUD (Create, Read, Update, Delete) in this project:
-  - Recipes
-  - Recipe Notes (Reviews)
+- There are currently 4 deployed features 2 of which have full CRUD (Create, Read, Update, Delete) in this project:
+  - Recipes (Full CRUD)
+  - Recipe Notes/Reviews (Full CRUD)
+  - Recipe Box
+  - Search Bar
 
 ## Future Features
 - Features that are coming soon:
-  - Recipe Box
   - Profile Page
-  - Search Bar
   - Shopping list
 
 ## Technology
