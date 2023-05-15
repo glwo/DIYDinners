@@ -43,6 +43,7 @@ const RecipeOTD = () => {
   // }
 
   // could maybe store recipe OTD in the redux store
+  // could store recipe otd locally for each individual
 
 
   return (
