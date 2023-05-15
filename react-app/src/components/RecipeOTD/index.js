@@ -11,34 +11,36 @@ const RecipeOTD = () => {
 
   const allRecipesData = useSelector(state => state.recipe.recipes)
 
-  let recipe = Object.values(allRecipesData).find(
-    (recipe) => recipe.id == selectedRecipeId
-  );
+  // let recipe = Object.values(allRecipesData).find(
+  //   (recipe) => recipe.id == selectedRecipeId
+  // );
 
   let allRecipes;
   if (allRecipesData) allRecipes = Object.values(allRecipesData);
 
-  useEffect(() => {
-    const recipeOTD = JSON.parse(localStorage.getItem('recipeOTD'));
-    if (recipeOTD && recipeOTD.expirationTime > new Date().getTime()) {
-      setSelectedRecipeId(recipeOTD.recipeId);
-    } else {
-      selectRandomRecipe();
-    }
-  }, []);
+  let recipe = allRecipes[0]
 
-  function selectRandomRecipe() {
-    const randomIndex = Math.floor(Math.random() * allRecipes.length);
-    const randomRecipe = allRecipes[randomIndex];
-    setSelectedRecipeId(randomRecipe?.id);
+  // useEffect(() => {
+  //   const recipeOTD = JSON.parse(localStorage.getItem('recipeOTD'));
+  //   if (recipeOTD && recipeOTD.expirationTime > new Date().getTime()) {
+  //     setSelectedRecipeId(recipeOTD.recipeId);
+  //   } else {
+  //     selectRandomRecipe();
+  //   }
+  // }, []);
 
-    const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-    localStorage.setItem('recipeOTD', JSON.stringify({ recipeId: randomRecipe?.id, expirationTime }));
-  }
+  // function selectRandomRecipe() {
+  //   const randomIndex = Math.floor(Math.random() * allRecipes.length);
+  //   const randomRecipe = allRecipes[randomIndex];
+  //   setSelectedRecipeId(randomRecipe?.id);
 
-  if (!recipe){
-    recipe = allRecipes[0]
-  }
+  //   const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+  //   localStorage.setItem('recipeOTD', JSON.stringify({ recipeId: randomRecipe?.id, expirationTime }));
+  // }
+
+  // if (!recipe){
+  //   recipe = allRecipes[0]
+  // }
 
   return (
     <div
