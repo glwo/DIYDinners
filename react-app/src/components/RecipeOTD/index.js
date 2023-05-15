@@ -42,6 +42,8 @@ const RecipeOTD = () => {
   //   recipe = allRecipes[0]
   // }
 
+  // could maybe store recipe OTD in the redux store
+
 
   return (
     <div
