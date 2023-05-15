@@ -26,6 +26,7 @@ const SplashPage = () => {
 
   let allRecipes;
   if (allRecipesData) allRecipes = Object.values(allRecipesData);
+  let recipe = allRecipes[0]
   useEffect(() => {
     dispatch(thunkLoadAllRecipes());
     dispatch(thunkLoadAllReviews());
@@ -36,7 +37,7 @@ const SplashPage = () => {
 
   return (
     <>
-      <RecipeOTD />
+      <RecipeOTD initialRecipe={recipe}/>
       <div className="homePageBox">
         {/* <div className="recipeHomePageBox">
           {allRecipes.map((recipe) => (
